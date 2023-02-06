@@ -71,6 +71,7 @@ h3 {
   background-color: transparent;
   border: none;
   color: var(--clr-neutral);
+  outline: transparent;
 }
 
 .text-input::placeholder {

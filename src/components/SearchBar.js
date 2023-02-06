@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon, { magnifyingGlassIcon } from '../assets/icons';
+import '../styles/components/SearchBar.scss';
 
 function SearchBar() {
   return (
