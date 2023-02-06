@@ -1,0 +1,86 @@
+:root {
+  /* Colors */
+  --clr-primary: hsl(4, 99%, 68%);
+  --clr-secondary: hsl(150, 3%, 13%);
+  --clr-secondary-variant: hsl(0, 0%, 18%);
+  --clr-neutral: hsl(0, 0%, 100%);
+  --clr-neutral-variant: hsl(0, 0%, 85%);
+
+  /* Typography */
+  --fs-1: 2rem;
+  --fs-2: 1.5rem;
+  --fs-3: 1rem;
+  --fs-logo: 1.25rem;
+  --ff-logo: 'Josefin Sans';
+  --ff-main: Inter;
+}
+
+html,
+input,
+button {
+  font-family: var(--ff-main);
+}
+
+html {
+  background-color: var(--clr-secondary);
+  color: var(--clr-neutral);
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: var(--fs-1);
+}
+
+h2 {
+  font-size: var(--fs-2);
+}
+
+h3 {
+  font-size: var(--fs-3);
+}
+
+.button {
+  color: var(--clr-neutral);
+  background-color: var(--clr-primary);
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: var(--fs-3);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 5px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.button.secondary-button {
+  background-color: transparent;
+  border-color: var(--clr-neutral);
+}
+
+.text-input {
+  background-color: transparent;
+  border: none;
+  color: var(--clr-neutral);
+}
+
+.text-input::placeholder {
+  color: var(--clr-neutral-variant);
+}
+
+.icon {
+  color: var(--clr-primary);
+}
+
+.container {
+  padding-inline: 24px;
+}

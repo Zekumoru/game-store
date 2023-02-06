@@ -1,0 +1,11 @@
+.fw-bold {
+  font-weight: 600;
+}
+
+.box-shadow-none {
+  box-shadow: none !important;
+}
+
+.border-none {
+  border: none !important;
+}

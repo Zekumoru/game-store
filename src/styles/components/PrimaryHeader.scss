@@ -1,0 +1,22 @@
+.PrimaryHeader .container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding-block: 24px 16px;
+  align-items: center;
+  gap: 16px;
+
+  .logo {
+    font-family: var(--ff-logo);
+    font-size: var(--fs-logo);
+    line-height: normal;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 16px;
+  }
+
+  .SearchBar {
+    grid-column: 1 / -1;
+  }
+}

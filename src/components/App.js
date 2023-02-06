@@ -10,11 +10,13 @@ function App() {
       <PrimaryHeader />
       <main>
         <Carousel />
-        <h2>
-          Featured Games
-          <Icon icon={flameIcon} />
-        </h2>
-        <GameList />
+        <div className="container">
+          <h2>
+            Featured Games
+            <Icon icon={flameIcon} />
+          </h2>
+          <GameList />
+        </div>
       </main>
       <PrimaryNavigation />
     </div>

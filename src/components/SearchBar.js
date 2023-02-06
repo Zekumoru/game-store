@@ -3,9 +3,9 @@ import Icon, { magnifyingGlassIcon } from '../assets/icons';
 
 function SearchBar() {
   return (
-    <div>
+    <div className="SearchBar">
       <Icon icon={magnifyingGlassIcon} className="icon" />
-      <input type="text" placeholder="Search..." />
+      <input type="text" className="text-input" placeholder="Search..." />
     </div>
   );
 }
