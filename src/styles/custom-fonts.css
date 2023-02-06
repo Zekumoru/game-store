@@ -1,0 +1,22 @@
+/* Josefin Sans */
+@font-face {
+  font-family: 'Josefin Sans';
+  src: local('Josefin Sans'),
+    url('../assets/fonts/josefin-sans/JosefinSans-VariableFont_wght.ttf')
+      format('truetype');
+}
+
+@font-face {
+  font-family: 'Josefin Sans Italic';
+  src: local('Josefin Sans Italic'),
+    url('../assets/fonts/josefin-sans/JosefinSans-Italic-VariableFont_wght.ttf')
+      format('truetype');
+}
+
+/* Inter */
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter'),
+    url('../assets/fonts/inter/Inter-VariableFont_slnt\,wght.ttf')
+      format('truetype');
+}
