@@ -1,40 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import useSwiper from '../hooks/useSwiper';
-import GameSlide from './GameSlide';
-import gamesSample from '../../data/games-sample.json';
 import '../../styles/components/ImageSlider.scss';
 import SliderDots from './SliderDots';
-import fetchPrices from '../../utils/fetchPrices';
 
-function ImageSlider() {
+function ImageSlider({
+  children = [],
+  items,
+  slideSelector,
+  findActiveIndex = () => {},
+}) {
   const [swiper, setSwiperRef] = useSwiper();
-  const [games, setGames] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    const initializeGames = async () => {
-      const games = await fetchPrices(gamesSample.results);
-      const gamesNoUnavailable = games.filter(
-        (game) => game.price !== 'Unavailable'
-      );
-
-      setGames(gamesNoUnavailable.slice(5, 9));
-    };
-
-    initializeGames();
-  }, []);
 
   useEffect(() => {
     if (swiper == null) return;
     swiper.update();
 
     const handleSlideChange = () => {
-      if (games.length === 0) return;
+      if (items.length === 0) return;
 
       const currentSlide = swiper.slides[swiper.realIndex];
-      const title = currentSlide.querySelector('.title').textContent;
+      const element = currentSlide.querySelector(slideSelector);
 
-      const activeIndex = games.findIndex((game) => game.name === title);
+      const activeIndex = items.findIndex((item) =>
+        findActiveIndex(item, element)
+      );
       setActiveIndex(activeIndex);
     };
 
@@ -44,12 +34,12 @@ function ImageSlider() {
     return () => {
       swiper.off('slideChange', handleSlideChange);
     };
-  }, [swiper, games]);
+  }, [swiper, items, slideSelector, findActiveIndex]);
 
   const handleDotClick = (index) => {
-    const game = games[index];
+    const item = items[index];
     const slideIndex = swiper.slides.findIndex(
-      (slide) => slide.querySelector('.title').textContent === game.name
+      (slide) => slide.querySelector('.title').textContent === item.name
     );
     swiper.slideTo(slideIndex);
   };
@@ -63,15 +53,13 @@ function ImageSlider() {
         speed={1000}
         loop={true}
       >
-        {games.map((game) => (
-          <swiper-slide key={game.id}>
-            <GameSlide game={game} />
-          </swiper-slide>
+        {children.map((child, index) => (
+          <swiper-slide key={index}>{child}</swiper-slide>
         ))}
       </swiper-container>
       <SliderDots
         activeIndex={activeIndex}
-        length={games.length}
+        length={items.length}
         onClick={handleDotClick}
       />
     </div>
