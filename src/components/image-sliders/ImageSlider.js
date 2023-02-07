@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useSwiper from '../hooks/useSwiper';
 import GameSlide from './GameSlide';
-import data from './data.json';
+import gamesSample from '../../data/games-sample.json';
 import axios from 'axios';
 
 function ImageSlider() {
@@ -10,7 +10,7 @@ function ImageSlider() {
 
   useEffect(() => {
     const fetchPrices = async () => {
-      const games = data.results;
+      const games = gamesSample.results;
       const response = await axios.post(
         'http://194.163.190.50:3001/steam-price',
         {
@@ -25,7 +25,10 @@ function ImageSlider() {
         game.price = fetchedItems[index].price || 'Unavailable';
       });
 
-      setGames(games.filter((game) => game.price !== 'Unavailable'));
+      const filteredGames = games.filter(
+        (game) => game.price !== 'Unavailable'
+      );
+      setGames(filteredGames);
     };
 
     fetchPrices();

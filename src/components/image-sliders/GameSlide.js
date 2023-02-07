@@ -1,8 +1,9 @@
 import React from 'react';
 import '../../styles/components/GameSlide.scss';
+import PlatformsIconsList from '../PlatformsIconsList';
 
 function GameSlide({ game }) {
-  const { name, price } = game;
+  const { name, price, platforms } = game;
 
   return (
     <div
@@ -16,6 +17,7 @@ function GameSlide({ game }) {
       <div className="info">
         <div className="title">{name}</div>
         <div className="price">{price}</div>
+        <PlatformsIconsList platforms={platforms} />
       </div>
     </div>
   );

@@ -4,3 +4,4 @@ import { ReactComponent as flameIcon } from './flame.svg';
 
 export default Icon;
 export { magnifyingGlassIcon, flameIcon };
+export * from './platforms';
