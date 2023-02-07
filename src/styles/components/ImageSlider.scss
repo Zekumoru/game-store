@@ -1,0 +1,11 @@
+.ImageSlider {
+  height: var(--home-image-slider-height);
+  position: relative;
+
+  .SliderDots {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1;
+  }
+}

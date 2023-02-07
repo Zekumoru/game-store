@@ -1,6 +1,6 @@
 import Icon, { flameIcon } from '../assets/icons';
-import Carousel from './Carousels/Carousel';
 import GameList from './GameList';
+import ImageSlider from './image-sliders/ImageSlider';
 import PrimaryHeader from './PrimaryHeader';
 import PrimaryNavigation from './PrimaryNavigation';
 
@@ -9,11 +9,16 @@ function App() {
     <div className="App">
       <PrimaryHeader />
       <main>
-        <Carousel />
+        <ImageSlider />
         <div className="container">
-          <h2>
+          <h2
+            style={{
+              display: 'flex',
+              gap: '4px',
+            }}
+          >
             Featured Games
-            <Icon icon={flameIcon} />
+            <Icon className="icon" icon={flameIcon} />
           </h2>
           <GameList />
         </div>

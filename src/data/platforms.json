@@ -1,0 +1,410 @@
+[
+  {
+    "id": 1,
+    "name": "Xbox One",
+    "slug": "xbox-one",
+    "parentId": 3,
+    "parentPlatform": "Xbox",
+    "parentSlug": "xbox"
+  },
+  {
+    "id": 3,
+    "name": "iOS",
+    "slug": "ios",
+    "parentId": 4,
+    "parentPlatform": "iOS",
+    "parentSlug": "ios"
+  },
+  {
+    "id": 4,
+    "name": "PC",
+    "slug": "pc",
+    "parentId": 1,
+    "parentPlatform": "PC",
+    "parentSlug": "pc"
+  },
+  {
+    "id": 5,
+    "name": "macOS",
+    "slug": "macos",
+    "parentId": 5,
+    "parentPlatform": "Apple Macintosh",
+    "parentSlug": "mac"
+  },
+  {
+    "id": 6,
+    "name": "Linux",
+    "slug": "linux",
+    "parentId": 6,
+    "parentPlatform": "Linux",
+    "parentSlug": "linux"
+  },
+  {
+    "id": 7,
+    "name": "Nintendo Switch",
+    "slug": "nintendo-switch",
+    "parentId": 7,
+    "parentPlatform": "Nintendo",
+    "parentSlug": "nintendo"
+  },
+  {
+    "id": 8,
+    "name": "Nintendo 3DS",
+    "slug": "nintendo-3ds",
+    "parentId": 7,
+    "parentPlatform": "Nintendo",
+    "parentSlug": "nintendo"
+  },
+  {
+    "id": 9,
+    "name": "Nintendo DS",
+    "slug": "nintendo-ds",
+    "parentId": 7,
+    "parentPlatform": "Nintendo",
+    "parentSlug": "nintendo"
+  },
+  {
+    "id": 10,
+    "name": "Wii U",
+    "slug": "wii-u",
+    "parentId": 7,
+    "parentPlatform": "Nintendo",
+    "parentSlug": "nintendo"
+  },
+  {
+    "id": 11,
+    "name": "Wii",
+    "slug": "wii",
+    "parentId": 7,
+    "parentPlatform": "Nintendo",
+    "parentSlug": "nintendo"
+  },
+  {
+    "id": 12,
+    "name": "Neo Geo",
+    "slug": "neogeo",
+    "parentId": 13,
+    "parentPlatform": "Neo Geo",
+    "parentSlug": "neo-geo"
+  },
+  {
+    "id": 13,
+    "name": "Nintendo DSi",
+    "slug": "nintendo-dsi",
+    "parentId": 7,
+    "parentPlatform": "Nintendo",
+    "parentSlug": "nintendo"
+  },
+  {
+    "id": 14,
+    "name": "Xbox 360",
+    "slug": "xbox360",
+    "parentId": 3,
+    "parentPlatform": "Xbox",
+    "parentSlug": "xbox"
+  },
+  {
+    "id": 15,
+    "name": "PlayStation 2",
+    "slug": "playstation2",
+    "parentId": 2,
+    "parentPlatform": "PlayStation",
+    "parentSlug": "playstation"
+  },
+  {
+    "id": 16,
+    "name": "PlayStation 3",
+    "slug": "playstation3",
+    "parentId": 2,
+    "parentPlatform": "PlayStation",
+    "parentSlug": "playstation"
+  },
+  {
+    "id": 17,
+    "name": "PSP",
+    "slug": "psp",
+    "parentId": 2,
+    "parentPlatform": "PlayStation",
+    "parentSlug": "playstation"
+  },
+  {
+    "id": 18,
+    "name": "PlayStation 4",
+    "slug": "playstation4",
+    "parentId": 2,
+    "parentPlatform": "PlayStation",
+    "parentSlug": "playstation"
+  },
+  {
+    "id": 19,
+    "name": "PS Vita",
+    "slug": "ps-vita",
+    "parentId": 2,
+    "parentPlatform": "PlayStation",
+    "parentSlug": "playstation"
+  },
+  {
+    "id": 21,
+    "name": "Android",
+    "slug": "android",
+    "parentId": 8,
+    "parentPlatform": "Android",
+    "parentSlug": "android"
+  },
+  {
+    "id": 22,
+    "name": "Atari Flashback",
+    "slug": "atari-flashback",
+    "parentId": 9,
+    "parentPlatform": "Atari",
+    "parentSlug": "atari"
+  },
+  {
+    "id": 23,
+    "name": "Atari 2600",
+    "slug": "atari-2600",
+    "parentId": 9,
+    "parentPlatform": "Atari",
+    "parentSlug": "atari"
+  },
+  {
+    "id": 24,
+    "name": "Game Boy Advance",
+    "slug": "game-boy-advance",
+    "parentId": 7,
+    "parentPlatform": "Nintendo",
+    "parentSlug": "nintendo"
+  },
+  {
+    "id": 25,
+    "name": "Atari 8-bit",
+    "slug": "atari-8-bit",
+    "parentId": 9,
+    "parentPlatform": "Atari",
+    "parentSlug": "atari"
+  },
+  {
+    "id": 26,
+    "name": "Game Boy",
+    "slug": "game-boy",
+    "parentId": 7,
+    "parentPlatform": "Nintendo",
+    "parentSlug": "nintendo"
+  },
+  {
+    "id": 27,
+    "name": "PlayStation",
+    "slug": "playstation1",
+    "parentId": 2,
+    "parentPlatform": "PlayStation",
+    "parentSlug": "playstation"
+  },
+  {
+    "id": 28,
+    "name": "Atari 7800",
+    "slug": "atari-7800",
+    "parentId": 9,
+    "parentPlatform": "Atari",
+    "parentSlug": "atari"
+  },
+  {
+    "id": 31,
+    "name": "Atari 5200",
+    "slug": "atari-5200",
+    "parentId": 9,
+    "parentPlatform": "Atari",
+    "parentSlug": "atari"
+  },
+  {
+    "id": 34,
+    "name": "Atari ST",
+    "slug": "atari-st",
+    "parentId": 9,
+    "parentPlatform": "Atari",
+    "parentSlug": "atari"
+  },
+  {
+    "id": 41,
+    "name": "Apple II",
+    "slug": "apple-ii",
+    "parentId": 5,
+    "parentPlatform": "Apple Macintosh",
+    "parentSlug": "mac"
+  },
+  {
+    "id": 43,
+    "name": "Game Boy Color",
+    "slug": "game-boy-color",
+    "parentId": 7,
+    "parentPlatform": "Nintendo",
+    "parentSlug": "nintendo"
+  },
+  {
+    "id": 46,
+    "name": "Atari Lynx",
+    "slug": "atari-lynx",
+    "parentId": 9,
+    "parentPlatform": "Atari",
+    "parentSlug": "atari"
+  },
+  {
+    "id": 49,
+    "name": "NES",
+    "slug": "nes",
+    "parentId": 7,
+    "parentPlatform": "Nintendo",
+    "parentSlug": "nintendo"
+  },
+  {
+    "id": 50,
+    "name": "Atari XEGS",
+    "slug": "atari-xegs",
+    "parentId": 9,
+    "parentPlatform": "Atari",
+    "parentSlug": "atari"
+  },
+  {
+    "id": 55,
+    "name": "Classic Macintosh",
+    "slug": "macintosh",
+    "parentId": 5,
+    "parentPlatform": "Apple Macintosh",
+    "parentSlug": "mac"
+  },
+  {
+    "id": 74,
+    "name": "SEGA Master System",
+    "slug": "sega-master-system",
+    "parentId": 11,
+    "parentPlatform": "SEGA",
+    "parentSlug": "sega"
+  },
+  {
+    "id": 77,
+    "name": "Game Gear",
+    "slug": "game-gear",
+    "parentId": 11,
+    "parentPlatform": "SEGA",
+    "parentSlug": "sega"
+  },
+  {
+    "id": 79,
+    "name": "SNES",
+    "slug": "snes",
+    "parentId": 7,
+    "parentPlatform": "Nintendo",
+    "parentSlug": "nintendo"
+  },
+  {
+    "id": 80,
+    "name": "Xbox",
+    "slug": "xbox-old",
+    "parentId": 3,
+    "parentPlatform": "Xbox",
+    "parentSlug": "xbox"
+  },
+  {
+    "id": 83,
+    "name": "Nintendo 64",
+    "slug": "nintendo-64",
+    "parentId": 7,
+    "parentPlatform": "Nintendo",
+    "parentSlug": "nintendo"
+  },
+  {
+    "id": 105,
+    "name": "GameCube",
+    "slug": "gamecube",
+    "parentId": 7,
+    "parentPlatform": "Nintendo",
+    "parentSlug": "nintendo"
+  },
+  {
+    "id": 106,
+    "name": "Dreamcast",
+    "slug": "dreamcast",
+    "parentId": 11,
+    "parentPlatform": "SEGA",
+    "parentSlug": "sega"
+  },
+  {
+    "id": 107,
+    "name": "SEGA Saturn",
+    "slug": "sega-saturn",
+    "parentId": 11,
+    "parentPlatform": "SEGA",
+    "parentSlug": "sega"
+  },
+  {
+    "id": 111,
+    "name": "3DO",
+    "slug": "3do",
+    "parentId": 12,
+    "parentPlatform": "3DO",
+    "parentSlug": "3do"
+  },
+  {
+    "id": 112,
+    "name": "Jaguar",
+    "slug": "jaguar",
+    "parentId": 9,
+    "parentPlatform": "Atari",
+    "parentSlug": "atari"
+  },
+  {
+    "id": 117,
+    "name": "SEGA 32X",
+    "slug": "sega-32x",
+    "parentId": 11,
+    "parentPlatform": "SEGA",
+    "parentSlug": "sega"
+  },
+  {
+    "id": 119,
+    "name": "SEGA CD",
+    "slug": "sega-cd",
+    "parentId": 11,
+    "parentPlatform": "SEGA",
+    "parentSlug": "sega"
+  },
+  {
+    "id": 166,
+    "name": "Commodore / Amiga",
+    "slug": "commodore-amiga",
+    "parentId": 10,
+    "parentPlatform": "Commodore / Amiga",
+    "parentSlug": "commodore-amiga"
+  },
+  {
+    "id": 167,
+    "name": "Genesis",
+    "slug": "genesis",
+    "parentId": 11,
+    "parentPlatform": "SEGA",
+    "parentSlug": "sega"
+  },
+  {
+    "id": 171,
+    "name": "Web",
+    "slug": "web",
+    "parentId": 14,
+    "parentPlatform": "Web",
+    "parentSlug": "web"
+  },
+  {
+    "id": 186,
+    "name": "Xbox Series S/X",
+    "slug": "xbox-series-x",
+    "parentId": 3,
+    "parentPlatform": "Xbox",
+    "parentSlug": "xbox"
+  },
+  {
+    "id": 187,
+    "name": "PlayStation 5",
+    "slug": "playstation5",
+    "parentId": 2,
+    "parentPlatform": "PlayStation",
+    "parentSlug": "playstation"
+  }
+]
