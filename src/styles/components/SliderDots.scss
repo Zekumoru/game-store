@@ -1,0 +1,15 @@
+.SliderDots {
+  display: flex;
+  gap: 4px;
+
+  .dot {
+    width: var(--home-image-slider-dot-size);
+    height: var(--home-image-slider-dot-size);
+    border-radius: 100%;
+    background-color: var(--clr-neutral-variant);
+  }
+
+  .active {
+    background-color: var(--clr-primary);
+  }
+}

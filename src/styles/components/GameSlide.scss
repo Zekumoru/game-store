@@ -1,5 +1,5 @@
 .GameSlide {
-  height: 220px;
+  height: var(--home-image-slider-height);
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;

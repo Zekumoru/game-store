@@ -2,41 +2,57 @@ import React, { useEffect, useState } from 'react';
 import useSwiper from '../hooks/useSwiper';
 import GameSlide from './GameSlide';
 import gamesSample from '../../data/games-sample.json';
-import axios from 'axios';
+import '../../styles/components/ImageSlider.scss';
+import SliderDots from './SliderDots';
+import fetchPrices from '../../utils/fetchPrices';
 
 function ImageSlider() {
   const [swiper, setSwiperRef] = useSwiper();
   const [games, setGames] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    const fetchPrices = async () => {
-      const games = gamesSample.results;
-      const response = await axios.post(
-        'http://194.163.190.50:3001/steam-price',
-        {
-          titles: games.map((game) => game.name),
-        }
-      );
-      const fetchedItems = response.data.items;
-      games.forEach((game) => {
-        const index = fetchedItems.findIndex(
-          (item) => item.title === game.name
-        );
-        game.price = fetchedItems[index].price || 'Unavailable';
-      });
-
-      const filteredGames = games.filter(
+    const initializeGames = async () => {
+      const games = await fetchPrices(gamesSample.results);
+      const gamesNoUnavailable = games.filter(
         (game) => game.price !== 'Unavailable'
       );
-      setGames(filteredGames);
+
+      setGames(gamesNoUnavailable.slice(5, 9));
     };
 
-    fetchPrices();
+    initializeGames();
   }, []);
 
   useEffect(() => {
-    swiper?.update();
-  }, [swiper]);
+    if (swiper == null) return;
+    swiper.update();
+
+    const handleSlideChange = () => {
+      if (games.length === 0) return;
+
+      const currentSlide = swiper.slides[swiper.realIndex];
+      const title = currentSlide.querySelector('.title').textContent;
+
+      const activeIndex = games.findIndex((game) => game.name === title);
+      setActiveIndex(activeIndex);
+    };
+
+    swiper.on('slideChange', handleSlideChange);
+    handleSlideChange();
+
+    return () => {
+      swiper.off('slideChange', handleSlideChange);
+    };
+  }, [swiper, games]);
+
+  const handleDotClick = (index) => {
+    const game = games[index];
+    const slideIndex = swiper.slides.findIndex(
+      (slide) => slide.querySelector('.title').textContent === game.name
+    );
+    swiper.slideTo(slideIndex);
+  };
 
   return (
     <div className="ImageSlider">
@@ -53,6 +69,11 @@ function ImageSlider() {
           </swiper-slide>
         ))}
       </swiper-container>
+      <SliderDots
+        activeIndex={activeIndex}
+        length={games.length}
+        onClick={handleDotClick}
+      />
     </div>
   );
 }
