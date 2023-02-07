@@ -1,0 +1,17 @@
+.GameSlide {
+  height: 220px;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .info {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+  }
+
+  .title {
+    font-size: var(--fs-1);
+  }
+}
