@@ -16,8 +16,11 @@ function GameSlide({ game }) {
     >
       <div className="info">
         <div className="title">{name}</div>
-        <div className="price">{price}</div>
-        <PlatformsIconsList platforms={platforms} />
+        <div className="content">
+          <div className="price">{price}</div>
+          <div className="divider">|</div>
+          <PlatformsIconsList platforms={platforms} />
+        </div>
       </div>
     </div>
   );

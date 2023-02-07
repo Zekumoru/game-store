@@ -11,36 +11,39 @@ import Icon, {
   xboxIcon,
 } from '../assets/icons';
 import platformsIds from '../data/platforms.json';
+import '../styles/components/PlatformsIconsList.scss';
 
 const getIcons = (names) => {
   const icons = [];
 
   if (names.includes('pc')) {
-    icons.push(<Icon key="pc" icon={windowsIcon} />);
+    icons.push(<Icon className="icon" key="pc" icon={windowsIcon} />);
   }
 
   if (names.includes('mac') || names.includes('ios')) {
-    icons.push(<Icon key="mac" icon={appleIcon} />);
+    icons.push(<Icon className="icon" key="mac" icon={appleIcon} />);
   }
 
   if (names.includes('playstation')) {
-    icons.push(<Icon key="playstation" icon={playstationIcon} />);
+    icons.push(
+      <Icon className="icon" key="playstation" icon={playstationIcon} />
+    );
   }
 
   if (names.includes('xbox')) {
-    icons.push(<Icon key="xbox" icon={xboxIcon} />);
+    icons.push(<Icon className="icon" key="xbox" icon={xboxIcon} />);
   }
 
   if (names.includes('nintendo')) {
-    icons.push(<Icon key="nintendo" icon={nintendoIcon} />);
+    icons.push(<Icon className="icon" key="nintendo" icon={nintendoIcon} />);
   }
 
   if (names.includes('android')) {
-    icons.push(<Icon key="android" icon={androidIcon} />);
+    icons.push(<Icon className="icon" key="android" icon={androidIcon} />);
   }
 
   if (names.includes('linux')) {
-    icons.push(<Icon key="linux" icon={linuxIcon} />);
+    icons.push(<Icon className="icon" key="linux" icon={linuxIcon} />);
   }
 
   if (
@@ -50,11 +53,11 @@ const getIcons = (names) => {
     names.includes('3do') ||
     names.includes('commodore-amiga')
   ) {
-    icons.push(<Icon key="console" icon={consoleIcon} />);
+    icons.push(<Icon className="icon" key="console" icon={consoleIcon} />);
   }
 
   if (names.includes('web')) {
-    icons.push(<Icon key="web" icon={webIcon} />);
+    icons.push(<Icon className="icon" key="web" icon={webIcon} />);
   }
 
   return icons;

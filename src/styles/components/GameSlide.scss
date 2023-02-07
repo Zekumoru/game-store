@@ -13,5 +13,11 @@
 
   .title {
     font-size: var(--fs-1);
+    margin-bottom: 4px;
+  }
+
+  .content {
+    display: flex;
+    gap: 4px;
   }
 }
