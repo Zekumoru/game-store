@@ -28,7 +28,10 @@ const prefetches = [
   },
   {
     url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&page=6',
-    data: {},
+    data: {
+      results: [],
+      next: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&page=5',
+    },
   },
 ];
 
@@ -36,9 +39,10 @@ const originalAxiosGet = axios.get;
 axios.get = async (url) => {
   const prefetch = prefetches.find((prefetch) => prefetch.url === url);
   if (prefetch != null) {
-    console.log('Fetch from cache! Url:', url);
+    console.log('Fetched from cache! Url:', url);
     return { data: prefetch.data };
   }
 
+  console.log(`Fetching literally now! Url: ${url}`);
   return originalAxiosGet(url);
 };
