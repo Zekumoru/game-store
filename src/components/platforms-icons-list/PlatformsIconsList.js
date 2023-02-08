@@ -17,6 +17,7 @@ const getIcons = (names) => {
             key={parentPlatform.name}
             icon={parentPlatform.icon}
             className="icon"
+            data-testid={`${parentPlatform.name}-icon`}
           />
         );
         break;
