@@ -1,0 +1,18 @@
+.LoadingCircle {
+  width: 24px;
+  height: 24px;
+  border: solid 5px var(--clr-neutral-variant);
+  border-top: solid 5px var(--clr-primary);
+  border-radius: 100%;
+  animation: LoadingCircle 1s infinite linear;
+}
+
+@keyframes LoadingCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
