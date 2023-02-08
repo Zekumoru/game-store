@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Icon, { flameIcon } from '../assets/icons';
+import { flameIcon } from '../assets/icons';
 import fetchPrices from '../utils/fetchPrices';
 import GameList from './GameList';
 import ImageSlider from './image-sliders/ImageSlider';
@@ -7,6 +7,7 @@ import PrimaryHeader from './PrimaryHeader';
 import PrimaryNavigation from './PrimaryNavigation';
 import gamesSample from '../data/games-sample.json';
 import GameSlide from './image-sliders/GameSlide';
+import HeaderIcon from './header-icon/HeaderIcon';
 
 function App() {
   const [games, setGames] = useState([]);
@@ -38,15 +39,9 @@ function App() {
           ))}
         </ImageSlider>
         <div className="container">
-          <h2
-            style={{
-              display: 'flex',
-              gap: '4px',
-            }}
-          >
+          <HeaderIcon type="h2" icon={flameIcon}>
             Featured Games
-            <Icon className="icon" icon={flameIcon} />
-          </h2>
+          </HeaderIcon>
           <GameList />
         </div>
       </main>

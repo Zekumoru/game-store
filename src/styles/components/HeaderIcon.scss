@@ -1,0 +1,13 @@
+.HeaderIcon {
+  display: flex;
+  align-items: center;
+  margin-block: 16px;
+  line-height: 0;
+  gap: 4px;
+  position: relative;
+
+  .icon {
+    position: relative;
+    bottom: 2px;
+  }
+}
