@@ -13,6 +13,9 @@
   --fs-logo: 1.25rem;
   --ff-logo: 'Josefin Sans';
   --ff-main: Inter;
+  /* p: paragraph, h: heading, s: small */
+  --fs-ph: 1.625rem;
+  --fs-ps: 0.75rem;
 
   /* Sizes */
   --home-image-slider-height: 220px;
@@ -33,6 +36,11 @@ html {
 a {
   color: currentColor;
   text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
 h1,
