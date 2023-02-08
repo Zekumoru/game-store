@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/components/GameSlide.scss';
-import PlatformsIconsList from '../PlatformsIconsList';
+import PlatformsIconsList from '../platforms-icons-list/PlatformsIconsList';
 
 function GameSlide({ game }) {
   const { name, price, platforms } = game;
