@@ -6,6 +6,7 @@
   background-position: center;
 
   .info {
+    width: calc(100% - 24px * 2);
     position: absolute;
     bottom: 24px;
     left: 24px;
