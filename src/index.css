@@ -5,10 +5,13 @@
   --clr-secondary-variant: hsl(0, 0%, 18%);
   --clr-neutral: hsl(0, 0%, 100%);
   --clr-neutral-variant: hsl(0, 0%, 85%);
+  --clr-button-disabled-bg: hsl(0, 0%, 74%);
+  --clr-button-disabled-fg: hsl(0, 0%, 29%);
 
   /* Typography */
   --fs-1: 2rem;
   --fs-2: 1.5rem;
+  --fs-2s: 1.25rem;
   --fs-3: 1rem;
   --fs-logo: 1.25rem;
   --ff-logo: 'Josefin Sans';
@@ -73,6 +76,13 @@ h3 {
   box-sizing: border-box;
   border: 2px solid transparent;
   cursor: pointer;
+}
+
+.button.disabled {
+  background-color: var(--clr-button-disabled-bg);
+  color: var(--clr-button-disabled-fg);
+  box-shadow: none;
+  cursor: default;
 }
 
 .button.secondary-button {
