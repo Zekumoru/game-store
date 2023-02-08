@@ -4,7 +4,7 @@ import platformsIds from './data/platforms.json';
 import platformsIcons from './platforms-icons';
 import '../../styles/components/PlatformsIconsList.scss';
 
-const getIcons = (names) => {
+const getIcons = (names, iconProps = {}) => {
   const icons = [];
 
   platformsIcons.forEach((parentPlatform) => {
@@ -18,6 +18,7 @@ const getIcons = (names) => {
             icon={parentPlatform.icon}
             className="icon"
             data-testid={`${parentPlatform.name}-icon`}
+            {...iconProps}
           />
         );
         break;
@@ -28,7 +29,7 @@ const getIcons = (names) => {
   return icons;
 };
 
-function PlatformsIconsList({ platforms = [] }) {
+function PlatformsIconsList({ platforms = [], iconProps }) {
   const [icons, setIcons] = useState([]);
 
   useEffect(() => {
@@ -41,9 +42,9 @@ function PlatformsIconsList({ platforms = [] }) {
       return parentSlug;
     });
 
-    const icons = getIcons(platformsNames);
+    const icons = getIcons(platformsNames, iconProps);
     setIcons(icons);
-  }, [platforms]);
+  }, [platforms, iconProps]);
 
   return (
     <div className="PlatformsIconsList" data-testid="platforms-icons-list">
