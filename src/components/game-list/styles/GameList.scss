@@ -1,0 +1,11 @@
+.GameList {
+  .loading {
+    font-size: var(--fs-2);
+    color: var(--clr-neutral-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-block: 8px 24px;
+  }
+}
