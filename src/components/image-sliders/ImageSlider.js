@@ -52,6 +52,7 @@ function ImageSlider({
         autoplay-disable-on-interaction={false}
         speed={1000}
         loop={true}
+        data-testid="swiper"
       >
         {children.map((child, index) => (
           <swiper-slide key={index}>{child}</swiper-slide>

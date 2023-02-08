@@ -10,6 +10,7 @@ function SliderDots({ activeIndex, length, onClick }) {
         key={i}
         className={`dot ${activeIndex === i ? 'active' : ''}`}
         onClick={() => onClick(i)}
+        data-testid={`dot-${i}`}
       />
     );
   }
