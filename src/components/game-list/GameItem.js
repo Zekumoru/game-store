@@ -11,9 +11,9 @@ const getPrice = (price) => {
   return price;
 };
 
-function GameItem({ game }) {
+function GameItem({ data: game, width }) {
   return (
-    <li className="GameItem">
+    <div className="GameItem" style={{ width: `${width}px` }}>
       <img src={game.background_image} alt={game.name} />
       <div className="content">
         <div className="game-info">
@@ -29,7 +29,7 @@ function GameItem({ game }) {
           <div className="price">{getPrice(game.price)}</div>
         </div>
       </div>
-    </li>
+    </div>
   );
 }
 
