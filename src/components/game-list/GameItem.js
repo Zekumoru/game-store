@@ -3,6 +3,14 @@ import GenresCapsulesList from '../genres-capsules-list/GenresCapsulesList';
 import PlatformsIconsList from '../platforms-icons-list/PlatformsIconsList';
 import './styles/GameItem.scss';
 
+const getPrice = (price) => {
+  if (price.includes('Free')) {
+    return 'Free';
+  }
+
+  return price;
+};
+
 function GameItem({ game }) {
   return (
     <li className="GameItem">
@@ -18,7 +26,7 @@ function GameItem({ game }) {
         </div>
         <div className="price-button">
           <button className="button">Add to cart</button>
-          <div className="price">{game.price}</div>
+          <div className="price">{getPrice(game.price)}</div>
         </div>
       </div>
     </li>
