@@ -8,9 +8,11 @@ import ImageSlider from './image-sliders/ImageSlider';
 import ScreenshotSlide from './image-sliders/ScreenshotSlide';
 import PlatformsIconsList from './platforms-icons-list/PlatformsIconsList';
 import PriceButton from './price-button/PriceButton';
+import useAsyncOnce from './hooks/useAsyncOnce';
 import './styles/Game.scss';
 
 function Game() {
+  const [asyncOnce] = useAsyncOnce();
   const navigate = useNavigate();
   const [game, setGame] = useSessionStorage('game', {});
   const { id } = useParams();
@@ -25,12 +27,10 @@ function Game() {
   useEffect(() => {
     if (game.id === Number(id)) return;
 
-    const loadGameData = async () => {
+    asyncOnce(async () => {
       const game = await fetchGame(id);
       setGame(game);
-    };
-
-    loadGameData();
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
