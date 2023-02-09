@@ -23,7 +23,7 @@
   }
 
   .back {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 4px;
     text-decoration: underline;
@@ -32,6 +32,16 @@
       width: 16px;
       height: 16px;
       color: var(--clr-neutral);
+    }
+  }
+
+  .overview {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .PriceButton {
+      margin-top: 4px;
     }
   }
 
