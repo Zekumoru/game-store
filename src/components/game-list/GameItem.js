@@ -32,11 +32,7 @@ function GameItem({ data: game, width }) {
           <GenresCapsulesList genres={game.genres} />
         </div>
         <div className="price-button">
-          <button
-            className={`button ${
-              game.price === 'Unavailable' ? 'disabled' : ''
-            }`}
-          >
+          <button className="button" disabled={game.price === 'Unavailable'}>
             Add to cart
           </button>
           <div

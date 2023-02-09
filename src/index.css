@@ -80,7 +80,7 @@ h3 {
   cursor: pointer;
 }
 
-.button.disabled {
+.button:disabled {
   background-color: var(--clr-button-disabled-bg);
   color: var(--clr-button-disabled-fg);
   box-shadow: none;
