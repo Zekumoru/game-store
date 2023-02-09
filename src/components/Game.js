@@ -10,6 +10,7 @@ import PlatformsIconsList from './platforms-icons-list/PlatformsIconsList';
 import PriceButton from './price-button/PriceButton';
 import useAsyncOnce from './hooks/useAsyncOnce';
 import './styles/Game.scss';
+import GameLoading from './game-loading/GameLoading';
 
 function Game() {
   const [asyncOnce] = useAsyncOnce();
@@ -36,7 +37,15 @@ function Game() {
 
   return (
     <div className="Game">
-      {game.name && (
+      <div className="container">
+        <div onClick={() => navigate(-1)} className="back">
+          <Icon className="icon" icon={arrowLeftIcon} />
+          Back
+        </div>
+      </div>
+      {!game.name ? (
+        <GameLoading />
+      ) : (
         <>
           <div
             className="background-image"
@@ -47,10 +56,6 @@ function Game() {
             }}
           />
           <div className="overview container">
-            <div onClick={() => navigate(-1)} className="back">
-              <Icon className="icon" icon={arrowLeftIcon} />
-              Back
-            </div>
             <div className="title">{game.name}</div>
             <div className="date-platforms">
               <DateCapsule date={game.released} />
