@@ -83,6 +83,10 @@ const prefetches = [
     url: 'https://api.rawg.io/api/games/3498/screenshots?key=f8c4731c17aa4d39a151c2de730a4e53',
     data: grandTheftAutoVScreenshots,
   },
+  {
+    url: 'https://api.rawg.io/api/games/123456789?key=f8c4731c17aa4d39a151c2de730a4e53',
+    data: { detail: 'Not found.' },
+  },
 ];
 
 const originalAxiosGet = axios.get;

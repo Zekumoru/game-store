@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Icon, { arrowLeftIcon } from '../assets/icons';
 import fetchGame from '../utils/fetchGame';
@@ -11,11 +11,13 @@ import PriceButton from './price-button/PriceButton';
 import useAsyncOnce from './hooks/useAsyncOnce';
 import './styles/Game.scss';
 import GameLoading from './game-loading/GameLoading';
+import NotFound from './not-found/NotFound';
 
 function Game() {
   const [asyncOnce] = useAsyncOnce();
   const navigate = useNavigate();
   const [game, setGame] = useSessionStorage('game', {});
+  const [notFound, setNotFound] = useState(false);
   const { id } = useParams();
 
   useLayoutEffect(() => {
@@ -30,6 +32,11 @@ function Game() {
 
     asyncOnce(async () => {
       const game = await fetchGame(id);
+      if (game == null) {
+        setNotFound(true);
+        return;
+      }
+
       setGame(game);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -44,7 +51,11 @@ function Game() {
         </div>
       </div>
       {!game.name ? (
-        <GameLoading />
+        notFound ? (
+          <NotFound>Game not found!</NotFound>
+        ) : (
+          <GameLoading />
+        )
       ) : (
         <>
           <div
