@@ -73,6 +73,7 @@ function Game() {
           />
           <div className="container">
             <h2>About</h2>
+            <p>{game.description_raw}</p>
           </div>
         </>
       )}
