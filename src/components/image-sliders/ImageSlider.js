@@ -8,6 +8,7 @@ function ImageSlider({
   items,
   slideElement,
   autoplay = false,
+  showDots = false,
   autoplayDelay = 2000,
   findSlideIndex = () => {},
 }) {
@@ -67,11 +68,15 @@ function ImageSlider({
           </swiper-slide>
         ))}
       </swiper-container>
-      <SliderDots
-        activeIndex={activeIndex}
-        length={items.length}
-        onClick={handleDotClick}
-      />
+      {!showDots ? (
+        <></>
+      ) : (
+        <SliderDots
+          activeIndex={activeIndex}
+          length={items.length}
+          onClick={handleDotClick}
+        />
+      )}
     </div>
   );
 }

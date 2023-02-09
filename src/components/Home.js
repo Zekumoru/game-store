@@ -50,6 +50,7 @@ function Home() {
       <ImageSlider
         items={gamesNoUnavailable}
         slideElement={GameSlide}
+        showDots={true}
         autoplay={true}
         autoplayDelay={4000}
         findSlideIndex={(slide, game) =>
