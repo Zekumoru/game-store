@@ -1,14 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import useAsyncOnce from '../hooks/useAsyncOnce';
 import fetchGames from '../../utils/fetchGames';
 import ImageSlider from '../image-sliders/ImageSlider';
 import GameCardSlide from '../image-sliders/GameCardSlide';
+import useSessionStorage from '../hooks/useSessionStorage';
 
 function Platform({ platform }) {
   const [asyncOnce] = useAsyncOnce();
-  const [games, setGames] = useState([]);
+  const [games, setGames] = useSessionStorage(`platform-${platform.id}`, []);
 
   useEffect(() => {
+    if (games.length !== 0) return;
+
     asyncOnce(async () => {
       const games = await fetchGames(
         `https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&parent_platforms=${platform.id}`,
