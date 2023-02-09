@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import { Masonry, useInfiniteLoader } from 'masonic';
-import GameList from '../GameList';
+import GameMasonryList from '../GameMasonryList';
 import games from '../../../data/games-sample.json';
 
 jest.mock('masonic');
@@ -23,10 +23,10 @@ const mockMasonry = () => {
   return actions;
 };
 
-describe('GameList', () => {
+describe('GameMasonryList', () => {
   it('should not load any games if onLoadMore is not passed', () => {
     const actions = mockMasonry();
-    render(<GameList games={games} />);
+    render(<GameMasonryList games={games} />);
 
     expect(() => actions.scrollDown()).toThrow(/undefined/);
   });
@@ -34,7 +34,7 @@ describe('GameList', () => {
   it('should load more if scrolled down', () => {
     const actions = mockMasonry();
     const loadMore = jest.fn();
-    render(<GameList games={games} onLoadMore={loadMore} />);
+    render(<GameMasonryList games={games} onLoadMore={loadMore} />);
 
     actions.scrollDown();
     actions.scrollDown();

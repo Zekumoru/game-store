@@ -4,7 +4,7 @@ import LoadingCircle from '../loading-circle/LoadingCircle';
 import GameItem from './GameItem';
 import './styles/GameList.scss';
 
-function GameList({ games = [], onLoadMore }) {
+function GameMasonryList({ games = [], onLoadMore }) {
   const maybeLoadMore = useInfiniteLoader(
     async () => {
       onLoadMore();
@@ -39,4 +39,4 @@ function GameList({ games = [], onLoadMore }) {
   );
 }
 
-export default GameList;
+export default GameMasonryList;

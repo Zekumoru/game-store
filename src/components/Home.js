@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react';
 import { flameIcon } from '../assets/icons';
-import GameList from './game-list/GameList';
+import GameMasonryList from './game-list/GameMasonryList';
 import HeaderIcon from './header-icon/HeaderIcon';
 import useAsyncOnce from './hooks/useAsyncOnce';
 import GameSlide from './image-sliders/GameSlide';
@@ -58,7 +58,7 @@ function Home() {
         <HeaderIcon type="h2" icon={flameIcon}>
           Featured Games
         </HeaderIcon>
-        <GameList games={games} onLoadMore={handleLoadMore} />
+        <GameMasonryList games={games} onLoadMore={handleLoadMore} />
       </div>
     </>
   );
