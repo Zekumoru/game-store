@@ -16,14 +16,19 @@ function GameList({ games = [], onLoadMore }) {
     }
   );
 
+  const options = {};
+  if (typeof onLoadMore === 'function') {
+    options.onRender = maybeLoadMore;
+  }
+
   return (
     <div className="GameList">
       <Masonry
         items={games}
         columnGutter={16}
         columnWidth={260}
-        onRender={maybeLoadMore}
         render={GameItem}
+        {...options}
       />
       <div className="loading">
         Loading <LoadingCircle />
