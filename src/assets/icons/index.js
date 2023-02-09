@@ -5,6 +5,7 @@ import { ReactComponent as homeIcon } from './home.svg';
 import { ReactComponent as cartIcon } from './cart.svg';
 import { ReactComponent as pcIcon } from './pc.svg';
 import { ReactComponent as swordIcon } from './sword.svg';
+import { ReactComponent as arrowLeftIcon } from './arrow-left.svg';
 
 export default Icon;
 export {
@@ -14,5 +15,6 @@ export {
   cartIcon,
   pcIcon,
   swordIcon,
+  arrowLeftIcon,
 };
 export * from './platforms';

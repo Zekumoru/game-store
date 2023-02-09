@@ -21,4 +21,27 @@
       opacity: 0.7;
     }
   }
+
+  .back {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: underline;
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      color: var(--clr-neutral);
+    }
+  }
+
+  .title {
+    font-size: var(--fs-1);
+  }
+
+  .date-platforms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 }

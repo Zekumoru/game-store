@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import Icon, { arrowLeftIcon } from '../assets/icons';
 import fetchGame from '../utils/fetchGame';
 import DateCapsule from './date-capsule/DateCapsule';
 import useSessionStorage from './hooks/useSessionStorage';
@@ -43,10 +44,15 @@ function Game() {
             }}
           />
           <div className="overview container">
-            <div className="back">Back</div>
+            <div className="back">
+              <Icon className="icon" icon={arrowLeftIcon} />
+              Back
+            </div>
             <div className="title">{game.name}</div>
-            <DateCapsule date={game.released} />
-            <PlatformsIconsList platforms={game.platforms} />
+            <div className="date-platforms">
+              <DateCapsule date={game.released} />
+              <PlatformsIconsList platforms={game.platforms} />
+            </div>
             <div className="genres">
               {game.genres.map((genre) => genre.name).join(', ')}
             </div>
