@@ -16,7 +16,7 @@ function Platform({ platform }) {
           limit: 5,
         }
       );
-      setGames(games.slice(0, 5));
+      setGames(games);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
