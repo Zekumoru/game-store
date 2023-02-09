@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import useSwiper from '../hooks/useSwiper';
-import '../../styles/components/ImageSlider.scss';
 import SliderDots from './SliderDots';
 
 function ImageSlider({
+  className,
   children = [],
   items,
   slideElement,
@@ -48,11 +48,7 @@ function ImageSlider({
       };
 
   return (
-    <div
-      className={`ImageSlider ${
-        children.length === 0 ? 'skeleton-loading' : ''
-      }`}
-    >
+    <div className={`ImageSlider ${className}`}>
       <swiper-container
         ref={setSwiperRef}
         speed={1000}
