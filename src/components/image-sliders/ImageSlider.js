@@ -45,7 +45,11 @@ function ImageSlider({
   };
 
   return (
-    <div className="ImageSlider">
+    <div
+      className={`ImageSlider ${
+        children.length === 0 ? 'skeleton-loading' : ''
+      }`}
+    >
       <swiper-container
         ref={setSwiperRef}
         autoplay-delay={4000}

@@ -11,9 +11,9 @@ const getPrice = (price) => {
   return price;
 };
 
-function GameItem({ game }) {
+function GameItem({ data: game, width }) {
   return (
-    <li className="GameItem">
+    <div className="GameItem" style={{ width: `${width}px` }}>
       <img src={game.background_image} alt={game.name} />
       <div className="content">
         <div className="game-info">
@@ -25,11 +25,23 @@ function GameItem({ game }) {
           <GenresCapsulesList genres={game.genres} />
         </div>
         <div className="price-button">
-          <button className="button">Add to cart</button>
-          <div className="price">{getPrice(game.price)}</div>
+          <button
+            className={`button ${
+              game.price === 'Unavailable' ? 'disabled' : ''
+            }`}
+          >
+            Add to cart
+          </button>
+          <div
+            className={`price ${
+              game.price === 'Unavailable' ? 'unavailable' : ''
+            }`}
+          >
+            {getPrice(game.price)}
+          </div>
         </div>
       </div>
-    </li>
+    </div>
   );
 }
 

@@ -9,3 +9,17 @@
 .border-none {
   border: none !important;
 }
+
+.skeleton-loading {
+  animation: skeleton-loading-anim 800ms linear infinite alternate;
+}
+
+@keyframes skeleton-loading-anim {
+  0% {
+    background-color: hsl(0, 0%, 18%);
+  }
+
+  100% {
+    background-color: hsl(0, 0%, 25%);
+  }
+}
