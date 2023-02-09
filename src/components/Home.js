@@ -49,13 +49,13 @@ function Home() {
     <>
       <ImageSlider
         items={gamesNoUnavailable}
-        slideSelector=".title"
-        findActiveIndex={(game, titleEl) => game.name === titleEl.textContent}
-      >
-        {gamesNoUnavailable.map((game) => (
-          <GameSlide key={game.id} game={game} />
-        ))}
-      </ImageSlider>
+        slideElement={GameSlide}
+        autoplay={true}
+        autoplayDelay={4000}
+        findSlideIndex={(slide, game) =>
+          slide.querySelector('.title').textContent === game.name
+        }
+      />
       <div className="container">
         <HeaderIcon type="h2" icon={flameIcon}>
           Featured Games

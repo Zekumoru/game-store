@@ -6,8 +6,10 @@ import SliderDots from './SliderDots';
 function ImageSlider({
   children = [],
   items,
-  slideSelector,
-  findActiveIndex = () => {},
+  slideElement,
+  autoplay = false,
+  autoplayDelay = 2000,
+  findSlideIndex = () => {},
 }) {
   const [swiper, setSwiperRef] = useSwiper();
   const [activeIndex, setActiveIndex] = useState(0);
@@ -18,14 +20,7 @@ function ImageSlider({
 
     const handleSlideChange = () => {
       if (items.length === 0) return;
-
-      const currentSlide = swiper.slides[swiper.realIndex];
-      const element = currentSlide.querySelector(slideSelector);
-
-      const activeIndex = items.findIndex((item) =>
-        findActiveIndex(item, element)
-      );
-      setActiveIndex(activeIndex);
+      setActiveIndex(swiper.realIndex);
     };
 
     swiper.on('slideChange', handleSlideChange);
@@ -34,15 +29,22 @@ function ImageSlider({
     return () => {
       swiper.off('slideChange', handleSlideChange);
     };
-  }, [swiper, items, slideSelector, findActiveIndex]);
+  }, [swiper, items, autoplay]);
 
   const handleDotClick = (index) => {
     const item = items[index];
-    const slideIndex = swiper.slides.findIndex(
-      (slide) => slide.querySelector('.title').textContent === item.name
+    const slideIndex = swiper.slides.findIndex((slide) =>
+      findSlideIndex(slide, item)
     );
     swiper.slideTo(slideIndex);
   };
+
+  const autoplayObj = !autoplay
+    ? {}
+    : {
+        'autoplay-delay': autoplayDelay,
+        'autoplay-disable-on-interaction': false,
+      };
 
   return (
     <div
@@ -52,14 +54,17 @@ function ImageSlider({
     >
       <swiper-container
         ref={setSwiperRef}
-        autoplay-delay={4000}
-        autoplay-disable-on-interaction={false}
         speed={1000}
         loop={true}
         data-testid="swiper"
+        {...autoplayObj}
       >
-        {children.map((child, index) => (
-          <swiper-slide key={index}>{child}</swiper-slide>
+        {items.map((item, index) => (
+          <swiper-slide key={index}>
+            {React.createElement(slideElement, {
+              data: item,
+            })}
+          </swiper-slide>
         ))}
       </swiper-container>
       <SliderDots

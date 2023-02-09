@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../../styles/components/GameSlide.scss';
 import PlatformsIconsList from '../platforms-icons-list/PlatformsIconsList';
 
-function GameSlide({ game }) {
+function GameSlide({ data: game }) {
   const { name, price, platforms } = game;
 
   return (
