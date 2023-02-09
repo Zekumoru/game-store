@@ -8,7 +8,6 @@ import useAsyncOnce from './hooks/useAsyncOnce';
 import GameSlide from './image-sliders/GameSlide';
 import ImageSlider from './image-sliders/ImageSlider';
 import useSessionStorage from './hooks/useSessionStorage';
-import '../data/mockAxios';
 import './styles/Home.scss';
 
 function Home() {
