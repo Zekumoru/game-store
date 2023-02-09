@@ -1,4 +1,6 @@
 .GameList {
+  overflow-x: hidden;
+
   .loading {
     font-size: var(--fs-2);
     color: var(--clr-neutral-variant);
