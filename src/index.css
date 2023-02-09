@@ -40,7 +40,7 @@ html {
 }
 
 main {
-  margin-bottom: var(--primary-nav-height);
+  margin-bottom: calc(24px + var(--primary-nav-height));
 }
 
 a {
@@ -50,6 +50,11 @@ a {
 
 ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
   margin: 0;
   padding: 0;
 }
