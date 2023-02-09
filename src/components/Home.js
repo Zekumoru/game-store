@@ -8,7 +8,7 @@ import useAsyncOnce from './hooks/useAsyncOnce';
 import GameSlide from './image-sliders/GameSlide';
 import ImageSlider from './image-sliders/ImageSlider';
 import useSessionStorage from './hooks/useSessionStorage';
-import '../data/mockAxios';
+import './styles/Home.scss';
 
 function Home() {
   const [asyncOnce] = useAsyncOnce();
@@ -48,14 +48,19 @@ function Home() {
   return (
     <>
       <ImageSlider
+        className={`home-image-slider ${
+          gamesNoUnavailable.length === 0 ? 'skeleton-loading' : ''
+        }`}
         items={gamesNoUnavailable}
-        slideSelector=".title"
-        findActiveIndex={(game, titleEl) => game.name === titleEl.textContent}
-      >
-        {gamesNoUnavailable.map((game) => (
-          <GameSlide key={game.id} game={game} />
-        ))}
-      </ImageSlider>
+        slideElement={GameSlide}
+        showDots={true}
+        loop={true}
+        autoplay={true}
+        autoplayDelay={4000}
+        findSlideIndex={(slide, game) =>
+          slide.querySelector('.title').textContent === game.name
+        }
+      />
       <div className="container">
         <HeaderIcon type="h2" icon={flameIcon}>
           Featured Games

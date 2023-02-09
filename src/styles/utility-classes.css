@@ -10,6 +10,19 @@
   border: none !important;
 }
 
+.capsule {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: var(--fs-ps);
+  color: var(--clr-neutral);
+  background-color: var(--clr-secondary);
+}
+
+.capsule.capsule-light {
+  color: var(--clr-secondary);
+  background-color: var(--clr-neutral);
+}
+
 .skeleton-loading {
   animation: skeleton-loading-anim 800ms linear infinite alternate;
 }

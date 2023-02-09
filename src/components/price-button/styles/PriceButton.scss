@@ -1,0 +1,18 @@
+.PriceButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .price {
+    font-size: var(--fs-2);
+    line-height: 1;
+  }
+
+  .price.unavailable {
+    font-size: var(--fs-2s);
+  }
+
+  .button {
+    flex-shrink: 0;
+  }
+}

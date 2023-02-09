@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { BrowserRouter } from 'react-router-dom';
 import GameSlide from '../GameSlide';
 import ImageSlider from '../ImageSlider';
 import games from './mock-data/games-sample.json';
@@ -8,15 +9,9 @@ import games from './mock-data/games-sample.json';
 describe('Image Slider', () => {
   it('should load the game titles, prices, and platforms', async () => {
     render(
-      <ImageSlider
-        items={games}
-        slideSelector=".title"
-        findActiveIndex={(game, titleEl) => game.name === titleEl.textContent}
-      >
-        {games.map((game) => (
-          <GameSlide key={game.id} game={game} />
-        ))}
-      </ImageSlider>
+      <BrowserRouter>
+        <ImageSlider items={games} slideElement={GameSlide} />
+      </BrowserRouter>
     );
 
     const platforms = (await screen.findAllByTestId('platforms-icons-list'))[0];
@@ -36,15 +31,9 @@ describe('Image Slider', () => {
   it('should change slide when user pressed on one of the slider dots', async () => {
     const user = userEvent.setup();
     const { rerender } = render(
-      <ImageSlider
-        items={games}
-        slideSelector=".title"
-        findActiveIndex={(game, titleEl) => game.name === titleEl.textContent}
-      >
-        {games.map((game) => (
-          <GameSlide key={game.id} game={game} />
-        ))}
-      </ImageSlider>
+      <BrowserRouter>
+        <ImageSlider items={games} slideElement={GameSlide} showDots={true} />
+      </BrowserRouter>
     );
 
     //
@@ -61,7 +50,7 @@ describe('Image Slider', () => {
       slideTo: () => {
         onSlideChange();
       },
-      realIndex: 0,
+      activeIndex: 0,
       slides: [
         {
           querySelector: () => ({ textContent: 'Borderlands 2' }),
@@ -79,22 +68,29 @@ describe('Image Slider', () => {
     };
 
     rerender(
-      <ImageSlider
-        items={games}
-        slideSelector=".title"
-        findActiveIndex={(game, titleEl) => game.name === titleEl.textContent}
-      >
-        {games.map((game) => (
-          <GameSlide key={game.id} game={game} />
-        ))}
-      </ImageSlider>
+      <BrowserRouter>
+        <ImageSlider
+          className={`home-image-slider ${
+            games.length === 0 ? 'skeleton-loading' : ''
+          }`}
+          items={games}
+          slideElement={GameSlide}
+          showDots={true}
+          autoplay={true}
+          autoplayDelay={4000}
+          findSlideIndex={(slide, game) =>
+            // eslint-disable-next-line testing-library/no-node-access
+            slide.querySelector('.title').textContent === game.name
+          }
+        />
+      </BrowserRouter>
     );
 
     const firstDot = screen.getByTestId('dot-0');
     const firstDotBeforeSlideChange = firstDot.cloneNode();
     const thirdDot = screen.getByTestId('dot-2');
 
-    swiperEl.swiper.realIndex = 2;
+    swiperEl.swiper.activeIndex = 2;
     await user.click(thirdDot);
 
     expect(firstDotBeforeSlideChange).toHaveClass('active');
