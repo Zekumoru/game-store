@@ -1,5 +1,10 @@
 .GameList {
-  overflow-x: hidden;
+  &.default {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    justify-items: center;
+    gap: 16px;
+  }
 
   .loading {
     font-size: var(--fs-2);

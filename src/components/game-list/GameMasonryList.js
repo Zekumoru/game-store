@@ -3,6 +3,7 @@ import React from 'react';
 import LoadingCircle from '../loading-circle/LoadingCircle';
 import GameMasonryItem from './GameMasonryItem';
 import './styles/GameList.scss';
+import './styles/GameMasonryList.scss';
 
 function GameMasonryList({ games = [], onLoadMore }) {
   const maybeLoadMore = useInfiniteLoader(
@@ -22,7 +23,7 @@ function GameMasonryList({ games = [], onLoadMore }) {
   }
 
   return (
-    <div className="GameList">
+    <div className="GameList GameMasonryList">
       <Masonry
         items={games}
         columnGutter={16}
