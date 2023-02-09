@@ -4,7 +4,6 @@ import SliderDots from './SliderDots';
 
 function ImageSlider({
   className,
-  children = [],
   items,
   slideElement,
   autoplay = false,
