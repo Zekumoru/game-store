@@ -7,7 +7,7 @@ function GameSlide({ game }) {
   const { name, price, platforms } = game;
 
   return (
-    <Link to={`/game/${game.id}`}>
+    <Link to={`/games/${game.id}`}>
       <div
         className="GameSlide"
         style={{

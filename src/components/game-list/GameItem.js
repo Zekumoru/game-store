@@ -13,7 +13,7 @@ const getPrice = (price) => {
 };
 
 function GameItem({ data: game, width }) {
-  const gamePageUrl = `/game/${game.id}`;
+  const gamePageUrl = `/games/${game.id}`;
 
   return (
     <div className="GameItem" style={{ width: `${width}px` }}>
