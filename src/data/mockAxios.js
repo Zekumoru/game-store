@@ -94,7 +94,7 @@ axios.get = async (url) => {
   }
 
   if (url.includes('f8c4731c17aa4d39a151c2de730a4e53')) {
-    console.log(
+    console.warn(
       'Blocked uncached RAWG request to prevent exhausting API calls.'
     );
     return { data: {} };
