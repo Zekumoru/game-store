@@ -11,6 +11,7 @@ function ImageSlider({
   loop = false,
   autoplayDelay = 2000,
   findSlideIndex = () => {},
+  containerProps = {},
 }) {
   const [swiper, setSwiperRef] = useSwiper();
   const [activeIndex, setActiveIndex] = useState(0);
@@ -59,6 +60,7 @@ function ImageSlider({
         speed={1000}
         loop={loop}
         data-testid="swiper"
+        {...containerProps}
         {...autoplayObj}
       >
         {items.map((item, index) => (
