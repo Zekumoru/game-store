@@ -1,0 +1,24 @@
+.Game {
+  .background-image {
+    position: absolute;
+    width: 100%;
+    height: var(--game-page-bg-size);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--game-page-bg-size);
+      background-color: var(--clr-secondary);
+      opacity: 0.7;
+    }
+  }
+}
