@@ -30,9 +30,11 @@ function GameList({ games = [], onLoadMore }) {
         render={GameItem}
         {...options}
       />
-      <div className="loading">
-        Loading <LoadingCircle />
-      </div>
+      {typeof onLoadMore === 'function' && (
+        <div className="loading">
+          Loading <LoadingCircle />
+        </div>
+      )}
     </div>
   );
 }
