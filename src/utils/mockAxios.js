@@ -14,6 +14,15 @@ import left4Dead2 from '../data/games/left-4-dead-2-game-details.json';
 import left4Dead2Screenshots from '../data/screenshots/left-4-dead-2-screenshots.json';
 import grandTheftAutoV from '../data/games/grand-theft-auto-v-game-details.json';
 import grandTheftAutoVScreenshots from '../data/screenshots/grand-theft-auto-v-screenshots.json';
+import pcPlatform from '../data/parent-platform-games/pc.json';
+import macPlatform from '../data/parent-platform-games/mac.json';
+import playstationPlatform from '../data/parent-platform-games/playstation.json';
+import xboxPlatform from '../data/parent-platform-games/xbox.json';
+import nintendoPlatform from '../data/parent-platform-games/nintendo.json';
+import androidPlatform from '../data/parent-platform-games/android.json';
+import iosPlatform from '../data/parent-platform-games/ios.json';
+import linuxPlatform from '../data/parent-platform-games/linux.json';
+import webPlatform from '../data/parent-platform-games/web.json';
 
 const prefetches = [
   {
@@ -86,6 +95,42 @@ const prefetches = [
   {
     url: 'https://api.rawg.io/api/games/123456789?key=f8c4731c17aa4d39a151c2de730a4e53',
     data: { detail: 'Not found.' },
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&parent_platforms=1',
+    data: pcPlatform,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&parent_platforms=5',
+    data: macPlatform,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&parent_platforms=2',
+    data: playstationPlatform,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&parent_platforms=3',
+    data: xboxPlatform,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&parent_platforms=7',
+    data: nintendoPlatform,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&parent_platforms=8',
+    data: androidPlatform,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&parent_platforms=4',
+    data: iosPlatform,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&parent_platforms=6',
+    data: linuxPlatform,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&parent_platforms=14',
+    data: webPlatform,
   },
 ];
 
