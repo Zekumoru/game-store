@@ -4,6 +4,8 @@ import Icon, { arrowLeftIcon } from '../assets/icons';
 import fetchGame from '../utils/fetchGame';
 import DateCapsule from './date-capsule/DateCapsule';
 import useSessionStorage from './hooks/useSessionStorage';
+import ImageSlider from './image-sliders/ImageSlider';
+import ScreenshotSlide from './image-sliders/ScreenshotSlide';
 import PlatformsIconsList from './platforms-icons-list/PlatformsIconsList';
 import PriceButton from './price-button/PriceButton';
 import './styles/Game.scss';
@@ -59,13 +61,18 @@ function Game() {
             </div>
             <PriceButton price={game.price} shrink={false} />
           </div>
-          <div className="details container">
-            <div>
-              <h2>Screenshots</h2>
-            </div>
-            <div>
-              <h2>About</h2>
-            </div>
+          <h2 className="container">Screenshots</h2>
+          <ImageSlider
+            className="game-image-slider"
+            items={game.screenshots}
+            slideElement={ScreenshotSlide}
+            containerProps={{
+              'free-mode': true,
+              'slides-per-view': 'auto',
+            }}
+          />
+          <div className="container">
+            <h2>About</h2>
           </div>
         </>
       )}

@@ -64,7 +64,7 @@ function ImageSlider({
         {...autoplayObj}
       >
         {items.map((item, index) => (
-          <swiper-slide style={{ width: 'auto' }} key={index}>
+          <swiper-slide class="slide" style={{ width: 'auto' }} key={index}>
             {React.createElement(slideElement, {
               data: item,
             })}

@@ -54,4 +54,30 @@
     align-items: center;
     gap: 8px;
   }
+
+  h2 {
+    margin-block: 24px 8px;
+  }
+
+  .game-image-slider {
+    .slide:first-of-type {
+      padding-inline-start: 24px;
+    }
+
+    .slide:last-of-type {
+      padding-inline-end: 24px;
+    }
+
+    .slide:not(:last-of-type) {
+      margin-right: 16px;
+    }
+
+    img {
+      width: 280px;
+      height: 180px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 8px;
+    }
+  }
 }
