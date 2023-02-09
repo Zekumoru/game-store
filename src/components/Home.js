@@ -1,7 +1,5 @@
-import axios from 'axios';
 import { useEffect, useMemo } from 'react';
 import { flameIcon } from '../assets/icons';
-import fetchPrices from '../utils/fetchPrices';
 import GameList from './game-list/GameList';
 import HeaderIcon from './header-icon/HeaderIcon';
 import useAsyncOnce from './hooks/useAsyncOnce';
@@ -9,6 +7,7 @@ import GameSlide from './image-sliders/GameSlide';
 import ImageSlider from './image-sliders/ImageSlider';
 import useSessionStorage from './hooks/useSessionStorage';
 import './styles/Home.scss';
+import fetchGames from '../utils/fetchGames';
 
 function Home() {
   const [asyncOnce] = useAsyncOnce();
@@ -19,19 +18,13 @@ function Home() {
     [games]
   );
 
-  const fetchGames = async (url) => {
-    const response = await axios.get(url);
-    const games = await fetchPrices(response.data.results);
-    setNextUrl(response.data.next);
-    return games;
-  };
-
   useEffect(() => {
     if (games.length !== 0) return;
 
     asyncOnce(async () => {
       const games = await fetchGames(
-        'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53'
+        'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53',
+        setNextUrl
       );
       setGames(games);
     });
@@ -40,7 +33,7 @@ function Home() {
 
   const handleLoadMore = () => {
     asyncOnce(async () => {
-      const newGames = await fetchGames(nextUrl);
+      const newGames = await fetchGames(nextUrl, setNextUrl);
       setGames((games) => [...games, ...newGames]);
     });
   };
