@@ -2,15 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import GenresCapsulesList from '../genres-capsules-list/GenresCapsulesList';
 import PlatformsIconsList from '../platforms-icons-list/PlatformsIconsList';
+import PriceButton from '../price-button/PriceButton';
 import './styles/GameItem.scss';
-
-const getPrice = (price) => {
-  if (price.includes('Free')) {
-    return 'Free';
-  }
-
-  return price;
-};
 
 function GameItem({ data: game, width }) {
   const gamePageUrl = `/games/${game.id}`;
@@ -31,18 +24,7 @@ function GameItem({ data: game, width }) {
           </Link>
           <GenresCapsulesList genres={game.genres} />
         </div>
-        <div className="price-button">
-          <button className="button" disabled={game.price === 'Unavailable'}>
-            Add to cart
-          </button>
-          <div
-            className={`price ${
-              game.price === 'Unavailable' ? 'unavailable' : ''
-            }`}
-          >
-            {getPrice(game.price)}
-          </div>
-        </div>
+        <PriceButton price={game.price} />
       </div>
     </div>
   );
