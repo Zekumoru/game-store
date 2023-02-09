@@ -9,6 +9,7 @@ function ImageSlider({
   slideElement,
   autoplay = false,
   showDots = false,
+  loop = false,
   autoplayDelay = 2000,
   findSlideIndex = () => {},
 }) {
@@ -57,7 +58,7 @@ function ImageSlider({
       <swiper-container
         ref={setSwiperRef}
         speed={1000}
-        loop={true}
+        loop={loop}
         data-testid="swiper"
         {...autoplayObj}
       >

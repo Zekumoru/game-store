@@ -55,6 +55,7 @@ function Home() {
         items={gamesNoUnavailable}
         slideElement={GameSlide}
         showDots={true}
+        loop={true}
         autoplay={true}
         autoplayDelay={4000}
         findSlideIndex={(slide, game) =>
