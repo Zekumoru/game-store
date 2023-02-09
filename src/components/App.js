@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import Game from './Game';
 import '../data/mockAxios';
+import Redirect from './Redirect';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/games" element={<Redirect to="/" />} />
           <Route path="/games/:id" element={<Game />} />
         </Routes>
       </main>
