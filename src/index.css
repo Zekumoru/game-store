@@ -3,6 +3,7 @@
   --clr-primary: hsl(4, 99%, 68%);
   --clr-secondary: hsl(150, 3%, 13%);
   --clr-secondary-variant: hsl(0, 0%, 18%);
+  --clr-secondary-dark: hsl(150, 4%, 11%);
   --clr-neutral: hsl(0, 0%, 100%);
   --clr-neutral-variant: hsl(0, 0%, 85%);
   --clr-button-disabled-bg: hsl(0, 0%, 74%);
@@ -23,6 +24,7 @@
   /* Sizes */
   --home-image-slider-height: 280px;
   --home-image-slider-dot-size: 16px;
+  --primary-nav-height: 70px;
 }
 
 html,

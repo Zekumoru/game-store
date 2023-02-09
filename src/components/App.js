@@ -4,7 +4,7 @@ import fetchPrices from '../utils/fetchPrices';
 import GameList from './game-list/GameList';
 import ImageSlider from './image-sliders/ImageSlider';
 import PrimaryHeader from './PrimaryHeader';
-import PrimaryNavigation from './PrimaryNavigation';
+import PrimaryNavigation from './primary-navigation/PrimaryNavigation';
 import GameSlide from './image-sliders/GameSlide';
 import HeaderIcon from './header-icon/HeaderIcon';
 import useAsyncOnce from './hooks/useAsyncOnce';
