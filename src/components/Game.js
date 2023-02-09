@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Icon, { arrowLeftIcon } from '../assets/icons';
 import fetchGame from '../utils/fetchGame';
 import DateCapsule from './date-capsule/DateCapsule';
@@ -9,6 +9,7 @@ import PriceButton from './price-button/PriceButton';
 import './styles/Game.scss';
 
 function Game() {
+  const navigate = useNavigate();
   const [game, setGame] = useSessionStorage('game', {});
   const { id } = useParams();
 
@@ -44,7 +45,7 @@ function Game() {
             }}
           />
           <div className="overview container">
-            <div className="back">
+            <div onClick={() => navigate(-1)} className="back">
               <Icon className="icon" icon={arrowLeftIcon} />
               Back
             </div>
