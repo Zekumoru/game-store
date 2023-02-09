@@ -21,7 +21,12 @@ function ImageSlider({
 
     const handleSlideChange = () => {
       if (items.length === 0) return;
-      setActiveIndex(swiper.realIndex);
+
+      const currentSlide = swiper.slides[swiper.activeIndex];
+      const activeIndex = items.findIndex((item) =>
+        findSlideIndex(currentSlide, item)
+      );
+      setActiveIndex(activeIndex);
     };
 
     swiper.on('slideChange', handleSlideChange);
@@ -30,7 +35,7 @@ function ImageSlider({
     return () => {
       swiper.off('slideChange', handleSlideChange);
     };
-  }, [swiper, items, autoplay]);
+  }, [swiper, items, autoplay, findSlideIndex]);
 
   const handleDotClick = (index) => {
     const item = items[index];
