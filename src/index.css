@@ -39,6 +39,10 @@ html {
   color: var(--clr-neutral);
 }
 
+main {
+  margin-bottom: var(--primary-nav-height);
+}
+
 a {
   color: currentColor;
   text-decoration: none;
