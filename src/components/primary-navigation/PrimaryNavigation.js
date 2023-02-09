@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { cartIcon, homeIcon, pcIcon, swordIcon } from '../../assets/icons';
 import PrimaryNavItem from './PrimaryNavItem';
 import './styles/PrimaryNavigation.scss';
@@ -6,10 +7,18 @@ import './styles/PrimaryNavigation.scss';
 function PrimaryNavigation() {
   return (
     <nav className="PrimaryNavigation">
-      <PrimaryNavItem icon={homeIcon}>Home</PrimaryNavItem>
-      <PrimaryNavItem icon={pcIcon}>Platforms</PrimaryNavItem>
-      <PrimaryNavItem icon={swordIcon}>Genres</PrimaryNavItem>
-      <PrimaryNavItem icon={cartIcon}>Cart</PrimaryNavItem>
+      <Link className="nav-item" to="/">
+        <PrimaryNavItem icon={homeIcon}>Home</PrimaryNavItem>
+      </Link>
+      <Link className="nav-item" to="/platforms">
+        <PrimaryNavItem icon={pcIcon}>Platforms</PrimaryNavItem>
+      </Link>
+      <Link className="nav-item" to="/genres">
+        <PrimaryNavItem icon={swordIcon}>Genres</PrimaryNavItem>
+      </Link>
+      <Link className="nav-item" to="/cart">
+        <PrimaryNavItem icon={cartIcon}>Cart</PrimaryNavItem>
+      </Link>
     </nav>
   );
 }
