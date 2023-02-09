@@ -24,7 +24,9 @@ function Home() {
     asyncOnce(async () => {
       const games = await fetchGames(
         'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53',
-        setNextUrl
+        {
+          setNextUrlCallback: setNextUrl,
+        }
       );
       setGames(games);
     });
@@ -33,7 +35,9 @@ function Home() {
 
   const handleLoadMore = () => {
     asyncOnce(async () => {
-      const newGames = await fetchGames(nextUrl, setNextUrl);
+      const newGames = await fetchGames(nextUrl, {
+        setNextUrlCallback: setNextUrl,
+      });
       setGames((games) => [...games, ...newGames]);
     });
   };
