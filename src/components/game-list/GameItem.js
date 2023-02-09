@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import GenresCapsulesList from '../genres-capsules-list/GenresCapsulesList';
 import PlatformsIconsList from '../platforms-icons-list/PlatformsIconsList';
 import './styles/GameItem.scss';
@@ -12,16 +13,22 @@ const getPrice = (price) => {
 };
 
 function GameItem({ data: game, width }) {
+  const gamePageUrl = `/game/${game.id}`;
+
   return (
     <div className="GameItem" style={{ width: `${width}px` }}>
-      <img src={game.background_image} alt={game.name} />
+      <Link to={gamePageUrl}>
+        <img src={game.background_image} alt={game.name} />
+      </Link>
       <div className="content">
         <div className="game-info">
           <PlatformsIconsList
             platforms={game.platforms}
             iconProps={{ width: '14px', height: '14px' }}
           />
-          <div className="title fw-bold">{game.name}</div>
+          <Link to={gamePageUrl}>
+            <div className="title fw-bold">{game.name}</div>
+          </Link>
           <GenresCapsulesList genres={game.genres} />
         </div>
         <div className="price-button">
