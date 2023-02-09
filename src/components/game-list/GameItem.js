@@ -5,11 +5,11 @@ import PlatformsIconsList from '../platforms-icons-list/PlatformsIconsList';
 import PriceButton from '../price-button/PriceButton';
 import './styles/GameItem.scss';
 
-function GameItem({ data: game, width }) {
+function GameItem({ game }) {
   const gamePageUrl = `/games/${game.id}`;
 
   return (
-    <div className="GameItem" style={{ width: `${width}px` }}>
+    <div className="GameItem">
       <Link to={gamePageUrl}>
         <img src={game.background_image} alt={game.name} />
       </Link>

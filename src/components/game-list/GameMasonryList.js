@@ -1,7 +1,7 @@
 import { Masonry, useInfiniteLoader } from 'masonic';
 import React from 'react';
 import LoadingCircle from '../loading-circle/LoadingCircle';
-import GameItem from './GameItem';
+import GameMasonryItem from './GameMasonryItem';
 import './styles/GameList.scss';
 
 function GameMasonryList({ games = [], onLoadMore }) {
@@ -27,7 +27,7 @@ function GameMasonryList({ games = [], onLoadMore }) {
         items={games}
         columnGutter={16}
         columnWidth={260}
-        render={GameItem}
+        render={GameMasonryItem}
         {...options}
       />
       {typeof onLoadMore === 'function' && (
