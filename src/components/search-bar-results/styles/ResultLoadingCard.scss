@@ -1,0 +1,24 @@
+.SearchBar .ResultLoadingCard {
+  .image {
+    width: 55px;
+    height: 80px;
+    margin-right: 8px;
+    border-radius: 4px;
+    grid-row: 1 / 3;
+  }
+
+  .box {
+    border-radius: 4px;
+  }
+
+  .box-1 {
+    width: 90%;
+    height: 30px;
+    align-self: self-end;
+  }
+
+  .box-2 {
+    width: 35%;
+    height: 20px;
+  }
+}

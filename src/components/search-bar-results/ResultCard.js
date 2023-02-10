@@ -1,14 +1,14 @@
 import React from 'react';
 import PlatformsIconsList from '../platforms-icons-list/PlatformsIconsList';
-import './styles/SearchBarResultCard.scss';
+import './styles/ResultCard.scss';
 
-function SearchBarResultCard() {
+function ResultCard() {
   const platforms = JSON.parse(
     `[{"platform":{"id":4,"name":"PC","slug":"pc"}},{"platform":{"id":5,"name":"macOS","slug":"macos"}}]`
   );
 
   return (
-    <div className="SearchBarResultCard">
+    <div className="ResultCard">
       <img
         className="fit-center"
         src="https://media.rawg.io/media/screenshots/d7f/d7f630befee17f8d263a5d5396839c5a.jpg"
@@ -23,4 +23,4 @@ function SearchBarResultCard() {
   );
 }
 
-export default SearchBarResultCard;
+export default ResultCard;
