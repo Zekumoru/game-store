@@ -1,6 +1,9 @@
 import { Masonry, useInfiniteLoader } from 'masonic';
 import React from 'react';
+import { ElementProvider } from '../contexts/ElementContext';
 import LoadingCircle from '../loading-circle/LoadingCircle';
+import GameItem from './GameItem';
+import GameLoadingItem from './GameLoadingItem';
 import GameMasonryItem from './GameMasonryItem';
 import './styles/GameList.scss';
 import './styles/GameMasonryList.scss';
@@ -24,14 +27,18 @@ function GameMasonryList({ games = [], onLoadMore }) {
 
   return (
     <div className="GameList GameMasonryList">
-      <Masonry
-        items={games}
-        columnGutter={16}
-        columnWidth={260}
-        render={GameMasonryItem}
-        {...options}
-      />
-      {typeof onLoadMore === 'function' && (
+      <ElementProvider
+        element={games.length !== 0 ? GameItem : GameLoadingItem}
+      >
+        <Masonry
+          items={games.length !== 0 ? games : [{}, {}, {}, {}, {}]}
+          columnGutter={16}
+          columnWidth={260}
+          render={GameMasonryItem}
+          {...options}
+        />
+      </ElementProvider>
+      {typeof onLoadMore === 'function' && games.length !== 0 && (
         <div className="loading">
           Loading <LoadingCircle />
         </div>
