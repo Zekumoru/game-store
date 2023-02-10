@@ -1,28 +1,16 @@
-import { useEffect } from 'react';
-import useAsyncOnce from '../hooks/useAsyncOnce';
-import fetchGames from '../../utils/fetchGames';
 import ImageSlider from '../image-sliders/ImageSlider';
 import GameCardSlide from '../image-sliders/GameCardSlide';
-import useSessionStorage from '../hooks/useSessionStorage';
 import { useUrl } from '../contexts/UrlContext';
 import { Link } from 'react-router-dom';
+import useGames from '../hooks/useGames';
 
 function Category({ category, slug }) {
   const url = useUrl();
-  const [asyncOnce] = useAsyncOnce();
-  const [games, setGames] = useSessionStorage(`${slug}-${category.id}`, []);
-
-  useEffect(() => {
-    if (games.length !== 0) return;
-
-    asyncOnce(async () => {
-      const games = await fetchGames(`${url}${category.id}`, {
-        limit: 5,
-      });
-      setGames(games);
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { games } = useGames({
+    key: `${slug}-${category.id}`,
+    url: `${url}${category.id}`,
+    limit: 5,
+  });
 
   return (
     <div className="Category">

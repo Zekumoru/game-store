@@ -1,46 +1,22 @@
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import { flameIcon } from '../assets/icons';
 import GameMasonryList from './game-list/GameMasonryList';
 import HeaderIcon from './header-icon/HeaderIcon';
-import useAsyncOnce from './hooks/useAsyncOnce';
 import GameSlide from './image-sliders/GameSlide';
 import ImageSlider from './image-sliders/ImageSlider';
-import useSessionStorage from './hooks/useSessionStorage';
 import './styles/Home.scss';
-import fetchGames from '../utils/fetchGames';
+import useGames from './hooks/useGames';
 
 function Home() {
-  const [asyncOnce] = useAsyncOnce();
-  const [nextUrl, setNextUrl] = useSessionStorage('home-next-url', '');
-  const [games, setGames] = useSessionStorage('home-games', []);
+  const { games, handleLoadMore } = useGames({
+    key: 'home-games',
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53',
+  });
+
   const gamesNoUnavailable = useMemo(
     () => games.filter((game) => game.price !== 'Unavailable').slice(0, 4),
     [games]
   );
-
-  useEffect(() => {
-    if (games.length !== 0) return;
-
-    asyncOnce(async () => {
-      const games = await fetchGames(
-        'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53',
-        {
-          setNextUrlCallback: setNextUrl,
-        }
-      );
-      setGames(games);
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const handleLoadMore = () => {
-    asyncOnce(async () => {
-      const newGames = await fetchGames(nextUrl, {
-        setNextUrlCallback: setNextUrl,
-      });
-      setGames((games) => [...games, ...newGames]);
-    });
-  };
 
   return (
     <>
