@@ -1,25 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PlatformsIconsList from '../platforms-icons-list/PlatformsIconsList';
 import './styles/ResultCard.scss';
 
-function ResultCard() {
-  const platforms = JSON.parse(
-    `[{"platform":{"id":4,"name":"PC","slug":"pc"}},{"platform":{"id":5,"name":"macOS","slug":"macos"}}]`
-  );
-
+function ResultCard({ game }) {
   return (
-    <div className="ResultCard">
-      <img
-        className="fit-center"
-        src="https://media.rawg.io/media/screenshots/d7f/d7f630befee17f8d263a5d5396839c5a.jpg"
-        alt="search bar result"
-      />
-      <h2 className="title">OneShot</h2>
-      <div className="info">
-        <div className="price">9,99€</div>
-        <PlatformsIconsList platforms={platforms} />
+    <Link to={`/games/${game.id}`}>
+      <div className="ResultCard">
+        <img
+          className="fit-center"
+          src={game.background_image}
+          alt={game.name}
+        />
+        <h2 className="title text-ellipsis">{game.name}</h2>
+        <div className="info">
+          <div className="price">{game.price}</div>
+          <div className="divider">|</div>
+          <PlatformsIconsList platforms={game.platforms} />
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
