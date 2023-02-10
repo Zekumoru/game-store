@@ -79,7 +79,7 @@ function Game() {
           </div>
           <h2 className="container">Screenshots</h2>
           <ImageSlider
-            className="game-image-slider"
+            className="game-image-slider image-slider-unwrapped"
             items={game.screenshots}
             slideElement={ScreenshotSlide}
             containerProps={{

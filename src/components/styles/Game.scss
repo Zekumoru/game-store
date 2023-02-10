@@ -60,18 +60,6 @@
   }
 
   .game-image-slider {
-    .slide:first-of-type {
-      padding-inline-start: 24px;
-    }
-
-    .slide:last-of-type {
-      padding-inline-end: 24px;
-    }
-
-    .slide:not(:last-of-type) {
-      margin-right: 16px;
-    }
-
     img {
       width: 280px;
       height: 180px;

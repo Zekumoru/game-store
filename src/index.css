@@ -63,6 +63,7 @@ h1,
 h2,
 h3 {
   font-weight: 400;
+  margin: 0;
 }
 
 h1 {
@@ -119,4 +120,16 @@ h3 {
 
 .container {
   padding-inline: 24px;
+}
+
+.image-slider-unwrapped .slide:first-of-type {
+  padding-inline-start: 24px;
+}
+
+.image-slider-unwrapped .slide:last-of-type {
+  padding-inline-end: 24px;
+}
+
+.image-slider-unwrapped .slide:not(:last-of-type) {
+  margin-right: 16px;
 }

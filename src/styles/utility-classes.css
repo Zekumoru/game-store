@@ -10,6 +10,22 @@
   border: none !important;
 }
 
+.mg-b4 {
+  margin-bottom: 4px;
+}
+
+.mg-b8 {
+  margin-bottom: 8px;
+}
+
+.mg-b16 {
+  margin-bottom: 16px;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
 .capsule {
   padding: 4px 10px;
   border-radius: 4px;

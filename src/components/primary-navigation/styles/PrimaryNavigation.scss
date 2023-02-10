@@ -10,6 +10,7 @@
   box-sizing: border-box;
   padding-inline: 8px;
   gap: 8px;
+  z-index: 1000;
 
   .nav-item {
     flex: 1;
