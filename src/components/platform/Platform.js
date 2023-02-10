@@ -31,7 +31,8 @@ function Platform({ platform }) {
       </div>
       <ImageSlider
         className="image-slider-unwrapped mg-b8"
-        items={games}
+        // passing 5 nulls will make GameCardSlide to render 5 loading cards
+        items={games.length !== 0 ? games : [null, null, null, null, null]}
         slideElement={GameCardSlide}
         containerProps={{
           'free-mode': true,
