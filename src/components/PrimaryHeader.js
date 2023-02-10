@@ -6,8 +6,8 @@ import '../styles/components/PrimaryHeader.scss';
 function PrimaryHeader() {
   return (
     <header className="PrimaryHeader">
-      <div className="container">
-        <div className="logo">
+      <div className="logo-buttons container">
+        <div>
           <Link to="/">GameStore</Link>
         </div>
         <div className="buttons">
@@ -16,8 +16,8 @@ function PrimaryHeader() {
           </button>
           <button className="button primary-button fw-bold">Sign Up</button>
         </div>
-        <SearchBar />
       </div>
+      <SearchBar className="container" />
     </header>
   );
 }
