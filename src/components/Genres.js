@@ -10,7 +10,7 @@ function Platforms() {
         'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres='
       }
     >
-      <Categories title={'Genres'} categories={genres} />
+      <Categories title="Genres" slug="genres" categories={genres} />
     </UrlProvider>
   );
 }

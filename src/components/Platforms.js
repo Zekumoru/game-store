@@ -10,7 +10,7 @@ function Platforms() {
         'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&parent_platforms='
       }
     >
-      <Categories title={'Platforms'} categories={platforms} />
+      <Categories title="Platforms" slug="platforms" categories={platforms} />
     </UrlProvider>
   );
 }

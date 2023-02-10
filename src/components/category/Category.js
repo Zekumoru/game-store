@@ -5,11 +5,12 @@ import ImageSlider from '../image-sliders/ImageSlider';
 import GameCardSlide from '../image-sliders/GameCardSlide';
 import useSessionStorage from '../hooks/useSessionStorage';
 import { useUrl } from '../contexts/UrlContext';
+import { Link } from 'react-router-dom';
 
-function Category({ title, category }) {
+function Category({ category, slug }) {
   const url = useUrl();
   const [asyncOnce] = useAsyncOnce();
-  const [games, setGames] = useSessionStorage(`${title}-${category.id}`, []);
+  const [games, setGames] = useSessionStorage(`${slug}-${category.id}`, []);
 
   useEffect(() => {
     if (games.length !== 0) return;
@@ -39,7 +40,9 @@ function Category({ title, category }) {
         }}
       />
       <div className="container mg-b16">
-        <div className="underlined">View more</div>
+        <Link to={`/${slug}/${category.id}`}>
+          <div className="underlined">View more</div>
+        </Link>
       </div>
     </div>
   );
