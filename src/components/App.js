@@ -6,6 +6,7 @@ import Game from './Game';
 import '../utils/mockAxios';
 import Redirect from './Redirect';
 import Platforms from './Platforms';
+import Genres from './Genres';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/platforms" element={<Platforms />} />
+          <Route path="/genres" element={<Genres />} />
           <Route path="/games" element={<Redirect to="/" />} />
           <Route path="/games/:id" element={<Game />} />
         </Routes>

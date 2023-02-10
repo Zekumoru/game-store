@@ -23,6 +23,25 @@ import androidPlatform from '../data/parent-platform-games/android.json';
 import iosPlatform from '../data/parent-platform-games/ios.json';
 import linuxPlatform from '../data/parent-platform-games/linux.json';
 import webPlatform from '../data/parent-platform-games/web.json';
+import action from '../data/genres-games/action.json';
+import adventure from '../data/genres-games/adventure.json';
+import arcade from '../data/genres-games/arcade.json';
+import boardGames from '../data/genres-games/board-games.json';
+import card from '../data/genres-games/card.json';
+import casual from '../data/genres-games/casual.json';
+import educational from '../data/genres-games/educational.json';
+import family from '../data/genres-games/family.json';
+import fighting from '../data/genres-games/fighting.json';
+import indie from '../data/genres-games/indie.json';
+import massiveMultiplayer from '../data/genres-games/massive-multiplayer.json';
+import platformer from '../data/genres-games/platformer.json';
+import puzzle from '../data/genres-games/puzzle.json';
+import racing from '../data/genres-games/racing.json';
+import rpg from '../data/genres-games/rpg.json';
+import shooter from '../data/genres-games/shooter.json';
+import simulation from '../data/genres-games/simulation.json';
+import sports from '../data/genres-games/sports.json';
+import strategy from '../data/genres-games/strategy.json';
 
 const prefetches = [
   {
@@ -131,6 +150,82 @@ const prefetches = [
   {
     url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&parent_platforms=14',
     data: webPlatform,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=19',
+    data: family,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=15',
+    data: sports,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=4',
+    data: action,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=28',
+    data: boardGames,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=3',
+    data: adventure,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=6',
+    data: fighting,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=59',
+    data: massiveMultiplayer,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=1',
+    data: racing,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=2',
+    data: shooter,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=5',
+    data: rpg,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=11',
+    data: arcade,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=40',
+    data: casual,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=51',
+    data: indie,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=14',
+    data: simulation,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=34',
+    data: educational,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=10',
+    data: strategy,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=83',
+    data: platformer,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=7',
+    data: puzzle,
+  },
+  {
+    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres=17',
+    data: card,
   },
 ];
 
