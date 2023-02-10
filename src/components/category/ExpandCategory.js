@@ -5,10 +5,11 @@ import useGames from '../hooks/useGames';
 
 function ExpandCategory({ title, query, categories }) {
   const { id } = useParams();
-  const categoryName = categories.find((c) => c.id === Number(id)).name;
+  const categoryName = categories.find((c) => c.id === Number(id))?.name;
   const { games, handleLoadMore } = useGames({
     key: `${title.toLowerCase()}-${categoryName}-games`,
     url: `https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&${query}=${id}`,
+    shouldFetch: categoryName !== undefined,
   });
 
   return (

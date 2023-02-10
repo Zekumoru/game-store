@@ -3,13 +3,14 @@ import fetchGames from '../../utils/fetchGames';
 import useAsyncOnce from './useAsyncOnce';
 import useSessionStorage from './useSessionStorage';
 
-function useGames({ key, url, limit = Infinity }) {
+function useGames({ key, url, limit = Infinity, shouldFetch = true }) {
   const [asyncOnce] = useAsyncOnce();
   const [games, setGames] = useSessionStorage(key, []);
   const [nextUrl, setNextUrl] = useSessionStorage(`${key}-next-url`, []);
 
   useEffect(() => {
     if (games.length !== 0) return;
+    if (!shouldFetch) return;
 
     asyncOnce(async () => {
       const games = await fetchGames(url, {
@@ -22,6 +23,8 @@ function useGames({ key, url, limit = Infinity }) {
   }, []);
 
   const handleLoadMore = () => {
+    if (!shouldFetch) return;
+
     asyncOnce(async () => {
       const newGames = await fetchGames(nextUrl, {
         setNextUrlCallback: setNextUrl,
