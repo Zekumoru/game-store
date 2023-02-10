@@ -1,11 +1,18 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import genres from '../data/genres.json';
+import Categories from './Categories';
+import { UrlProvider } from './contexts/UrlContext';
 
-function Genres() {
-  useEffect(() => {
-    console.log(genres);
-  }, []);
-  return <div className="Genres"></div>;
+function Platforms() {
+  return (
+    <UrlProvider
+      url={
+        'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres='
+      }
+    >
+      <Categories title={'Genres'} categories={genres} />
+    </UrlProvider>
+  );
 }
 
-export default Genres;
+export default Platforms;
