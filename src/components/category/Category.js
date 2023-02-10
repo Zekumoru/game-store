@@ -4,30 +4,29 @@ import fetchGames from '../../utils/fetchGames';
 import ImageSlider from '../image-sliders/ImageSlider';
 import GameCardSlide from '../image-sliders/GameCardSlide';
 import useSessionStorage from '../hooks/useSessionStorage';
+import { useUrl } from '../contexts/UrlContext';
 
-function Platform({ platform }) {
+function Category({ title, category }) {
+  const url = useUrl();
   const [asyncOnce] = useAsyncOnce();
-  const [games, setGames] = useSessionStorage(`platform-${platform.id}`, []);
+  const [games, setGames] = useSessionStorage(`${title}-${category.id}`, []);
 
   useEffect(() => {
     if (games.length !== 0) return;
 
     asyncOnce(async () => {
-      const games = await fetchGames(
-        `https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&parent_platforms=${platform.id}`,
-        {
-          limit: 5,
-        }
-      );
+      const games = await fetchGames(`${url}${category.id}`, {
+        limit: 5,
+      });
       setGames(games);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div className="Platform">
+    <div className="Category">
       <div className="container mg-b4">
-        <h2>{platform.name}</h2>
+        <h2>{category.name}</h2>
       </div>
       <ImageSlider
         className="image-slider-unwrapped mg-b8"
@@ -46,4 +45,4 @@ function Platform({ platform }) {
   );
 }
 
-export default Platform;
+export default Category;
