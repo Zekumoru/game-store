@@ -37,8 +37,8 @@
   text-overflow: ellipsis;
 }
 
-.word-break-all {
-  word-break: break-all;
+.overflow-wrap-word {
+  overflow-wrap: break-word;
 }
 
 .capsule {
