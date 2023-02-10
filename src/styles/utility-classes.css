@@ -31,6 +31,16 @@
   object-position: center;
 }
 
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.word-break-all {
+  word-break: break-all;
+}
+
 .capsule {
   padding: 4px 10px;
   border-radius: 4px;
