@@ -26,6 +26,11 @@
   text-decoration: underline;
 }
 
+.fit-center {
+  object-fit: cover;
+  object-position: center;
+}
+
 .capsule {
   padding: 4px 10px;
   border-radius: 4px;
