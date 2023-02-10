@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom';
 
 function SearchBar({ className }) {
   const [input, setInput] = useState('');
+  const [notFound, setNotFound] = useState(false);
   const [games, setGames] = useState([]);
   const debouncedInput = useDebouncedValue(input);
   const location = useLocation();
@@ -30,6 +31,8 @@ function SearchBar({ className }) {
           limit: 5,
         }
       );
+
+      setNotFound(games.length === 0);
       setGames(games);
     })();
   }, [debouncedInput]);
@@ -49,6 +52,7 @@ function SearchBar({ className }) {
           className="results container"
           games={games}
           blurBackground={location.pathname.includes('/games')}
+          notFound={notFound}
         />
       )}
     </div>
