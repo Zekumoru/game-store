@@ -5,8 +5,10 @@ import useDebouncedValue from './hooks/useDebouncedValue';
 import './styles/SearchBar.scss';
 import fetchGames from '../utils/fetchGames';
 import { useLocation } from 'react-router-dom';
+import useAsyncOnce from './hooks/useAsyncOnce';
 
 function SearchBar({ className }) {
+  const [asyncOnce] = useAsyncOnce();
   const [input, setInput] = useState('');
   const [notFound, setNotFound] = useState(false);
   const [games, setGames] = useState([]);
@@ -14,27 +16,37 @@ function SearchBar({ className }) {
   const location = useLocation();
 
   useEffect(() => {
-    if (input === '') setGames([]);
+    if (input !== '') return;
+
+    setGames([]);
+    setNotFound(false);
   }, [input]);
 
   useEffect(() => {
     setInput('');
+    setNotFound(false);
   }, [location]);
 
   useEffect(() => {
     if (debouncedInput === '') return;
 
-    (async () => {
-      const games = await fetchGames(
-        `https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&search=${debouncedInput}`,
-        {
-          limit: 5,
-        }
-      );
+    asyncOnce(
+      async () => {
+        const games = await fetchGames(
+          `https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&search=${debouncedInput}`,
+          {
+            limit: 5,
+          }
+        );
 
-      setNotFound(games.length === 0);
-      setGames(games);
-    })();
+        return () => {
+          setNotFound(games.length === 0);
+          setGames(games);
+        };
+      },
+      { override: true }
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedInput]);
 
   return (
@@ -49,6 +61,7 @@ function SearchBar({ className }) {
       />
       {input !== '' && (
         <SearchBarResults
+          search={debouncedInput}
           className="results container"
           games={games}
           blurBackground={location.pathname.includes('/games')}

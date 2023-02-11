@@ -1,8 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ResultCard from './ResultCard';
 import ResultLoadingCard from './ResultLoadingCard';
 
-function SearchBarResults({ className, games, blurBackground, notFound }) {
+function SearchBarResults({
+  className,
+  games,
+  search,
+  blurBackground,
+  notFound,
+}) {
   const cards =
     games.length === 0 ? (
       <>
@@ -15,6 +22,9 @@ function SearchBarResults({ className, games, blurBackground, notFound }) {
         {games.map((game) => (
           <ResultCard key={game.id} game={game} />
         ))}
+        <Link to={`/search/${search}`}>
+          <div className="underlined">View more results</div>
+        </Link>
       </>
     );
 

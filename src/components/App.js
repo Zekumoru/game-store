@@ -10,6 +10,7 @@ import Genres from './Genres';
 import ExpandCategory from './category/ExpandCategory';
 import platforms from '../data/platforms.json';
 import genres from '../data/genres.json';
+import SearchResults from './SearchResults';
 
 function App() {
   return (
@@ -40,6 +41,8 @@ function App() {
               />
             }
           />
+          <Route path="/search" element={<Redirect to="/" />} />
+          <Route path="/search/:search" element={<SearchResults />} />
           <Route path="/games" element={<Redirect to="/" />} />
           <Route path="/games/:id" element={<Game />} />
         </Routes>
