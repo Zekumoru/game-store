@@ -7,7 +7,7 @@ function PrimaryHeader() {
   return (
     <header className="PrimaryHeader">
       <div className="logo-buttons container">
-        <div>
+        <div className="logo">
           <Link to="/">GameStore</Link>
         </div>
         <div className="buttons">
