@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import fetchGames from '../../utils/fetchGames';
+import handleLoadMoreGames from '../../utils/handleLoadMoreGames';
 import useAsyncOnce from './useAsyncOnce';
 import useSessionStorage from './useSessionStorage';
 
@@ -18,32 +19,38 @@ function useGames({
     if (games.length !== 0) return;
     if (!shouldFetch) return;
 
-    const fetch = async () => {
-      const games = await fetchGames(url, {
-        setNextUrlCallback: setNextUrl,
-        limit,
-      });
-      setGames(games);
-    };
+    asyncOnce(
+      async () => {
+        const games = await fetchGames(url, {
+          setNextUrlCallback: setNextUrl,
+          limit,
+        });
 
-    if (once) asyncOnce(fetch);
-    else fetch();
+        return () => {
+          setGames(games);
+        };
+      },
+      { override: !once }
+    );
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleLoadMore = () => {
     if (!shouldFetch) return;
-    if (nextUrl === '') return;
 
-    const fetch = async () => {
-      const newGames = await fetchGames(nextUrl, {
-        setNextUrlCallback: setNextUrl,
-      });
-      setGames((games) => [...games, ...newGames]);
-    };
+    asyncOnce(
+      async () => {
+        const { games: newGames, nextUrl: newNextUrl } =
+          await handleLoadMoreGames(nextUrl);
 
-    if (once) asyncOnce(fetch);
-    else fetch();
+        return () => {
+          setGames((games) => [...games, ...newGames]);
+          setNextUrl(newNextUrl);
+        };
+      },
+      { override: !once }
+    );
   };
 
   return { games, handleLoadMore };
