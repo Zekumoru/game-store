@@ -11,7 +11,11 @@ function GameItem({ game }) {
   return (
     <div className="GameItem">
       <Link to={gamePageUrl}>
-        <img src={game.background_image} alt={game.name} />
+        <img
+          className="fit-center"
+          src={game.background_image}
+          alt={game.name}
+        />
       </Link>
       <div className="content">
         <div className="game-info">

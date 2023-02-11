@@ -27,6 +27,7 @@
     align-items: center;
     gap: 4px;
     text-decoration: underline;
+    cursor: pointer;
 
     .icon {
       width: 16px;
@@ -63,8 +64,6 @@
     img {
       width: 280px;
       height: 180px;
-      object-fit: cover;
-      object-position: center;
       border-radius: 8px;
     }
   }

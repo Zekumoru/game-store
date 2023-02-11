@@ -1,10 +1,12 @@
 import React from 'react';
-import GameItem from './GameItem';
+import { useElement } from '../contexts/ElementContext';
 
 function GameMasonryItem({ data, width }) {
+  const element = useElement();
+
   return (
     <div style={{ width: `${width}px` }}>
-      <GameItem game={data} />
+      {React.createElement(element, { game: data })}
     </div>
   );
 }

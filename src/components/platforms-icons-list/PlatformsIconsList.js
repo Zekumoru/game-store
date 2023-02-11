@@ -33,6 +33,7 @@ function PlatformsIconsList({ platforms = [], iconProps }) {
   const [icons, setIcons] = useState([]);
 
   useEffect(() => {
+    if (platforms === null) return;
     if (platforms.length === 0) return;
 
     const platformsNames = platforms.map((platform) => {
@@ -48,7 +49,7 @@ function PlatformsIconsList({ platforms = [], iconProps }) {
 
   return (
     <div className="PlatformsIconsList" data-testid="platforms-icons-list">
-      {icons}
+      {platforms === null ? 'No platforms' : icons}
     </div>
   );
 }

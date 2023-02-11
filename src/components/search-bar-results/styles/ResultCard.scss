@@ -1,0 +1,23 @@
+.SearchBar .ResultCard {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px;
+
+  img {
+    width: 55px;
+    height: 80px;
+    border-radius: 4px;
+    grid-row: 1 / 3;
+    margin-right: 8px;
+  }
+
+  .title {
+    align-self: self-end;
+  }
+
+  .info {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
