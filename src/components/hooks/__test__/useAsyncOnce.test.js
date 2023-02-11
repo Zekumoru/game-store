@@ -1,6 +1,7 @@
+import '@testing-library/jest-dom';
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import useAsyncOnce from '../useAsyncOnce';
 
 const waitByMilliseconds = (ms) => {
@@ -96,5 +97,85 @@ describe('useAsyncOnce', () => {
       await promise;
     });
     expect(running).toBe(false);
+  });
+
+  it('should cancel the previous promise if cancelled option is true', async () => {
+    const data = {
+      message: '',
+      promise: Promise.resolve(),
+      resolve: null,
+      delay: 100,
+      createPromise() {
+        this.promise = new Promise((resolveInPromise) => {
+          this.resolve = resolveInPromise;
+        });
+      },
+    };
+
+    const Component = () => {
+      const [asyncOnce] = useAsyncOnce();
+      const [messages, setMessages] = useState([]);
+
+      return (
+        <>
+          {messages.map((message) => (
+            <p key={message}>{message}</p>
+          ))}
+          <button
+            onClick={() => {
+              asyncOnce(
+                async () => {
+                  const message = data.message;
+                  await waitByMilliseconds(data.delay);
+
+                  return () => {
+                    setMessages((messages) => [...messages, message]);
+                    data.resolve();
+                  };
+                },
+                { override: true }
+              );
+            }}
+          >
+            Run
+          </button>
+        </>
+      );
+    };
+
+    const user = userEvent.setup();
+    render(<Component />);
+    const button = screen.getByRole('button');
+
+    data.createPromise();
+    data.message = 'First message!';
+    await user.click(button);
+
+    // since it has just been clicked, the message
+    // in the component shouldn't be updated yet
+    expect(screen.queryByText(/first message/i)).not.toBeInTheDocument();
+
+    await act(async () => {
+      await data.promise;
+    });
+
+    // now it should be updated
+    expect(screen.getByText(/first message/i)).toBeInTheDocument();
+
+    data.createPromise();
+    data.message = 'Do not let this message come through!';
+    await user.click(button);
+
+    data.message = 'Second message!';
+    await user.click();
+    await act(async () => {
+      await data.promise;
+    });
+
+    // previous async call should have been cancelled
+    expect(
+      screen.queryByText(/do not let this message/i)
+    ).not.toBeInTheDocument();
+    expect(screen.getByText(/second message/i)).toBeInTheDocument();
   });
 });
