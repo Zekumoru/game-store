@@ -4,6 +4,7 @@ import LabelInput from './form/LabelInput';
 import './styles/SignUp.scss';
 import useAsyncOnce from './hooks/useAsyncOnce';
 import fetchGames from '../utils/fetchGames';
+import { Link } from 'react-router-dom';
 
 function SignUp() {
   const [asyncOnce] = useAsyncOnce();
@@ -67,7 +68,10 @@ function SignUp() {
           <button className="button">Register</button>
         </Form>
         <div className="already-user-text">
-          Already a user? <span className="login-text">Login</span>
+          Already a user?{' '}
+          <Link to="/login" className="login-text">
+            Login
+          </Link>
         </div>
       </div>
     </div>
