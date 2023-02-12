@@ -1,0 +1,36 @@
+.SignUp {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-block: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+
+  h2 {
+    margin-bottom: 8px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .error-message:not(:empty) {
+    margin-top: 4px;
+    color: var(--clr-error);
+    font-size: var(--fs-ps);
+  }
+
+  .already-user-text {
+    margin-top: 16px;
+  }
+
+  .login-text {
+    text-decoration: underline;
+    color: var(--clr-primary);
+  }
+}

@@ -11,6 +11,7 @@ import ExpandCategory from './category/ExpandCategory';
 import platforms from '../data/platforms.json';
 import genres from '../data/genres.json';
 import SearchResults from './SearchResults';
+import SignUp from './SignUp';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/platforms" element={<Platforms />} />
           <Route
             path="/platforms/:id"

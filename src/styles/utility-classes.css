@@ -41,6 +41,10 @@
   overflow-wrap: break-word;
 }
 
+.visibility-hidden {
+  visibility: hidden;
+}
+
 .capsule {
   padding: 4px 10px;
   border-radius: 4px;
