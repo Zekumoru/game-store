@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 
 function SignUp() {
   const [asyncOnce] = useAsyncOnce();
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [bgImage, setBgImage] = useState('');
 
@@ -43,7 +42,6 @@ function SignUp() {
             label="Email"
             type="email"
             className="text-input"
-            onChange={(e) => setEmail(e.target.value)}
             requiredMessage="Email is required"
           />
           <LabelInput
