@@ -12,6 +12,7 @@ import platforms from '../data/platforms.json';
 import genres from '../data/genres.json';
 import SearchResults from './SearchResults';
 import SignUp from './SignUp';
+import Login from './Login';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/platforms" element={<Platforms />} />
           <Route
             path="/platforms/:id"

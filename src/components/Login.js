@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import LabelInput from './form/LabelInput';
 import LoginSignUpForm from './LoginSignUpForm';
 import { Link } from 'react-router-dom';
 import './styles/form-page.scss';
 
 function SignUp() {
-  const [password, setPassword] = useState('');
-
   return (
     <div className="form-page container">
-      <LoginSignUpForm title="Sign Up">
+      <LoginSignUpForm title="Login">
         <LabelInput
           label="Email"
           type="email"
@@ -21,24 +19,13 @@ function SignUp() {
           type="password"
           className="password-input"
           requiredMessage="Password is required"
-          onChange={(e) => setPassword(e.target.value)}
           minLength="8"
           maxLength="20"
         />
-        <LabelInput
-          label="Confirm Password"
-          type="password"
-          className="password-input"
-          requiredMessage="Please confirm your password"
-          validate={(confirmPassword) => {
-            if (password !== confirmPassword) return 'Passwords do not match';
-            return '';
-          }}
-        />
-        <button className="button fw-bold">Register</button>
+        <button className="button fw-bold">Login</button>
       </LoginSignUpForm>
       <div className="user-prompt-text">
-        Already a user? <Link to="/login">Login</Link>
+        New user? <Link to="/signup">Create an account</Link>
       </div>
     </div>
   );
