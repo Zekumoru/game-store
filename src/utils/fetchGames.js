@@ -3,7 +3,7 @@ import fetchPrices from './fetchPrices';
 
 const fetchGames = async (
   url,
-  { limit = Infinity, setNextUrlCallback = () => {} }
+  { limit = Number.MAX_SAFE_INTEGER, setNextUrlCallback = () => {} } = {}
 ) => {
   const response = await axios.get(url);
 
