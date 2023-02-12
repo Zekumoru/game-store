@@ -14,6 +14,11 @@
     margin-bottom: 8px;
   }
 
+  input {
+    background-color: hsla(0, 0%, 18%, 0.7);
+    backdrop-filter: blur(5px);
+  }
+
   button {
     width: 100%;
     margin-top: 8px;
