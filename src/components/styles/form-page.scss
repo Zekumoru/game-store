@@ -1,0 +1,41 @@
+.form-page {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-block: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+
+  h2 {
+    margin-bottom: 8px;
+  }
+
+  input {
+    background-color: hsla(0, 0%, 18%, 0.7);
+    backdrop-filter: blur(5px);
+  }
+
+  button {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .error-message:not(:empty) {
+    margin-top: 4px;
+    color: var(--clr-error);
+    font-size: var(--fs-ps);
+  }
+
+  .user-prompt-text {
+    margin-top: 16px;
+
+    a {
+      text-decoration: underline;
+      color: var(--clr-primary);
+    }
+  }
+}

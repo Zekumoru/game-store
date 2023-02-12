@@ -8,6 +8,7 @@
   --clr-neutral-variant: hsl(0, 0%, 85%);
   --clr-button-disabled-bg: hsl(0, 0%, 74%);
   --clr-button-disabled-fg: hsl(0, 0%, 29%);
+  --clr-error: hsl(0, 100%, 50%);
 
   /* Typography */
   --fs-1: 2rem;
@@ -19,7 +20,7 @@
   --ff-main: Inter;
   /* p: paragraph, h: heading, s: small */
   --fs-ph: 1.625rem;
-  --fs-ps: 0.75rem;
+  --fs-ps: 0.8rem;
 
   /* Sizes */
   --home-image-slider-height: 280px;
@@ -57,6 +58,10 @@ ul {
 p {
   margin: 0;
   padding: 0;
+}
+
+input {
+  box-sizing: border-box;
 }
 
 h1,
@@ -103,15 +108,39 @@ h3 {
   border-color: var(--clr-neutral);
 }
 
-.text-input {
+.search-input {
   background-color: transparent;
   border: none;
   color: var(--clr-neutral);
   outline: transparent;
 }
 
-.text-input::placeholder {
+.search-input::placeholder {
   color: var(--clr-neutral-variant);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form label {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.text-input,
+.password-input {
+  width: 100%;
+  min-width: 0;
+  font-size: var(--fs-2s);
+  padding: 10px;
+  background-color: var(--clr-secondary-variant);
+  color: var(--clr-neutral);
+  border: none;
+  border-radius: 4px;
+  outline: transparent;
 }
 
 .icon {
@@ -132,4 +161,28 @@ h3 {
 
 .image-slider-unwrapped .slide:not(:last-of-type) {
   margin-right: 16px;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.background-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: var(--clr-secondary);
+  opacity: 0.8;
 }

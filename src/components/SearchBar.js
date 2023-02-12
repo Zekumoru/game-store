@@ -54,7 +54,7 @@ function SearchBar({ className }) {
       <Icon icon={magnifyingGlassIcon} className="icon" />
       <input
         type="text"
-        className="text-input"
+        className="search-input"
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder="Search..."
