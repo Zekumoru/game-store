@@ -103,14 +103,14 @@ h3 {
   border-color: var(--clr-neutral);
 }
 
-.text-input {
+.search-input {
   background-color: transparent;
   border: none;
   color: var(--clr-neutral);
   outline: transparent;
 }
 
-.text-input::placeholder {
+.search-input::placeholder {
   color: var(--clr-neutral-variant);
 }
 
