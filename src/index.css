@@ -162,3 +162,27 @@ h3 {
 .image-slider-unwrapped .slide:not(:last-of-type) {
   margin-right: 16px;
 }
+
+.background-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.background-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: var(--clr-secondary);
+  opacity: 0.8;
+}

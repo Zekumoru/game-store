@@ -3,14 +3,24 @@ import fetchPrices from './fetchPrices';
 
 const fetchGames = async (
   url,
-  { limit = Number.MAX_SAFE_INTEGER, setNextUrlCallback = () => {} } = {}
+  {
+    limit = Number.MAX_SAFE_INTEGER,
+    setNextUrlCallback = () => {},
+    includePrices = true,
+  } = {}
 ) => {
-  const response = await axios.get(url);
-
   try {
-    const games = await fetchPrices(response.data.results.slice(0, limit));
+    const response = await axios.get(url);
     setNextUrlCallback(response.data.next);
-    return games;
+
+    if (!includePrices) {
+      return response.data.results;
+    }
+
+    const gamesWithPrices = await fetchPrices(
+      response.data.results.slice(0, limit)
+    );
+    return gamesWithPrices;
   } catch (e) {
     console.error(
       `An error occurred while fetching games! Make sure that the url and/or query parameters are correct! It is also possible that the data has not been found.\nUrl: ${url}`
