@@ -75,7 +75,7 @@ function Game() {
             <div className="genres">
               {game.genres.map((genre) => genre.name).join(', ')}
             </div>
-            <PriceButton price={game.price} shrink={false} />
+            <PriceButton game={game} freeStringToShrink={false} />
           </div>
           <h2 className="container">Screenshots</h2>
           <ImageSlider
