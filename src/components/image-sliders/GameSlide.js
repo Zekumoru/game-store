@@ -19,7 +19,7 @@ function GameSlide({ data: game }) {
         <div className="info">
           <div className="title">{name}</div>
           <div className="content">
-            <div className="price">{price}</div>
+            <div className="price">{price.text}</div>
             <div className="divider">|</div>
             <PlatformsIconsList platforms={platforms} />
           </div>

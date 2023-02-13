@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { useCart } from '../contexts/CartContext';
 import './styles/PriceButton.scss';
 
-const shrinkFreeString = (price) => {
-  if (price.includes('Free')) {
+const shrinkFreeString = (priceText) => {
+  if (priceText.includes('Free')) {
     return 'Free';
   }
 
-  return price;
+  return priceText;
 };
 
 function PriceButton({ game, freeStringToShrink = true }) {
@@ -25,7 +25,7 @@ function PriceButton({ game, freeStringToShrink = true }) {
             setShowAddToCardButton(false);
           }}
           className="button"
-          disabled={game.price === 'Unavailable'}
+          disabled={game.price.text === 'Unavailable'}
         >
           Add to cart
         </button>
@@ -41,9 +41,13 @@ function PriceButton({ game, freeStringToShrink = true }) {
         </button>
       )}
       <div
-        className={`price ${game.price === 'Unavailable' ? 'unavailable' : ''}`}
+        className={`price ${
+          game.price.text === 'Unavailable' ? 'unavailable' : ''
+        }`}
       >
-        {!freeStringToShrink ? game.price : shrinkFreeString(game.price)}
+        {!freeStringToShrink
+          ? game.price.text
+          : shrinkFreeString(game.price.text)}
       </div>
     </div>
   );
