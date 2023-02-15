@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import useSwiper from '../hooks/useSwiper';
 import SliderDots from './SliderDots';
 
@@ -6,6 +6,7 @@ function ImageSlider({
   className,
   items,
   slideElement,
+  multiply = 1,
   autoplay = false,
   showDots = false,
   loop = false,
@@ -15,6 +16,25 @@ function ImageSlider({
 }) {
   const [swiper, setSwiperRef] = useSwiper();
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const itemsToDisplay = useMemo(() => {
+    let itemsToDisplay = [...items];
+    for (let i = 1; i < multiply; i++) {
+      itemsToDisplay = [...itemsToDisplay, ...items];
+    }
+    return itemsToDisplay;
+  }, [items, multiply]);
+
+  const handleDotClick = useCallback(
+    (index) => {
+      const item = items[index];
+      const slideIndex = swiper.slides.findIndex((slide) =>
+        findSlideIndex(slide, item)
+      );
+      swiper.slideTo(slideIndex);
+    },
+    [findSlideIndex, items, swiper]
+  );
 
   useEffect(() => {
     if (swiper == null) return;
@@ -29,6 +49,7 @@ function ImageSlider({
       );
       setActiveIndex(activeIndex);
     };
+    handleDotClick(0);
 
     swiper.on('slideChange', handleSlideChange);
     handleSlideChange();
@@ -36,15 +57,7 @@ function ImageSlider({
     return () => {
       swiper.off('slideChange', handleSlideChange);
     };
-  }, [swiper, items, autoplay, findSlideIndex]);
-
-  const handleDotClick = (index) => {
-    const item = items[index];
-    const slideIndex = swiper.slides.findIndex((slide) =>
-      findSlideIndex(slide, item)
-    );
-    swiper.slideTo(slideIndex);
-  };
+  }, [swiper, items, autoplay, findSlideIndex, handleDotClick]);
 
   const autoplayObj = !autoplay
     ? {}
@@ -63,7 +76,7 @@ function ImageSlider({
         {...containerProps}
         {...autoplayObj}
       >
-        {items.map((item, index) => (
+        {itemsToDisplay.map((item, index) => (
           <swiper-slide
             class="slide"
             style={{ width: 'auto', height: 'auto' }}
