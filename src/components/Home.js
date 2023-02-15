@@ -26,6 +26,7 @@ function Home() {
         }`}
         items={gamesNoUnavailable}
         slideElement={GameSlide}
+        multiply={3}
         showDots={true}
         loop={true}
         autoplay={true}
@@ -33,6 +34,9 @@ function Home() {
         findSlideIndex={(slide, game) =>
           slide.querySelector('.title').textContent === game.name
         }
+        containerProps={{
+          'slides-per-view': 'auto',
+        }}
       />
       <div className="container">
         <HeaderIcon type="h2" icon={flameIcon}>

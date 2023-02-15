@@ -1,5 +1,4 @@
 .home-image-slider {
-  height: var(--home-image-slider-height);
   position: relative;
 
   .SliderDots {
@@ -7,5 +6,12 @@
     bottom: 24px;
     right: 24px;
     z-index: 1;
+  }
+
+  @media screen and (min-width: 768px) {
+    .SliderDots {
+      position: static;
+      margin-top: 8px;
+    }
   }
 }

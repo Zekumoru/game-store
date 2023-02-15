@@ -1,4 +1,5 @@
 .GameSlide {
+  width: 100vw;
   height: var(--home-image-slider-height);
   position: relative;
   background-size: cover;
@@ -20,5 +21,12 @@
   .content {
     display: flex;
     gap: 4px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 600px;
+    height: var(--home-image-slider-height-desktop);
+    margin-right: 16px;
+    border-radius: 8px;
   }
 }

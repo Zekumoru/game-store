@@ -24,6 +24,7 @@
 
   /* Sizes */
   --home-image-slider-height: 280px;
+  --home-image-slider-height-desktop: 360px;
   --home-image-slider-dot-size: 16px;
   --game-page-bg-size: 340px;
   --primary-nav-height: 70px;
