@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 import GameSlide from '../GameSlide';
 import ImageSlider from '../ImageSlider';
-import games from './mock-data/games-sample.json';
+import games from './mock-data/games-sample-230214.json';
 
 describe('Image Slider', () => {
   it('should load the game titles, prices, and platforms', async () => {

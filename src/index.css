@@ -151,6 +151,18 @@ h3 {
   padding-inline: 24px;
 }
 
+.full-screen {
+  position: absolute;
+  top: 80px;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+}
+
 .image-slider-unwrapped .slide:first-of-type {
   padding-inline-start: 24px;
 }

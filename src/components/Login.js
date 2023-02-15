@@ -6,7 +6,7 @@ import './styles/form-page.scss';
 
 function SignUp() {
   return (
-    <div className="form-page container">
+    <div className="form-page container full-screen">
       <LoginSignUpForm title="Login">
         <LabelInput
           label="Email"

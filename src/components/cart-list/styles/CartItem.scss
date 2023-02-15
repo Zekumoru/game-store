@@ -1,0 +1,36 @@
+.CartItem {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  column-gap: 8px;
+
+  .image-container {
+    grid-row: 1 / -1;
+  }
+
+  img {
+    width: 80px;
+    height: 120px;
+    border-radius: 4px;
+  }
+
+  .game-details {
+    margin-bottom: 4px;
+    min-width: 0;
+  }
+
+  .genres {
+    font-size: var(--fs-ps);
+  }
+
+  .price {
+    color: var(--clr-primary);
+    font-size: var(--fs-2s);
+  }
+
+  button {
+    font-size: var(--fs-ps);
+    justify-self: start;
+    margin-top: 4px;
+  }
+}

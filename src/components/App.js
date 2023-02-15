@@ -13,44 +13,52 @@ import genres from '../data/genres.json';
 import SearchResults from './SearchResults';
 import SignUp from './SignUp';
 import Login from './Login';
+import Cart from './Cart';
+import { CartProvider } from './contexts/CartContext';
+import useCurrency from './hooks/useCurrency';
 
 function App() {
+  useCurrency();
+
   return (
     <div className="App">
       <PrimaryHeader />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/platforms" element={<Platforms />} />
-          <Route
-            path="/platforms/:id"
-            element={
-              <ExpandCategory
-                title="Platforms"
-                query="parent_platforms"
-                categories={platforms}
-              />
-            }
-          />
-          <Route path="/genres" element={<Genres />} />
-          <Route
-            path="/genres/:id"
-            element={
-              <ExpandCategory
-                title="Genres"
-                query="genres"
-                categories={genres}
-              />
-            }
-          />
-          <Route path="/search" element={<Redirect to="/" />} />
-          <Route path="/search/:search" element={<SearchResults />} />
-          <Route path="/games" element={<Redirect to="/" />} />
-          <Route path="/games/:id" element={<Game />} />
-        </Routes>
-      </main>
+      <CartProvider>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/platforms" element={<Platforms />} />
+            <Route
+              path="/platforms/:id"
+              element={
+                <ExpandCategory
+                  title="Platforms"
+                  query="parent_platforms"
+                  categories={platforms}
+                />
+              }
+            />
+            <Route path="/genres" element={<Genres />} />
+            <Route
+              path="/genres/:id"
+              element={
+                <ExpandCategory
+                  title="Genres"
+                  query="genres"
+                  categories={genres}
+                />
+              }
+            />
+            <Route path="/search" element={<Redirect to="/" />} />
+            <Route path="/search/:search" element={<SearchResults />} />
+            <Route path="/games" element={<Redirect to="/" />} />
+            <Route path="/games/:id" element={<Game />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </main>
+      </CartProvider>
       <PrimaryNavigation />
     </div>
   );

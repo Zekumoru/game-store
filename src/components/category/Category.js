@@ -3,6 +3,7 @@ import GameCardSlide from '../image-sliders/GameCardSlide';
 import { useUrl } from '../contexts/UrlContext';
 import { Link } from 'react-router-dom';
 import useGames from '../hooks/useGames';
+import './styles/Category.scss';
 
 function Category({ category, slug }) {
   const url = useUrl();
@@ -18,7 +19,7 @@ function Category({ category, slug }) {
         <h2>{category.name}</h2>
       </div>
       <ImageSlider
-        className="image-slider-unwrapped mg-b8"
+        className="image-slider-unwrapped"
         // passing 5 nulls will make GameCardSlide to render 5 loading cards
         items={games.length !== 0 ? games : [null, null, null, null, null]}
         slideElement={GameCardSlide}

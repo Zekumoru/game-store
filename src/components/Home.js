@@ -14,7 +14,7 @@ function Home() {
   });
 
   const gamesNoUnavailable = useMemo(
-    () => games.filter((game) => game.price !== 'Unavailable').slice(0, 4),
+    () => games.filter((game) => game.price.text !== 'Unavailable').slice(0, 4),
     [games]
   );
 

@@ -28,7 +28,7 @@ function GameItem({ game }) {
           </Link>
           <GenresCapsulesList genres={game.genres} />
         </div>
-        <PriceButton price={game.price} />
+        <PriceButton game={game} />
       </div>
     </div>
   );

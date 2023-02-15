@@ -5,7 +5,8 @@ import '../styles/components/PrimaryHeader.scss';
 
 function PrimaryHeader() {
   const location = useLocation('login');
-  const hideButtonsAndSearchBar = /\/(login|signup)/i.test(location.pathname);
+  const hideButtons = /\/(login|signup)/i.test(location.pathname);
+  const hideSearchBar = /\/(login|signup|cart)/i.test(location.pathname);
 
   return (
     <header className="PrimaryHeader">
@@ -13,11 +14,7 @@ function PrimaryHeader() {
         <div className="logo">
           <Link to="/">GameStore</Link>
         </div>
-        <div
-          className={`buttons ${
-            hideButtonsAndSearchBar ? 'visibility-hidden' : ''
-          }`}
-        >
+        <div className={`buttons ${hideButtons ? 'visibility-hidden' : ''}`}>
           <Link to="/login">
             <button className="button secondary-button box-shadow-none border-none">
               Login
@@ -28,7 +25,7 @@ function PrimaryHeader() {
           </Link>
         </div>
       </div>
-      {hideButtonsAndSearchBar || <SearchBar className="container" />}
+      {hideSearchBar || <SearchBar className="container" />}
     </header>
   );
 }

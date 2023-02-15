@@ -14,7 +14,7 @@ function ResultCard({ game }) {
         />
         <h2 className="title text-ellipsis">{game.name}</h2>
         <div className="info">
-          <div className="price">{game.price}</div>
+          <div className="price">{game.price.text}</div>
           <div className="divider">|</div>
           <PlatformsIconsList platforms={game.platforms} />
         </div>
