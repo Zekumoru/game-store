@@ -1,0 +1,15 @@
+.SidebarNavItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  .icon {
+    color: inherit;
+    width: 32px;
+    height: 32px;
+  }
+
+  .label {
+    font-size: var(--fs-2);
+  }
+}

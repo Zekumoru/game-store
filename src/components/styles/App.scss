@@ -1,0 +1,21 @@
+.App {
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-areas:
+      'header header'
+      'sidebar main';
+
+    .PrimaryHeader {
+      grid-area: header;
+    }
+
+    .SidebarNavigation {
+      grid-area: sidebar;
+    }
+
+    main {
+      grid-area: main;
+      overflow-x: hidden;
+    }
+  }
+}

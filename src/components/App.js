@@ -16,6 +16,8 @@ import Login from './Login';
 import Cart from './Cart';
 import { CartProvider } from './contexts/CartContext';
 import useCurrency from './hooks/useCurrency';
+import SidebarNavigation from './sidebar-navigation/SidebarNavigation';
+import './styles/App.scss';
 
 function App() {
   useCurrency();
@@ -23,6 +25,7 @@ function App() {
   return (
     <div className="App">
       <PrimaryHeader />
+      <SidebarNavigation />
       <CartProvider>
         <main>
           <Routes>
