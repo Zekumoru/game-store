@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
+import useSessionStorage from '../hooks/useSessionStorage';
 import { useCart } from './CartContext';
 
 const CartItemsContext = React.createContext();
@@ -8,7 +9,7 @@ function useCartItems() {
 }
 
 function CartItemsProvider({ children }) {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useSessionStorage('cart-items', []);
   const cart = useCart();
 
   cart.addToCart = (item) => {
