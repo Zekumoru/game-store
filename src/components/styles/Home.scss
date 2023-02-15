@@ -1,5 +1,6 @@
 .home-image-slider {
   position: relative;
+  min-height: var(--home-image-slider-height);
 
   .SliderDots {
     position: absolute;
@@ -9,6 +10,8 @@
   }
 
   @media screen and (min-width: 768px) {
+    min-height: var(--home-image-slider-height-desktop);
+
     .SliderDots {
       position: static;
       margin-top: 8px;
