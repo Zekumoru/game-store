@@ -6,6 +6,8 @@ import useCurrency from '../useCurrency';
 
 describe('useCurrency', () => {
   beforeEach(() => {
+    jest.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {});
+    jest.spyOn(Storage.prototype, 'getItem').mockImplementation(() => null);
     sessionStorage.clear();
   });
 
@@ -97,5 +99,30 @@ describe('useCurrency', () => {
     });
 
     expect(spyFetchGames).not.toHaveBeenCalledTimes(1);
+  });
+
+  it('should return a sample price text', async () => {
+    const spyFetchGames = jest.spyOn(fetchGamesModule, 'default');
+    spyFetchGames.mockImplementation(() => {
+      return [
+        {
+          price: {
+            value: 9.99,
+            currency: { symbol: '€', placement: 'right' },
+            text: '9,99€',
+          },
+        },
+      ];
+    });
+    const Component = () => {
+      const currency = useCurrency();
+      return <div>{currency.sample_text}</div>;
+    };
+    // eslint-disable-next-line testing-library/no-unnecessary-act
+    await act(async () => {
+      render(<Component />);
+    });
+
+    expect(screen.getByText('9,99€')).toBeInTheDocument();
   });
 });

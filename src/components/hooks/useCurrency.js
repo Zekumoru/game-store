@@ -18,7 +18,10 @@ function useCurrency() {
       return () => {
         for (let i = 0; i < games.length; i++) {
           if (games[i].price.currency.symbol !== undefined) {
-            setCurrency(games[i].price.currency);
+            setCurrency({
+              sample_text: games[i].price.text,
+              ...games[i].price.currency,
+            });
             return;
           }
         }
