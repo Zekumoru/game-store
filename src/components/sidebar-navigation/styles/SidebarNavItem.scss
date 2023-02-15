@@ -1,15 +1,29 @@
 .SidebarNavItem {
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 4px;
 
-  .icon {
-    color: inherit;
-    width: 32px;
-    height: 32px;
+    .icon {
+      color: inherit;
+      width: 32px;
+      height: 32px;
+    }
+
+    .label {
+      font-size: var(--fs-2);
+    }
   }
 
-  .label {
+  ul {
+    margin-top: 10px;
+    padding-left: calc(32px + 4px);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  li {
     font-size: var(--fs-2);
   }
 }
