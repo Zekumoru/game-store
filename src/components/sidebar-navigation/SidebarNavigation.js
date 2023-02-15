@@ -8,12 +8,16 @@ import genres from '../../data/genres.json';
 function SidebarNavigation() {
   return (
     <div className="SidebarNavigation container">
-      <SidebarNavItem icon={homeIcon}>Home</SidebarNavItem>
-      <SidebarNavItem icon={cartIcon}>Cart</SidebarNavItem>
-      <SidebarNavItem subitems={platforms} icon={pcIcon}>
+      <SidebarNavItem icon={homeIcon} linkTo="/">
+        Home
+      </SidebarNavItem>
+      <SidebarNavItem icon={cartIcon} linkTo="/cart">
+        Cart
+      </SidebarNavItem>
+      <SidebarNavItem subitems={platforms} icon={pcIcon} linkTo="/platforms">
         Platforms
       </SidebarNavItem>
-      <SidebarNavItem subitems={genres} icon={swordIcon}>
+      <SidebarNavItem subitems={genres} icon={swordIcon} linkTo="/genres">
         Genres
       </SidebarNavItem>
     </div>
