@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import useSessionStorage from '../hooks/useSessionStorage';
+import useLocalStorage from '../hooks/useLocalStorage';
 import { useCart } from './CartContext';
 
 const CartItemsContext = React.createContext();
@@ -9,7 +9,7 @@ function useCartItems() {
 }
 
 function CartItemsProvider({ children }) {
-  const [items, setItems] = useSessionStorage('cart-items', []);
+  const [items, setItems] = useLocalStorage('cart-items', []);
   const cart = useCart();
 
   cart.addToCart = (item) => {
