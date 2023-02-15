@@ -1,4 +1,14 @@
 .Cart {
+  .empty-cart-msg {
+    align-items: center;
+
+    .icon {
+      color: inherit;
+      width: 48px;
+      height: 48px;
+    }
+  }
+
   .horizontal-divider {
     border-top: 3px solid var(--clr-secondary-variant);
     margin-block: 4px;

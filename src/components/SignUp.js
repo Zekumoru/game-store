@@ -8,7 +8,7 @@ function SignUp() {
   const [password, setPassword] = useState('');
 
   return (
-    <div className="form-page container">
+    <div className="form-page container full-screen">
       <LoginSignUpForm title="Sign Up">
         <LabelInput
           label="Email"
