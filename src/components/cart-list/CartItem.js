@@ -13,7 +13,7 @@ function CartItem({ item }) {
       <img className="fit-center" src={item.background_image} alt={item.name} />
       <div className="game-details">
         <h2 className="text-ellipsis">{item.name}</h2>
-        <div className="genres">
+        <div className="genres text-ellipsis">
           {item.genres.map((genre) => genre.name).join(', ')}
         </div>
       </div>
