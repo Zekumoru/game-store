@@ -7,7 +7,7 @@ import genres from '../../data/genres.json';
 
 function SidebarNavigation() {
   return (
-    <div className="SidebarNavigation">
+    <div className="SidebarNavigation container">
       <SidebarNavItem icon={homeIcon}>Home</SidebarNavItem>
       <SidebarNavItem icon={cartIcon}>Cart</SidebarNavItem>
       <SidebarNavItem subitems={platforms} icon={pcIcon}>

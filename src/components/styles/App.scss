@@ -1,23 +1,26 @@
-.App {
-  @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+  .App {
     max-width: 1440px;
     margin-inline: auto;
+  }
+
+  main {
     display: grid;
-    grid-template-areas:
-      'header header'
-      'sidebar main';
+    grid-template-columns: auto 1fr;
+  }
 
-    .PrimaryHeader {
-      grid-area: header;
-    }
+  .SidebarNavigation {
+    position: sticky;
+    bottom: 0;
+    align-self: self-end;
+  }
 
-    .SidebarNavigation {
-      grid-area: sidebar;
-    }
+  .main-content {
+    overflow-x: hidden;
 
-    main {
-      grid-area: main;
-      overflow-x: hidden;
+    .container {
+      padding: 0;
+      padding-right: 24px;
     }
   }
 }
