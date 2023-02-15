@@ -31,6 +31,11 @@
   object-position: center;
 }
 
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
 .text-ellipsis {
   white-space: nowrap;
   overflow: hidden;
