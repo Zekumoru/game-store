@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import getPriceText from '../../utils/getPriceText';
 import { useCart } from '../contexts/CartContext';
 import useCurrency from '../hooks/useCurrency';
@@ -10,9 +11,17 @@ function CartItem({ item }) {
 
   return (
     <div className="CartItem">
-      <img className="fit-center" src={item.background_image} alt={item.name} />
+      <Link className="image-container" to={`/games/${item.id}`}>
+        <img
+          className="fit-center"
+          src={item.background_image}
+          alt={item.name}
+        />
+      </Link>
       <div className="game-details">
-        <h2 className="text-ellipsis">{item.name}</h2>
+        <Link to={`/games/${item.id}`}>
+          <h2 className="text-ellipsis">{item.name}</h2>
+        </Link>
         <div className="genres text-ellipsis">
           {item.genres.map((genre) => genre.name).join(', ')}
         </div>

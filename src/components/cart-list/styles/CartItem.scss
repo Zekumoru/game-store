@@ -4,10 +4,13 @@
   grid-template-rows: auto 1fr auto;
   column-gap: 8px;
 
+  .image-container {
+    grid-row: 1 / -1;
+  }
+
   img {
     width: 80px;
     height: 120px;
-    grid-row: 1 / -1;
     border-radius: 4px;
   }
 
