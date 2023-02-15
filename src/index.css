@@ -154,8 +154,9 @@ h3 {
 
 .full-screen {
   position: absolute;
-  top: 80px;
-  bottom: 80px;
+  padding-block: 80px;
+  top: 0px;
+  bottom: 0px;
   left: 0;
   right: 0;
   display: flex;
