@@ -1,9 +1,11 @@
 const getPriceText = (price, { space = false } = {}) => {
+  if (typeof price.value !== 'number') return '';
+
   let text;
-  if (price.currency?.placement === 'left') {
-    text = `${price.currency?.symbol ?? ''}${space ? ' ' : ''}${price.value}`;
+  if (price.currency.placement === 'left') {
+    text = price.currency.symbol + (space ? ' ' : '') + price.value.toFixed(2);
   } else {
-    text = `${price.value}${space ? ' ' : ''}${price.currency?.symbol ?? ''}`;
+    text = price.value.toFixed(2) + (space ? ' ' : '') + price.currency.symbol;
   }
 
   if (price?.text?.match(/,\d{2}/)) {

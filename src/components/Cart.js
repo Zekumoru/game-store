@@ -23,9 +23,10 @@ function Cart() {
           <div>
             {getPriceText({
               text: currency.sample_text,
-              value: items
-                .reduce((subtotal, item) => subtotal + item.price.value, 0)
-                .toFixed(2),
+              value: items.reduce(
+                (subtotal, item) => subtotal + item.price.value,
+                0
+              ),
               currency: {
                 symbol: currency.symbol,
                 placement: currency.placement,
