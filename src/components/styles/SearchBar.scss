@@ -3,6 +3,10 @@
   gap: 6px;
   position: relative;
 
+  .search-input {
+    width: 100%;
+  }
+
   .results {
     display: flex;
     flex-direction: column;

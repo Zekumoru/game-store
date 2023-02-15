@@ -1,0 +1,35 @@
+.PrimaryHeader {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    'logo buttons'
+    'search-bar search-bar';
+  padding-block: 24px 16px;
+  row-gap: 16px;
+  align-items: center;
+
+  .logo {
+    font-family: var(--ff-logo);
+    font-size: var(--fs-logo);
+    line-height: normal;
+    grid-area: logo;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 16px;
+    margin-left: auto;
+    grid-area: buttons;
+  }
+
+  .SearchBar {
+    grid-area: search-bar;
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: 'logo search-bar buttons';
+    column-gap: 16px;
+    margin-bottom: 8px;
+  }
+}
