@@ -153,11 +153,10 @@ h3 {
 
 .full-screen {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 80px;
+  bottom: 80px;
   left: 0;
   right: 0;
-  padding-block: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
