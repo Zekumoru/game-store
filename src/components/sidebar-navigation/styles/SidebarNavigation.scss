@@ -1,6 +1,10 @@
 .SidebarNavigation {
-  width: 220px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 }
