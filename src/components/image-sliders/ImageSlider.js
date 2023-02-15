@@ -49,9 +49,9 @@ function ImageSlider({
       );
       setActiveIndex(activeIndex);
     };
-    handleDotClick(0);
 
     swiper.on('slideChange', handleSlideChange);
+    handleDotClick(0);
     handleSlideChange();
 
     return () => {
