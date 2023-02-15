@@ -15,8 +15,11 @@ import SignUp from './SignUp';
 import Login from './Login';
 import Cart from './Cart';
 import { CartProvider } from './contexts/CartContext';
+import useCurrency from './hooks/useCurrency';
 
 function App() {
+  useCurrency();
+
   return (
     <div className="App">
       <PrimaryHeader />
