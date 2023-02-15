@@ -1,5 +1,7 @@
 .App {
   @media screen and (min-width: 768px) {
+    max-width: 1440px;
+    margin-inline: auto;
     display: grid;
     grid-template-areas:
       'header header'
