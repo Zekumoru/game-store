@@ -31,8 +31,20 @@ function SearchResults() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
 
-  const handleLoadMore = () => {
-    if (games.length === 0) return;
+  const handleLoadMore = (statusCallback) => {
+    if (games.length === 0) {
+      if (typeof statusCallback === 'function') {
+        statusCallback('Loading games');
+      }
+      return;
+    }
+
+    if (nextUrl === null) {
+      if (typeof statusCallback === 'function') {
+        statusCallback('No more games');
+      }
+      return;
+    }
 
     asyncOnce(async () => {
       const { games: newGames, nextUrl: newNextUrl } =
@@ -41,6 +53,10 @@ function SearchResults() {
       return () => {
         setGames((games) => [...games, ...newGames]);
         setNextUrl(newNextUrl);
+
+        if (typeof statusCallback === 'function') {
+          statusCallback('Added more games');
+        }
       };
     });
   };

@@ -40,9 +40,27 @@ function useGames({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key]);
 
-  const handleLoadMore = () => {
-    if (games.length === 0) return;
-    if (!shouldFetch) return;
+  const handleLoadMore = (statusCallback) => {
+    if (games.length === 0) {
+      if (typeof statusCallback === 'function') {
+        statusCallback('Loading games');
+      }
+      return;
+    }
+
+    if (!shouldFetch) {
+      if (typeof statusCallback === 'function') {
+        statusCallback('Fetching is disabled');
+      }
+      return;
+    }
+
+    if (nextUrl === null) {
+      if (typeof statusCallback === 'function') {
+        statusCallback('No more games');
+      }
+      return;
+    }
 
     asyncOnce(
       async () => {
@@ -52,6 +70,10 @@ function useGames({
         return () => {
           setGames((games) => [...games, ...newGames]);
           setNextUrl(newNextUrl);
+
+          if (typeof statusCallback === 'function') {
+            statusCallback('Added more games');
+          }
         };
       },
       { override: !once }
