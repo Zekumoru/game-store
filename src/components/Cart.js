@@ -19,7 +19,7 @@ function Cart() {
       <div className="horizontal-divider" />
       {items.length === 0 ? (
         <>
-          <div className="empty-cart-msg full-screen">
+          <div className="empty-cart-msg">
             <Icon className="icon" icon={cartIcon} />
             <p>No games in your cart yet!</p>
           </div>
