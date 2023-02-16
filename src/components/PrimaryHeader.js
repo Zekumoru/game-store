@@ -9,7 +9,7 @@ function PrimaryHeader() {
   const hideSearchBar = /\/(login|signup|cart)/i.test(location.pathname);
 
   return (
-    <header className="PrimaryHeader container">
+    <header className="PrimaryHeader">
       <div className="logo">
         <Link to="/">GameStore</Link>
       </div>
