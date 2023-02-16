@@ -4,21 +4,16 @@ import SidebarNavItem from './SidebarNavItem';
 import './styles/SidebarNavigation.scss';
 import platforms from '../../data/platforms.json';
 import genres from '../../data/genres.json';
-import { useCartItems } from '../contexts/CartItemsContext';
+import CartItemsCount from '../cart-items-count/CartItemsCount';
 
 function SidebarNavigation() {
-  const items = useCartItems();
-
   return (
     <div className="SidebarNavigation container">
       <SidebarNavItem icon={homeIcon} linkTo="/">
         Home
       </SidebarNavItem>
       <SidebarNavItem icon={cartIcon} linkTo="/cart">
-        Cart{' '}
-        <div className="cart-items-count">
-          {items.length > 99 ? '99+' : items.length}
-        </div>
+        Cart <CartItemsCount />
       </SidebarNavItem>
       <SidebarNavItem subitems={platforms} icon={pcIcon} linkTo="/platforms">
         Platforms

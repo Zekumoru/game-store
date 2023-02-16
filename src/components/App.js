@@ -65,8 +65,8 @@ function App() {
             </Routes>
           </div>
         </main>
+        <PrimaryNavigation />
       </CartProvider>
-      <PrimaryNavigation />
     </div>
   );
 }
