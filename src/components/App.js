@@ -1,6 +1,6 @@
 import PrimaryHeader from './PrimaryHeader';
 import PrimaryNavigation from './primary-navigation/PrimaryNavigation';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from './Home';
 import Game from './Game';
 import '../utils/mockAxios';
@@ -20,14 +20,16 @@ import SidebarNavigation from './sidebar-navigation/SidebarNavigation';
 import './styles/App.scss';
 
 function App() {
-  useCurrency();
+  useCurrency(); // loads up currency in session storage
+  const location = useLocation();
+  const hideSidebar = /\/(login|signup)/i.test(location.pathname);
 
   return (
     <div className="App">
       <PrimaryHeader />
       <CartProvider>
         <main>
-          <SidebarNavigation />
+          {hideSidebar || <SidebarNavigation />}
           <div className="main-content">
             <Routes>
               <Route path="/" element={<Home />} />
