@@ -24,7 +24,6 @@ function useGames({
 
     asyncOnce(
       async () => {
-        console.log(url);
         const games = await fetchGames(url, {
           setNextUrlCallback: setNextUrl,
           limit,
