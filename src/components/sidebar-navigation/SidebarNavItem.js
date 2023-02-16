@@ -9,7 +9,7 @@ function SidebarNavItem({ children, linkTo, subitems, icon }) {
       <Link to={linkTo}>
         <div className="title">
           <Icon className="icon" icon={icon} />
-          <div className="label fw-bold">{children}</div>
+          <div className="label fw-bold flex-align-center">{children}</div>
         </div>
       </Link>
       {subitems && (

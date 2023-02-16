@@ -7,5 +7,18 @@
     flex-direction: column;
     gap: 16px;
     padding-bottom: 32px;
+
+    .cart-items-count {
+      font-size: 14px;
+      width: 26px;
+      height: 26px;
+      line-height: 1;
+      border-radius: 100%;
+      background-color: var(--clr-primary);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-inline: 4px;
+    }
   }
 }
