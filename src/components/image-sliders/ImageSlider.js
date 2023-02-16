@@ -70,6 +70,17 @@ function ImageSlider({
         'autoplay-disable-on-interaction': false,
       };
 
+  useEffect(() => {
+    if (swiper === null) return;
+    if (swiper.autoplay.running) return;
+
+    if (items[0]?.id === undefined) {
+      swiper.autoplay.pause();
+    } else {
+      swiper.autoplay.start();
+    }
+  }, [swiper, items]);
+
   return (
     <div className={`ImageSlider ${className}`}>
       <swiper-container

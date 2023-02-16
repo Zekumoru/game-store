@@ -32,7 +32,7 @@ function Home() {
         multiply={3}
         showDots={true}
         loop={true}
-        autoplay={gamesNoUnavailable[0]?.id !== undefined}
+        autoplay={true}
         disable={gamesNoUnavailable[0]?.id === undefined}
         autoplayDelay={4000}
         findSlideIndex={(slide, game) =>
