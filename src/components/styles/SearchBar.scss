@@ -33,4 +33,10 @@
     left: 8px;
     padding-inline: 16px;
   }
+
+  @media screen and (min-width: 768px) {
+    .results {
+      border-radius: 8px;
+    }
+  }
 }
