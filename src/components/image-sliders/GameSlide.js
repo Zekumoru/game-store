@@ -6,7 +6,9 @@ import PlatformsIconsList from '../platforms-icons-list/PlatformsIconsList';
 function GameSlide({ data: game }) {
   const { name, price, platforms } = game;
 
-  return (
+  return game.id === undefined ? (
+    <div className="GameSlide skeleton-loading"></div>
+  ) : (
     <Link to={`/games/${game.id}`}>
       <div
         className="GameSlide"

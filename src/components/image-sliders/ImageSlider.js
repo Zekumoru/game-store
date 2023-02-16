@@ -10,6 +10,7 @@ function ImageSlider({
   autoplay = false,
   showDots = false,
   loop = false,
+  disable = false,
   autoplayDelay = 2000,
   findSlideIndex = () => {},
   containerProps = {},
@@ -54,10 +55,13 @@ function ImageSlider({
     handleDotClick(0);
     handleSlideChange();
 
+    if (disable) swiper.disable();
+    else swiper.enable();
+
     return () => {
       swiper.off('slideChange', handleSlideChange);
     };
-  }, [swiper, items, autoplay, findSlideIndex, handleDotClick]);
+  }, [swiper, items, autoplay, disable, findSlideIndex, handleDotClick]);
 
   const autoplayObj = !autoplay
     ? {}
