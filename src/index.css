@@ -1,4 +1,6 @@
 :root {
+  color-scheme: dark;
+
   /* Colors */
   --clr-primary: hsl(4, 99%, 68%);
   --clr-secondary: hsl(150, 3%, 13%);
