@@ -1,5 +1,5 @@
 import { Masonry, useInfiniteLoader } from 'masonic';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { ElementProvider } from '../contexts/ElementContext';
 import LoadingCircle from '../loading-circle/LoadingCircle';
 import GameItem from './GameItem';
@@ -9,6 +9,9 @@ import './styles/GameList.scss';
 import './styles/GameMasonryList.scss';
 
 function GameMasonryList({ games = [], onLoadMore }) {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const randomKey = useMemo(() => Date.now(), [games]);
+
   const maybeLoadMore = useInfiniteLoader(
     async () => {
       onLoadMore();
@@ -31,7 +34,8 @@ function GameMasonryList({ games = [], onLoadMore }) {
         element={games.length !== 0 ? GameItem : GameLoadingItem}
       >
         <Masonry
-          items={games.length !== 0 ? games : [{}, {}, {}, {}, {}]}
+          key={randomKey}
+          items={games.length !== 0 ? games : Array(12).fill({})}
           columnGutter={16}
           columnWidth={260}
           render={GameMasonryItem}
