@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useId, useState } from 'react';
 import Icon, { magnifyingGlassIcon } from '../assets/icons';
 import SearchBarResults from './search-bar-results/SearchBarResults';
 import useDebouncedValue from './hooks/useDebouncedValue';
@@ -14,6 +14,7 @@ function SearchBar({ className }) {
   const [games, setGames] = useState([]);
   const debouncedInput = useDebouncedValue(input);
   const location = useLocation();
+  const id = useId();
 
   useEffect(() => {
     if (input !== '') return;
@@ -50,9 +51,12 @@ function SearchBar({ className }) {
   }, [debouncedInput]);
 
   return (
-    <div className={`SearchBar ${className}`}>
-      <Icon icon={magnifyingGlassIcon} className="icon" />
+    <div className={`SearchBar ${className ?? ''}`}>
+      <label htmlFor={id}>
+        <Icon icon={magnifyingGlassIcon} className="icon" />
+      </label>
       <input
+        id={id}
         type="text"
         className="search-input"
         value={input}
