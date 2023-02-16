@@ -1,6 +1,15 @@
 .Cart {
+  position: relative;
+
   .empty-cart-msg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    position: absolute;
+    height: 400px;
+    left: 0;
+    right: 0;
 
     .icon {
       color: inherit;

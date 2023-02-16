@@ -5,6 +5,10 @@ import { render, screen } from '@testing-library/react';
 import { useCartItems } from '../CartItemsContext';
 
 describe('CartContext', () => {
+  beforeEach(() => {
+    localStorage.clear();
+  });
+
   it('must not rerender a component if items in the cart changed because of referential equality', async () => {
     const user = userEvent.setup();
     const rendered = jest.fn();

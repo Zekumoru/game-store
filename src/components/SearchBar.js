@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import Icon, { magnifyingGlassIcon } from '../assets/icons';
+import React, { useEffect, useId, useState } from 'react';
+import Icon, { crossIcon, magnifyingGlassIcon } from '../assets/icons';
 import SearchBarResults from './search-bar-results/SearchBarResults';
 import useDebouncedValue from './hooks/useDebouncedValue';
 import './styles/SearchBar.scss';
@@ -14,17 +14,21 @@ function SearchBar({ className }) {
   const [games, setGames] = useState([]);
   const debouncedInput = useDebouncedValue(input);
   const location = useLocation();
+  const id = useId();
+
+  const clear = () => {
+    setInput('');
+    setGames([]);
+    setNotFound(false);
+  };
 
   useEffect(() => {
     if (input !== '') return;
-
-    setGames([]);
-    setNotFound(false);
+    clear();
   }, [input]);
 
   useEffect(() => {
-    setInput('');
-    setNotFound(false);
+    clear();
   }, [location]);
 
   useEffect(() => {
@@ -32,6 +36,7 @@ function SearchBar({ className }) {
 
     asyncOnce(
       async () => {
+        setGames([]); // clear games to show skeleton loading on new search
         const games = await fetchGames(
           `https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&search=${debouncedInput}`,
           {
@@ -50,9 +55,12 @@ function SearchBar({ className }) {
   }, [debouncedInput]);
 
   return (
-    <div className={`SearchBar ${className}`}>
-      <Icon icon={magnifyingGlassIcon} className="icon" />
+    <div className={`SearchBar ${className ?? ''}`}>
+      <label htmlFor={id}>
+        <Icon icon={magnifyingGlassIcon} className="icon" />
+      </label>
       <input
+        id={id}
         type="text"
         className="search-input"
         value={input}
@@ -60,13 +68,16 @@ function SearchBar({ className }) {
         placeholder="Search..."
       />
       {input !== '' && (
-        <SearchBarResults
-          search={debouncedInput}
-          className="results container"
-          games={games}
-          blurBackground={location.pathname.includes('/games')}
-          notFound={notFound}
-        />
+        <>
+          <Icon className="icon cross" icon={crossIcon} onClick={clear} />
+          <SearchBarResults
+            search={debouncedInput}
+            className="results container"
+            games={games}
+            blurBackground={location.pathname.includes('/games')}
+            notFound={notFound}
+          />
+        </>
       )}
     </div>
   );

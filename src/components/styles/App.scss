@@ -1,0 +1,27 @@
+@media screen and (min-width: 768px) {
+  .App {
+    max-width: 1440px;
+    margin-inline: auto;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  .SidebarNavigation {
+    position: sticky;
+    bottom: 0;
+    align-self: self-end;
+    z-index: 1000;
+  }
+
+  .main-content {
+    overflow-x: hidden;
+
+    .container {
+      padding: 0;
+      padding-right: 24px;
+    }
+  }
+}

@@ -3,7 +3,7 @@ import fetchGames from './fetchGames';
 const handleLoadMoreGames = async (url) => {
   if (url === '') return null;
 
-  let nextUrl = false;
+  let nextUrl = '';
   const games = await fetchGames(url, {
     setNextUrlCallback: (url) => (nextUrl = url),
   });

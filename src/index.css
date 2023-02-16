@@ -1,4 +1,6 @@
 :root {
+  color-scheme: dark;
+
   /* Colors */
   --clr-primary: hsl(4, 99%, 68%);
   --clr-secondary: hsl(150, 3%, 13%);
@@ -24,8 +26,10 @@
 
   /* Sizes */
   --home-image-slider-height: 280px;
+  --home-image-slider-height-desktop: 360px;
   --home-image-slider-dot-size: 16px;
   --game-page-bg-size: 340px;
+  --game-page-bg-size-desktop: 480px;
   --primary-nav-height: 70px;
 }
 
@@ -42,6 +46,12 @@ html {
 
 main {
   margin-bottom: calc(24px + var(--primary-nav-height));
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    margin-bottom: 0;
+  }
 }
 
 a {
@@ -153,8 +163,9 @@ h3 {
 
 .full-screen {
   position: absolute;
-  top: 80px;
-  bottom: 80px;
+  padding-block: 80px;
+  top: 0px;
+  bottom: 0px;
   left: 0;
   right: 0;
   display: flex;
@@ -165,6 +176,12 @@ h3 {
 
 .image-slider-unwrapped .slide:first-of-type {
   padding-inline-start: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .image-slider-unwrapped .slide:first-of-type {
+    padding-inline-start: 0;
+  }
 }
 
 .image-slider-unwrapped .slide:last-of-type {

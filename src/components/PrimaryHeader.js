@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import SearchBar from './SearchBar';
-import '../styles/components/PrimaryHeader.scss';
+import './styles/PrimaryHeader.scss';
 
 function PrimaryHeader() {
   const location = useLocation('login');
@@ -10,22 +10,20 @@ function PrimaryHeader() {
 
   return (
     <header className="PrimaryHeader">
-      <div className="logo-buttons container">
-        <div className="logo">
-          <Link to="/">GameStore</Link>
-        </div>
-        <div className={`buttons ${hideButtons ? 'visibility-hidden' : ''}`}>
-          <Link to="/login">
-            <button className="button secondary-button box-shadow-none border-none">
-              Login
-            </button>
-          </Link>
-          <Link to="/signup">
-            <button className="button primary-button fw-bold">Sign Up</button>
-          </Link>
-        </div>
+      <div className="logo">
+        <Link to="/">GameStore</Link>
       </div>
-      {hideSearchBar || <SearchBar className="container" />}
+      <div className={`buttons ${hideButtons ? 'visibility-hidden' : ''}`}>
+        <Link to="/login">
+          <button className="button secondary-button box-shadow-none border-none">
+            Login
+          </button>
+        </Link>
+        <Link to="/signup">
+          <button className="button primary-button fw-bold">Sign Up</button>
+        </Link>
+      </div>
+      {hideSearchBar || <SearchBar />}
     </header>
   );
 }

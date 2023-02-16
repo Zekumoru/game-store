@@ -9,7 +9,9 @@ function ExpandCategory({ title, query, categories }) {
   const { games, handleLoadMore } = useGames({
     key: `${title.toLowerCase()}-${categoryName}-games`,
     url: `https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&${query}=${id}`,
+    refetch: true,
     shouldFetch: categoryName !== undefined,
+    once: false,
   });
 
   return (

@@ -3,6 +3,25 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 4px;
   height: 100%;
+
+  .icon-container {
+    position: relative;
+
+    .icon {
+      color: inherit;
+      width: 28px;
+      height: 28px;
+    }
+
+    .CartItemsCount {
+      position: absolute;
+      width: 16.5px;
+      height: 16.5px;
+      font-size: 10px;
+      margin: 0;
+      right: -2px;
+      bottom: 2px;
+    }
+  }
 }

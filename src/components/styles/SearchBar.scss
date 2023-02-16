@@ -3,6 +3,18 @@
   gap: 6px;
   position: relative;
 
+  .search-input {
+    width: 100%;
+  }
+
+  .icon {
+    cursor: pointer;
+
+    &.cross {
+      color: inherit;
+    }
+  }
+
   .results {
     display: flex;
     flex-direction: column;
@@ -28,5 +40,16 @@
     margin-top: 8px;
     left: 8px;
     padding-inline: 16px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .results {
+      border-radius: 8px;
+    }
+
+    .bg-blur {
+      width: 100%;
+      left: 0;
+    }
   }
 }

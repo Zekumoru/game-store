@@ -1,11 +1,33 @@
 .home-image-slider {
-  height: var(--home-image-slider-height);
   position: relative;
+  min-height: var(--home-image-slider-height);
 
   .SliderDots {
     position: absolute;
     bottom: 24px;
     right: 24px;
     z-index: 1;
+  }
+
+  @media screen and (min-width: 768px) {
+    min-height: var(--home-image-slider-height-desktop);
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 200px;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(90deg, hsla(0, 0%, 0%, 0), hsla(150, 3%, 13%)),
+        linear-gradient(90deg, hsla(0, 0%, 0%, 0), hsla(150, 3%, 13%, 0.6));
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .SliderDots {
+      position: static;
+      margin-top: 8px;
+    }
   }
 }

@@ -9,36 +9,38 @@ function SignUp() {
 
   return (
     <div className="form-page container full-screen">
-      <LoginSignUpForm title="Sign Up">
-        <LabelInput
-          label="Email"
-          type="email"
-          className="text-input"
-          requiredMessage="Email is required"
-        />
-        <LabelInput
-          label="Password"
-          type="password"
-          className="password-input"
-          requiredMessage="Password is required"
-          onChange={(e) => setPassword(e.target.value)}
-          minLength="8"
-          maxLength="20"
-        />
-        <LabelInput
-          label="Confirm Password"
-          type="password"
-          className="password-input"
-          requiredMessage="Please confirm your password"
-          validate={(confirmPassword) => {
-            if (password !== confirmPassword) return 'Passwords do not match';
-            return '';
-          }}
-        />
-        <button className="button fw-bold">Register</button>
-      </LoginSignUpForm>
-      <div className="user-prompt-text">
-        Already a user? <Link to="/login">Login</Link>
+      <div className="form-container">
+        <LoginSignUpForm title="Sign Up">
+          <LabelInput
+            label="Email"
+            type="email"
+            className="text-input"
+            requiredMessage="Email is required"
+          />
+          <LabelInput
+            label="Password"
+            type="password"
+            className="password-input"
+            requiredMessage="Password is required"
+            onChange={(e) => setPassword(e.target.value)}
+            minLength="8"
+            maxLength="20"
+          />
+          <LabelInput
+            label="Confirm Password"
+            type="password"
+            className="password-input"
+            requiredMessage="Please confirm your password"
+            validate={(confirmPassword) => {
+              if (password !== confirmPassword) return 'Passwords do not match';
+              return '';
+            }}
+          />
+          <button className="button fw-bold">Register</button>
+        </LoginSignUpForm>
+        <div className="user-prompt-text">
+          Already a user? <Link to="/login">Login</Link>
+        </div>
       </div>
     </div>
   );

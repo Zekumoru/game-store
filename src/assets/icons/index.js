@@ -6,6 +6,7 @@ import { ReactComponent as cartIcon } from './cart.svg';
 import { ReactComponent as pcIcon } from './pc.svg';
 import { ReactComponent as swordIcon } from './sword.svg';
 import { ReactComponent as arrowLeftIcon } from './arrow-left.svg';
+import { ReactComponent as crossIcon } from './cross.svg';
 
 export default Icon;
 export {
@@ -16,5 +17,6 @@ export {
   pcIcon,
   swordIcon,
   arrowLeftIcon,
+  crossIcon,
 };
 export * from './platforms';

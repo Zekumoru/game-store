@@ -3,6 +3,7 @@
     height: var(--game-page-bg-size);
 
     &::before {
+      // dims the background image
       height: var(--game-page-bg-size);
     }
   }
@@ -50,6 +51,17 @@
       width: 280px;
       height: 180px;
       border-radius: 8px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .background-image {
+      height: var(--game-page-bg-size-desktop);
+
+      &::before {
+        // dims the background image
+        height: var(--game-page-bg-size-desktop);
+      }
     }
   }
 }

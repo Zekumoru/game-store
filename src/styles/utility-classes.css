@@ -36,6 +36,11 @@
   justify-content: space-between;
 }
 
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
 .text-ellipsis {
   white-space: nowrap;
   overflow: hidden;
