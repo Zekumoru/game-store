@@ -6,7 +6,6 @@ import GameItem from './GameItem';
 import GameLoadingItem from './GameLoadingItem';
 import GameMasonryItem from './GameMasonryItem';
 import './styles/GameList.scss';
-import './styles/GameMasonryList.scss';
 
 function GameMasonryList({ games = [], onLoadMore }) {
   // eslint-disable-next-line react-hooks/exhaustive-deps

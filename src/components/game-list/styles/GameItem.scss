@@ -4,6 +4,32 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 4px 8px;
   border-radius: 6px;
   overflow: hidden;
+  animation: scale-down 0.3s ease-out forwards;
+
+  &:hover {
+    animation: scale-up 0.3s ease-out forwards;
+    z-index: 1;
+  }
+
+  @keyframes scale-up {
+    0% {
+      scale: 1;
+    }
+
+    100% {
+      scale: 1.03;
+    }
+  }
+
+  @keyframes scale-down {
+    0% {
+      scale: 1.03;
+    }
+
+    100% {
+      scale: 1;
+    }
+  }
 
   img {
     width: 100%;
