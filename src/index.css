@@ -45,6 +45,12 @@ main {
   margin-bottom: calc(24px + var(--primary-nav-height));
 }
 
+@media screen and (min-width: 768px) {
+  main {
+    margin-bottom: 0;
+  }
+}
+
 a {
   color: currentColor;
   text-decoration: none;
