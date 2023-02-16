@@ -9,6 +9,10 @@
 
   .icon {
     cursor: pointer;
+
+    &.cross {
+      color: inherit;
+    }
   }
 
   .results {
