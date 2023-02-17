@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useCart } from '../contexts/CartContext';
 import './styles/PriceButton.scss';
+import MaterialButton from '../material-button/MaterialButton';
 
 const shrinkFreeString = (priceText) => {
   if (priceText.includes('Free')) {
@@ -19,26 +20,26 @@ function PriceButton({ game, freeStringToShrink = true }) {
   return (
     <div className="PriceButton">
       {showAddToCartButton ? (
-        <button
+        <MaterialButton
           onClick={() => {
             addToCart(game);
             setShowAddToCardButton(false);
           }}
-          className="button"
           disabled={game.price.text === 'Unavailable'}
         >
           Add to cart
-        </button>
+        </MaterialButton>
       ) : (
-        <button
-          className="button secondary-button"
+        <MaterialButton
+          type="secondary"
           onClick={() => {
             removeFromCart(game.id);
             setShowAddToCardButton(true);
           }}
+          disabled={game.price.text === 'Unavailable'}
         >
           Remove from Cart
-        </button>
+        </MaterialButton>
       )}
       <div
         className={`price ${

@@ -37,6 +37,7 @@ function MaterialButton({
   type = 'primary',
   bold = true,
   rippleClassName = '',
+  disabled = false,
 }) {
   const ref = useRef(null);
   const rippleRef = useRef(null);
@@ -77,6 +78,7 @@ function MaterialButton({
       onClick={onClick}
       onMouseDown={handleMouseDown}
       ref={ref}
+      disabled={disabled}
       className={`MaterialButton | button ${type}-button ${
         bold ? 'fw-bold' : ''
       }`}

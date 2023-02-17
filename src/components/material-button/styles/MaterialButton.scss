@@ -2,6 +2,7 @@
   --clr-bg-default: hsl(4, 99%, 68%);
   --clr-bg-hover: hsl(4, 99%, 70%);
   --clr-ripple: hsl(0, 0%, 7%);
+  --clr-disabled: hsl(0, 0%, 40%);
 
   animation: hover-out 0.1s linear forwards;
   position: relative;
@@ -22,6 +23,17 @@
     --clr-bg-hover: hsla(0, 0%, 100%, 0.05);
     --clr-ripple: hsl(0, 0%, 100%);
     box-shadow: none !important;
+  }
+
+  &:disabled,
+  &:disabled::before {
+    animation: none !important;
+  }
+
+  &:disabled {
+    background-color: transparent;
+    border: 2px solid var(--clr-disabled);
+    color: var(--clr-disabled);
   }
 
   &:hover {
