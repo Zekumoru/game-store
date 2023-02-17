@@ -12,6 +12,7 @@ import { ReactComponent as clockIcon } from './clock.svg';
 import { ReactComponent as ratingStarEmptyIcon } from './rating-star-empty.svg';
 import { ReactComponent as ratingStarHalfIcon } from './rating-star-half.svg';
 import { ReactComponent as ratingStarFullIcon } from './rating-star-full.svg';
+import { ReactComponent as logoIcon } from './logo.svg';
 
 export default Icon;
 export {
@@ -28,5 +29,6 @@ export {
   ratingStarEmptyIcon,
   ratingStarHalfIcon,
   ratingStarFullIcon,
+  logoIcon,
 };
 export * from './platforms';
