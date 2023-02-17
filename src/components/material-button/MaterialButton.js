@@ -60,9 +60,7 @@ function MaterialButton({
   }, []);
 
   const handleMouseDown = (e) => {
-    const x = e.clientX - e.target.offsetLeft;
-    const y = e.clientY - e.target.offsetTop;
-
+    const { offsetX: x, offsetY: y } = e.nativeEvent;
     rippleRef.current?.remove();
 
     const ripple = createRipple(x, y, eventsRef, {
