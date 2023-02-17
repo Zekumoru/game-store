@@ -12,6 +12,7 @@ function ImageSlider({
   loop = false,
   disable = false,
   autoplayDelay = 2000,
+  onSlideClick = () => {},
   findSlideIndex = () => {},
   containerProps = {},
 }) {
@@ -100,6 +101,8 @@ function ImageSlider({
           >
             {React.createElement(slideElement, {
               data: item,
+              slideIndex: index,
+              onClick: onSlideClick,
             })}
           </swiper-slide>
         ))}

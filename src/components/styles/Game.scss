@@ -56,6 +56,11 @@
     }
   }
 
+  .image-viewer {
+    position: relative;
+    z-index: 10000;
+  }
+
   .title {
     font-size: var(--fs-1);
   }

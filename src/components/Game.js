@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import ImageViewer from 'react-simple-image-viewer';
 import Icon, { arrowLeftIcon, clockIcon, webIcon } from '../assets/icons';
 import fetchGame from '../utils/fetchGame';
 import DateCapsule from './date-capsule/DateCapsule';
@@ -19,7 +20,19 @@ function Game() {
   const navigate = useNavigate();
   const [game, setGame] = useSessionStorage('game', {});
   const [notFound, setNotFound] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
+  const [isViewerOpen, setIsViewerOpen] = useState(false);
   const { id } = useParams();
+
+  const openImageViewer = (index) => {
+    setCurrentImage(index);
+    setIsViewerOpen(true);
+  };
+
+  const closeImageViewer = () => {
+    setCurrentImage(0);
+    setIsViewerOpen(false);
+  };
 
   useLayoutEffect(() => {
     if (game.id !== Number(id)) {
@@ -110,11 +123,27 @@ function Game() {
             className="game-image-slider image-slider-unwrapped"
             items={game.screenshots}
             slideElement={ScreenshotSlide}
+            onSlideClick={openImageViewer}
             containerProps={{
               'free-mode': true,
               'slides-per-view': 'auto',
             }}
           />
+          <div className="image-viewer">
+            {isViewerOpen && (
+              <ImageViewer
+                src={game.screenshots.map((screenshot) => screenshot.image)}
+                currentIndex={currentImage}
+                disableScroll={true}
+                closeOnClickOutside={true}
+                onClose={closeImageViewer}
+                backgroundStyle={{
+                  backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                  backdropFilter: 'blur(2px)',
+                }}
+              />
+            )}
+          </div>
           <div className="container">
             <h2>About</h2>
             <p className="overflow-wrap-word">{game.description_raw}</p>
