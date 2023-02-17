@@ -4,6 +4,7 @@ import getPriceText from '../utils/getPriceText';
 import CartList from './cart-list/CartList';
 import { useCartItems } from './contexts/CartItemsContext';
 import useCurrency from './hooks/useCurrency';
+import MaterialButton from './material-button/MaterialButton';
 import './styles/Cart.scss';
 
 function Cart() {
@@ -44,7 +45,7 @@ function Cart() {
               })}
             </div>
           </div>
-          <button className="button fw-bold">Checkout</button>
+          <MaterialButton rippleClassName="w10">Checkout</MaterialButton>
         </>
       )}
     </div>

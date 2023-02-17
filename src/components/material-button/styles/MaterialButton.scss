@@ -74,6 +74,11 @@
       width: 5vw;
       height: 5vw;
     }
+
+    &.w10 {
+      width: 10vw;
+      height: 10vw;
+    }
   }
 
   @keyframes ripple {

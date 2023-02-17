@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import getPriceText from '../../utils/getPriceText';
 import { useCart } from '../contexts/CartContext';
 import useCurrency from '../hooks/useCurrency';
+import MaterialButton from '../material-button/MaterialButton';
 import './styles/CartItem.scss';
 
 function CartItem({ item }) {
@@ -36,12 +37,9 @@ function CartItem({ item }) {
           },
         })}
       </div>
-      <button
-        className="button secondary-button fw-bold"
-        onClick={() => removeFromCart(item.id)}
-      >
+      <MaterialButton type="secondary" onClick={() => removeFromCart(item.id)}>
         Remove from Cart
-      </button>
+      </MaterialButton>
     </div>
   );
 }

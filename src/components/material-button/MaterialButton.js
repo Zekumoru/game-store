@@ -33,6 +33,7 @@ const createRipple = (x, y, eventsRef, { className }) => {
 
 function MaterialButton({
   children,
+  onClick = () => {},
   type = 'primary',
   bold = true,
   rippleClassName = '',
@@ -73,6 +74,7 @@ function MaterialButton({
 
   return (
     <button
+      onClick={onClick}
       onMouseDown={handleMouseDown}
       ref={ref}
       className={`MaterialButton | button ${type}-button ${
