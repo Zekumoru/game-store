@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import './styles/MaterialButton.scss';
 
-const createRipple = (x, y, eventsRef) => {
+const createRipple = (x, y, eventsRef, { className }) => {
   const ripple = document.createElement('div');
-  ripple.className = 'ripple';
+  ripple.className = `ripple ${className ?? ''}`;
   ripple.style.left = `${x}px`;
   ripple.style.top = `${y}px`;
 
@@ -31,7 +31,12 @@ const createRipple = (x, y, eventsRef) => {
   return ripple;
 };
 
-function MaterialButton({ children, type = 'primary', bold = true }) {
+function MaterialButton({
+  children,
+  type = 'primary',
+  bold = true,
+  rippleClassName = '',
+}) {
   const ref = useRef(null);
   const rippleRef = useRef(null);
   const eventsRef = useRef({
@@ -60,7 +65,9 @@ function MaterialButton({ children, type = 'primary', bold = true }) {
 
     rippleRef.current?.remove();
 
-    const ripple = createRipple(x, y, eventsRef);
+    const ripple = createRipple(x, y, eventsRef, {
+      className: rippleClassName,
+    });
     rippleRef.current = ripple;
     eventsRef.current.rippleEnded = false;
     e.target.lastElementChild.appendChild(ripple);

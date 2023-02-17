@@ -69,6 +69,11 @@
     position: absolute;
     pointer-events: none;
     opacity: 0;
+
+    &.w5 {
+      width: 5vw;
+      height: 5vw;
+    }
   }
 
   @keyframes ripple {

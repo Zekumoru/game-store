@@ -3,6 +3,7 @@ import LabelInput from './form/LabelInput';
 import LoginSignUpForm from './LoginSignUpForm';
 import { Link } from 'react-router-dom';
 import './styles/form-page.scss';
+import MaterialButton from './material-button/MaterialButton';
 
 function SignUp() {
   const [password, setPassword] = useState('');
@@ -36,7 +37,7 @@ function SignUp() {
               return '';
             }}
           />
-          <button className="button fw-bold">Register</button>
+          <MaterialButton rippleClassName="w5">Register</MaterialButton>
         </LoginSignUpForm>
         <div className="user-prompt-text">
           Already a user? <Link to="/login">Login</Link>

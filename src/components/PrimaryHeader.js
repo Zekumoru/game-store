@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import MaterialButton from './material-button/MaterialButton';
 import SearchBar from './SearchBar';
 import './styles/PrimaryHeader.scss';
 
@@ -15,12 +16,12 @@ function PrimaryHeader() {
       </div>
       <div className={`buttons ${hideButtons ? 'visibility-hidden' : ''}`}>
         <Link to="/login">
-          <button className="button secondary-button box-shadow-none border-none">
+          <MaterialButton type="tertiary" bold={false}>
             Login
-          </button>
+          </MaterialButton>
         </Link>
         <Link to="/signup">
-          <button className="button primary-button fw-bold">Sign Up</button>
+          <MaterialButton>Sign Up</MaterialButton>
         </Link>
       </div>
       {hideSearchBar || <SearchBar />}
