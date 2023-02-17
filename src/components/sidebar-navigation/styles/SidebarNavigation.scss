@@ -8,5 +8,47 @@
     gap: 16px;
     padding-bottom: 32px;
     padding-right: 0;
+
+    .credits {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .icon {
+      color: inherit;
+      width: 24px;
+      height: 24px;
+    }
+
+    .paragraph-icon {
+      margin-inline-start: 4px;
+      width: 20px;
+      height: 20px;
+      position: relative;
+      top: 2px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      line-height: 1;
+      gap: 4px;
+      font-family: var(--ff-logo);
+      font-size: var(--fs-2s);
+
+      .icon {
+        position: relative;
+        top: -2px;
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    .credits-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
   }
 }

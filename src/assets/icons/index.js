@@ -13,6 +13,8 @@ import { ReactComponent as ratingStarEmptyIcon } from './rating-star-empty.svg';
 import { ReactComponent as ratingStarHalfIcon } from './rating-star-half.svg';
 import { ReactComponent as ratingStarFullIcon } from './rating-star-full.svg';
 import { ReactComponent as logoIcon } from './logo.svg';
+import { ReactComponent as githubIcon } from './github.svg';
+import { ReactComponent as svgrepoIcon } from './svgrepo.svg';
 
 export default Icon;
 export {
@@ -30,5 +32,7 @@ export {
   ratingStarHalfIcon,
   ratingStarFullIcon,
   logoIcon,
+  githubIcon,
+  svgrepoIcon,
 };
 export * from './platforms';
