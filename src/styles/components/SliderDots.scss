@@ -8,9 +8,34 @@
     border-radius: 100%;
     background-color: var(--clr-neutral-variant);
     cursor: pointer;
+    animation: fade-out-bg 0.3s ease-out forwards;
+
+    &:hover {
+      animation: fade-in-bg 0.3s ease-out forwards;
+    }
+
+    @keyframes fade-in-bg {
+      0% {
+        background-color: var(--clr-neutral);
+      }
+
+      100% {
+        background-color: var(--clr-primary);
+      }
+    }
+
+    @keyframes fade-out-bg {
+      0% {
+        background-color: var(--clr-primary);
+      }
+
+      100% {
+        background-color: var(--clr-neutral);
+      }
+    }
   }
 
   .active {
-    background-color: var(--clr-primary);
+    background-color: var(--clr-primary) !important;
   }
 }
