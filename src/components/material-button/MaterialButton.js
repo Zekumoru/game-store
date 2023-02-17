@@ -67,16 +67,14 @@ function MaterialButton({ children, type = 'primary' }) {
   };
 
   return (
-    <div className="container">
-      <button
-        onMouseDown={handleMouseDown}
-        ref={ref}
-        className={`MaterialButton | button ${type}-button fw-bold`}
-      >
-        <span>{children}</span>
-        <span className="ripple-container"></span>
-      </button>
-    </div>
+    <button
+      onMouseDown={handleMouseDown}
+      ref={ref}
+      className={`MaterialButton | button ${type}-button fw-bold`}
+    >
+      <span>{children}</span>
+      <span className="ripple-container"></span>
+    </button>
   );
 }
 
