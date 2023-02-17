@@ -71,6 +71,7 @@ function ImageSlider({
       };
 
   useEffect(() => {
+    if (!autoplay) return;
     if (swiper === null) return;
     if (swiper.autoplay.running) return;
 
@@ -79,7 +80,7 @@ function ImageSlider({
     } else {
       swiper.autoplay.start();
     }
-  }, [swiper, items]);
+  }, [swiper, items, autoplay]);
 
   return (
     <div className={`ImageSlider ${className}`}>
