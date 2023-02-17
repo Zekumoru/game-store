@@ -76,7 +76,7 @@ function ImageSlider({
 
   useEffect(() => {
     if (!autoplay) return;
-    if (swiper === null) return;
+    if (swiper == null) return;
     if (swiper.autoplay.running) return;
 
     if (items[0]?.id === undefined) {

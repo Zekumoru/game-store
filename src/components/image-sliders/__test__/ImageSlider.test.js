@@ -50,6 +50,17 @@ describe('Image Slider', () => {
       slideTo: () => {
         onSlideChange();
       },
+      autoplay: {
+        running: false,
+        start() {
+          this.running = true;
+        },
+        pause() {
+          this.running = false;
+        },
+      },
+      enable() {},
+      disable() {},
       activeIndex: 0,
       slides: [
         {
