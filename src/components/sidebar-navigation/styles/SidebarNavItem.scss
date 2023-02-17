@@ -3,6 +3,11 @@
     display: flex;
     align-items: center;
     gap: 4px;
+    animation: fade-out 0.3s ease-out forwards;
+
+    &:hover {
+      animation: fade-in 0.3s ease-out forwards;
+    }
 
     .icon {
       color: inherit;
@@ -25,5 +30,30 @@
 
   li {
     font-size: var(--fs-2);
+    animation: fade-out 0.3s ease-out forwards;
+
+    &:hover {
+      animation: fade-in 0.3s ease-out forwards;
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      color: var(--clr-neutral);
+    }
+
+    100% {
+      color: var(--clr-primary);
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      color: var(--clr-primary);
+    }
+
+    100% {
+      color: var(--clr-neutral);
+    }
   }
 }
