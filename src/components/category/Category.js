@@ -15,7 +15,7 @@ function Category({ category, slug }) {
 
   return (
     <div className="Category">
-      <div className="container mg-b4">
+      <div className="container">
         <h2>{category.name}</h2>
       </div>
       <ImageSlider

@@ -178,12 +178,6 @@ h3 {
   padding-inline-start: 24px;
 }
 
-@media screen and (min-width: 768px) {
-  .image-slider-unwrapped .slide:first-of-type {
-    padding-inline-start: 0;
-  }
-}
-
 .image-slider-unwrapped .slide:last-of-type {
   padding-inline-end: 24px;
 }
