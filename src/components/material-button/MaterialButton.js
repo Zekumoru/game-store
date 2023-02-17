@@ -31,7 +31,7 @@ const createRipple = (x, y, eventsRef) => {
   return ripple;
 };
 
-function MaterialButton({ children, type = 'primary' }) {
+function MaterialButton({ children, type = 'primary', bold = true }) {
   const ref = useRef(null);
   const rippleRef = useRef(null);
   const eventsRef = useRef({
@@ -70,7 +70,9 @@ function MaterialButton({ children, type = 'primary' }) {
     <button
       onMouseDown={handleMouseDown}
       ref={ref}
-      className={`MaterialButton | button ${type}-button fw-bold`}
+      className={`MaterialButton | button ${type}-button ${
+        bold ? 'fw-bold' : ''
+      }`}
     >
       <span>{children}</span>
       <span className="ripple-container"></span>
