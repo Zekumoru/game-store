@@ -8,6 +8,30 @@
     }
   }
 
+  .extra-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .playtime,
+  .rating,
+  .website {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 4px;
+
+    h2 {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .icon {
+    color: white;
+    width: 24px;
+    height: 24px;
+  }
+
   .back {
     display: inline-flex;
     align-items: center;
@@ -32,6 +56,11 @@
     }
   }
 
+  .image-viewer {
+    position: relative;
+    z-index: 10000;
+  }
+
   .title {
     font-size: var(--fs-1);
   }
@@ -52,6 +81,10 @@
       height: 180px;
       border-radius: 8px;
     }
+  }
+
+  .data-provided {
+    margin-block: 20px 24px;
   }
 
   @media screen and (min-width: 768px) {
