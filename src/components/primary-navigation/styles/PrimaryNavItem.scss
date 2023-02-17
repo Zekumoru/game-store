@@ -5,6 +5,10 @@
   align-items: center;
   height: 100%;
 
+  .label {
+    font-size: var(--fs-ps);
+  }
+
   .icon-container {
     position: relative;
 

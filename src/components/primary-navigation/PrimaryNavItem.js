@@ -9,7 +9,9 @@ function PrimaryNavItem({ children, icon, iconOverlayElement }) {
         <Icon className="icon" icon={icon} />
         {iconOverlayElement && iconOverlayElement}
       </div>
-      <div className="label flex-align-center">{children}</div>
+      <div className="label | fw-bold uppercased flex-align-center">
+        {children}
+      </div>
     </div>
   );
 }

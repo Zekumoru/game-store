@@ -26,6 +26,10 @@
   text-decoration: underline;
 }
 
+.uppercased {
+  text-transform: uppercase;
+}
+
 .fit-center {
   object-fit: cover;
   object-position: center;
