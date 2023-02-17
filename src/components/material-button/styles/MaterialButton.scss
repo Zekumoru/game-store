@@ -17,6 +17,13 @@
     border: 2px solid var(--clr-neutral);
   }
 
+  &.tertiary-button {
+    --clr-bg-default: transparent;
+    --clr-bg-hover: hsla(0, 0%, 100%, 0.05);
+    --clr-ripple: hsl(0, 0%, 100%);
+    box-shadow: none !important;
+  }
+
   &:hover {
     animation: hover 0.1s linear forwards;
   }
@@ -50,6 +57,7 @@
     left: 0;
     right: 0;
     z-index: 0;
+    border-radius: 4px;
   }
 
   .ripple {
