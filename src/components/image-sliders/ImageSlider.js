@@ -33,6 +33,9 @@ function ImageSlider({
       const slideIndex = swiper.slides.findIndex((slide) =>
         findSlideIndex(slide, item)
       );
+
+      if (slideIndex < 0) return;
+
       swiper.slideTo(slideIndex);
     },
     [findSlideIndex, items, swiper]
