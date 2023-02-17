@@ -7,6 +7,11 @@ import { ReactComponent as pcIcon } from './pc.svg';
 import { ReactComponent as swordIcon } from './sword.svg';
 import { ReactComponent as arrowLeftIcon } from './arrow-left.svg';
 import { ReactComponent as crossIcon } from './cross.svg';
+import { ReactComponent as calendarIcon } from './calendar.svg';
+import { ReactComponent as clockIcon } from './clock.svg';
+import { ReactComponent as ratingStarEmptyIcon } from './rating-star-empty.svg';
+import { ReactComponent as ratingStarHalfIcon } from './rating-star-half.svg';
+import { ReactComponent as ratingStarFullIcon } from './rating-star-full.svg';
 
 export default Icon;
 export {
@@ -18,5 +23,10 @@ export {
   swordIcon,
   arrowLeftIcon,
   crossIcon,
+  calendarIcon,
+  clockIcon,
+  ratingStarEmptyIcon,
+  ratingStarHalfIcon,
+  ratingStarFullIcon,
 };
 export * from './platforms';
