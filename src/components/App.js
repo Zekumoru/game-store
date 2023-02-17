@@ -18,6 +18,7 @@ import { CartProvider } from './contexts/CartContext';
 import useCurrency from './hooks/useCurrency';
 import SidebarNavigation from './sidebar-navigation/SidebarNavigation';
 import './styles/App.scss';
+import Test from './Test';
 
 function App() {
   useCurrency(); // loads up currency in session storage
@@ -33,6 +34,7 @@ function App() {
           <div className="main-content">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/test" element={<Test />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<Login />} />
               <Route path="/platforms" element={<Platforms />} />
