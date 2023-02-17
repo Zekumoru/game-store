@@ -1,8 +1,21 @@
 .MaterialButton {
+  --clr-bg-default: hsl(4, 99%, 68%);
+  --clr-bg-hover: hsl(4, 99%, 70%);
+  --clr-ripple: hsl(0, 0%, 7%);
+
   animation: hover-out 0.1s linear forwards;
   position: relative;
   border: none;
   padding: 12px;
+
+  &.secondary-button {
+    --clr-bg-default: transparent;
+    --clr-bg-hover: hsla(0, 0%, 100%, 0.05);
+    --clr-ripple: hsl(0, 0%, 100%);
+
+    padding: 10px;
+    border: 2px solid var(--clr-neutral);
+  }
 
   &:hover {
     animation: hover 0.1s linear forwards;
@@ -41,7 +54,7 @@
 
   .ripple {
     animation: ripple 0.3s ease-out forwards;
-    background-color: #111;
+    background-color: var(--clr-ripple);
     width: 25px;
     height: 25px;
     border-radius: 100%;
@@ -80,24 +93,24 @@
 
   @keyframes hover {
     0% {
-      background-color: hsl(4, 99%, 68%);
+      background-color: var(--clr-bg-default);
       box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 5px;
     }
 
     100% {
-      background-color: hsl(4, 99%, 70%);
+      background-color: var(--clr-bg-hover);
       box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
     }
   }
 
   @keyframes hover-out {
     0% {
-      background-color: hsl(4, 99%, 70%);
+      background-color: var(--clr-bg-hover);
       box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
     }
 
     100% {
-      background-color: hsl(4, 99%, 68%);
+      background-color: var(--clr-bg-default);
       box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 5px;
     }
   }

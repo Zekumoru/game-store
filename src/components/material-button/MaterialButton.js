@@ -71,7 +71,7 @@ function MaterialButton() {
       <button
         onMouseDown={handleMouseDown}
         ref={ref}
-        className="MaterialButton | button fw-bold"
+        className="MaterialButton | button secondary-button fw-bold"
       >
         <span>Material Button</span>
         <span className="ripple-container"></span>
