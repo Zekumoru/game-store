@@ -1,11 +1,11 @@
 .MaterialButton {
-  animation: primary-hover-out 0.1s linear forwards;
+  animation: hover-out 0.1s linear forwards;
   position: relative;
   border: none;
   padding: 12px;
 
   &:hover {
-    animation: primary-hover 0.1s linear forwards;
+    animation: hover 0.1s linear forwards;
   }
 
   &::before {
@@ -16,11 +16,11 @@
     bottom: 0;
     left: 0;
     right: 0;
-    animation: primary-active-out 0.2s ease-out forwards;
+    animation: active-out 0.2s ease-out forwards;
   }
 
   &:active::before {
-    animation: primary-active 0.2s ease-out forwards;
+    animation: active 0.2s ease-out forwards;
   }
 
   span {
@@ -42,8 +42,8 @@
   .ripple {
     animation: ripple 0.3s ease-out forwards;
     background-color: #111;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 100%;
     position: absolute;
     pointer-events: none;
@@ -78,7 +78,7 @@
     }
   }
 
-  @keyframes primary-hover {
+  @keyframes hover {
     0% {
       background-color: hsl(4, 99%, 68%);
       box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 5px;
@@ -90,7 +90,7 @@
     }
   }
 
-  @keyframes primary-hover-out {
+  @keyframes hover-out {
     0% {
       background-color: hsl(4, 99%, 70%);
       box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
@@ -102,7 +102,7 @@
     }
   }
 
-  @keyframes primary-active {
+  @keyframes active {
     0% {
       box-shadow: none;
     }
@@ -112,7 +112,7 @@
     }
   }
 
-  @keyframes primary-active-out {
+  @keyframes active-out {
     0% {
       box-shadow: rgba(0, 0, 0, 0.4) 0px 8px 20px;
     }
