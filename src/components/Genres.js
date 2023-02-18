@@ -5,11 +5,7 @@ import { UrlProvider } from './contexts/UrlContext';
 
 function Platforms() {
   return (
-    <UrlProvider
-      url={
-        'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&genres='
-      }
-    >
+    <UrlProvider url={'/games?genres='}>
       <Categories title="Genres" slug="genres" categories={genres} />
     </UrlProvider>
   );

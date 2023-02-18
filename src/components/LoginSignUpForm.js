@@ -9,12 +9,9 @@ function LoginSignUpForm({ children, title }) {
 
   useEffect(() => {
     asyncOnce(async () => {
-      const games = await fetchGames(
-        `https://api.rawg.io/api/genres?key=f8c4731c17aa4d39a151c2de730a4e53`,
-        {
-          includePrices: false,
-        }
-      );
+      const games = await fetchGames(`/genres`, {
+        includePrices: false,
+      });
 
       const randomIndex = Math.floor(games.length * Math.random());
       setBgImage(games[randomIndex].image_background);

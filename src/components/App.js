@@ -3,7 +3,6 @@ import PrimaryNavigation from './primary-navigation/PrimaryNavigation';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from './Home';
 import Game from './Game';
-import '../utils/mockAxios';
 import Redirect from './Redirect';
 import Platforms from './Platforms';
 import Genres from './Genres';

@@ -10,7 +10,7 @@ import useGames from './hooks/useGames';
 function Home() {
   const { games, handleLoadMore } = useGames({
     key: 'home-games',
-    url: 'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53',
+    url: '/games',
   });
 
   const gamesNoUnavailable = useMemo(() => {
