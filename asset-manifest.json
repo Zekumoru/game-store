@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/game-store/static/css/main.f1f5bad4.css",
+    "main.js": "/game-store/static/js/main.0a85bad4.js",
+    "static/media/Inter-VariableFont_slnt,wght.ttf": "/game-store/static/media/Inter-VariableFont_slnt,wght.aadb65ac45347ff46699.ttf",
+    "static/media/JosefinSans-Italic-VariableFont_wght.ttf": "/game-store/static/media/JosefinSans-Italic-VariableFont_wght.5747f005bcd21b1d8b23.ttf",
+    "static/media/JosefinSans-VariableFont_wght.ttf": "/game-store/static/media/JosefinSans-VariableFont_wght.1bfcfba29eda50476f98.ttf",
+    "static/media/linux.svg": "/game-store/static/media/linux.a341e987e1c7c9dbfb2e5cf994476dee.svg",
+    "static/media/svgrepo.svg": "/game-store/static/media/svgrepo.0946a7736c7af3eccaed646744c765a0.svg",
+    "static/media/android.svg": "/game-store/static/media/android.b41a52b3e7e5e731aaafa97b6875a7b1.svg",
+    "static/media/console.svg": "/game-store/static/media/console.1263eb7e1d54be7682fa579d0b7e4fe3.svg",
+    "static/media/web.svg": "/game-store/static/media/web.6df6924674c7ac5c983046fe8dcd26b8.svg",
+    "static/media/xbox.svg": "/game-store/static/media/xbox.f73c04f9175d83ffee720845a9670a53.svg",
+    "static/media/playstation.svg": "/game-store/static/media/playstation.525297b7c23cf936cfdc2afa1879717f.svg",
+    "static/media/rating-star-empty.svg": "/game-store/static/media/rating-star-empty.2f7c5fec82cc793f5890b4b3356cfdf9.svg",
+    "static/media/logo.svg": "/game-store/static/media/logo.8191d3a91d0c251e836df332cebf5953.svg",
+    "static/media/rating-star-half.svg": "/game-store/static/media/rating-star-half.c1f54d930551fe8f6bf58f57de57e901.svg",
+    "static/media/nintendo.svg": "/game-store/static/media/nintendo.30e2196b34f7019b7c58935f9ba9770f.svg",
+    "static/media/flame.svg": "/game-store/static/media/flame.c9817da0137ead2cc969162d16483d69.svg",
+    "static/media/sword.svg": "/game-store/static/media/sword.3d77b5752f48aa1949d0f75bbf754dcc.svg",
+    "static/media/apple.svg": "/game-store/static/media/apple.e2c1772853dd4f66b5a974d87d6036f6.svg",
+    "static/media/rating-star-full.svg": "/game-store/static/media/rating-star-full.333eb1c0e82e3419a67d2453d51ac774.svg",
+    "static/media/github.svg": "/game-store/static/media/github.83c5398d01032616cc1bbc49b513602f.svg",
+    "index.html": "/game-store/index.html",
+    "static/media/cart.svg": "/game-store/static/media/cart.63c5cbb8c58b5ae4a2ff73bc1f075a91.svg",
+    "static/media/pc.svg": "/game-store/static/media/pc.82a175600f41aff6c64914eb2b87a015.svg",
+    "static/media/clock.svg": "/game-store/static/media/clock.e5e53108523c052f5b2c5963cf159d05.svg",
+    "static/media/calendar.svg": "/game-store/static/media/calendar.2ac2259823658ba26c814b7312b631a1.svg",
+    "static/media/home.svg": "/game-store/static/media/home.37bf4025fd736d6efcf9fac6e981efab.svg",
+    "static/media/windows.svg": "/game-store/static/media/windows.982887ca804f77a9fb0dd272ecec27dc.svg",
+    "static/media/magnifying-glass.svg": "/game-store/static/media/magnifying-glass.730c2ea541aa926697a3c8f920ce760a.svg",
+    "static/media/arrow-left.svg": "/game-store/static/media/arrow-left.ecec417d3171d56dba912d0a741a8e6a.svg",
+    "static/media/cross.svg": "/game-store/static/media/cross.a18c1bde39f44feb01e2ccecff56c5f9.svg",
+    "main.f1f5bad4.css.map": "/game-store/static/css/main.f1f5bad4.css.map",
+    "main.0a85bad4.js.map": "/game-store/static/js/main.0a85bad4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f1f5bad4.css",
+    "static/js/main.0a85bad4.js"
+  ]
+}
