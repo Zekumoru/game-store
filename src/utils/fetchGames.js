@@ -15,7 +15,8 @@ const fetchGames = async (
     if (response.data.next === null) {
       setNextUrlCallback(null);
     } else {
-      setNextUrlCallback(`/games?page=${response.data.next.page}`);
+      const params = new URLSearchParams({ ...response.data.next });
+      setNextUrlCallback(`/games?${params.toString()}`);
     }
 
     if (!includePrices) {
