@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import axios from 'axios';
 import 'normalize.css';
 import './styles/custom-fonts.css';
@@ -13,9 +13,9 @@ axios.defaults.baseURL = 'https://194.163.190.50:3010/game-store-api';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
+  <HashRouter>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </BrowserRouter>
+  </HashRouter>
 );
