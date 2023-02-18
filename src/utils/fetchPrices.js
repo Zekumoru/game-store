@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const PRICE_API_URL = 'https://194.163.190.50:3000/steam-price';
+const PRICE_API_URL = 'https://www.zekumoru.com/steam-price';
 
 const fetchPrices = async (games) => {
   const response = await axios.post(PRICE_API_URL, {

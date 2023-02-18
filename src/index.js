@@ -9,7 +9,8 @@ import './index.css';
 import App from './components/App';
 import './registerSwiper';
 
-axios.defaults.baseURL = 'https://194.163.190.50:3010/game-store-api';
+axios.defaults.baseURL = 'https://www.zekumoru.com/game-store-api';
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
