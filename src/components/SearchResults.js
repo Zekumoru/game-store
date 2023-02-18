@@ -17,7 +17,7 @@ function SearchResults() {
 
     asyncOnce(
       async () => {
-        const url = `https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&search=${search}`;
+        const url = `/games?search=${search}`;
         const games = await fetchGames(url, {
           setNextUrlCallback: setNextUrl,
         });

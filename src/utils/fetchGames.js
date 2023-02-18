@@ -11,7 +11,12 @@ const fetchGames = async (
 ) => {
   try {
     const response = await axios.get(url);
-    setNextUrlCallback(response.data.next);
+
+    if (response.data.next === null) {
+      setNextUrlCallback(null);
+    } else {
+      setNextUrlCallback(`/games?page=${response.data.next.page}`);
+    }
 
     if (!includePrices) {
       return response.data.results;

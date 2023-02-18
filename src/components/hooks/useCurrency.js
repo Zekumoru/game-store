@@ -11,9 +11,7 @@ function useCurrency() {
     if (currency?.symbol !== undefined) return;
 
     asyncOnce(async () => {
-      const games = await fetchGames(
-        'https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53'
-      );
+      const games = await fetchGames('/games');
 
       return () => {
         for (let i = 0; i < games.length; i++) {

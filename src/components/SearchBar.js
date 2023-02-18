@@ -37,12 +37,9 @@ function SearchBar({ className }) {
     asyncOnce(
       async () => {
         setGames([]); // clear games to show skeleton loading on new search
-        const games = await fetchGames(
-          `https://api.rawg.io/api/games?key=f8c4731c17aa4d39a151c2de730a4e53&search=${debouncedInput}`,
-          {
-            limit: 5,
-          }
-        );
+        const games = await fetchGames(`/games?search=${debouncedInput}`, {
+          limit: 5,
+        });
 
         return () => {
           setNotFound(games.length === 0);
