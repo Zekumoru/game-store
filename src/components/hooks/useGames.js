@@ -1,8 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import fetchGames from '../../utils/fetchGames';
 import handleLoadMoreGames from '../../utils/handleLoadMoreGames';
 import useAsyncOnce from './useAsyncOnce';
-import useSessionStorage from './useSessionStorage';
 
 function useGames({
   key,
@@ -13,8 +12,8 @@ function useGames({
   once = true,
 } = {}) {
   const [asyncOnce] = useAsyncOnce();
-  const [games, setGames] = useSessionStorage(key, []);
-  const [nextUrl, setNextUrl] = useSessionStorage(`${key}-next-url`, '');
+  const [games, setGames] = useState([]);
+  const [nextUrl, setNextUrl] = useState('');
 
   useEffect(() => {
     if (games.length !== 0 && !refetch) return;

@@ -4,7 +4,6 @@ import ImageViewer from 'react-simple-image-viewer';
 import Icon, { arrowLeftIcon, clockIcon, webIcon } from '../assets/icons';
 import fetchGame from '../utils/fetchGame';
 import DateCapsule from './date-capsule/DateCapsule';
-import useSessionStorage from './hooks/useSessionStorage';
 import ImageSlider from './image-sliders/ImageSlider';
 import ScreenshotSlide from './image-sliders/ScreenshotSlide';
 import PlatformsIconsList from './platforms-icons-list/PlatformsIconsList';
@@ -18,7 +17,7 @@ import RatingStars from './rating-stars/RatingStars';
 function Game() {
   const [asyncOnce] = useAsyncOnce();
   const navigate = useNavigate();
-  const [game, setGame] = useSessionStorage('game', {});
+  const [game, setGame] = useState({});
   const [notFound, setNotFound] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
