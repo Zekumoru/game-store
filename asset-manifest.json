@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/game-store/static/css/main.f1f5bad4.css",
-    "main.js": "/game-store/static/js/main.adc2db7c.js",
+    "main.js": "/game-store/static/js/main.3360ddc5.js",
     "static/media/Inter-VariableFont_slnt,wght.ttf": "/game-store/static/media/Inter-VariableFont_slnt,wght.aadb65ac45347ff46699.ttf",
     "static/media/JosefinSans-Italic-VariableFont_wght.ttf": "/game-store/static/media/JosefinSans-Italic-VariableFont_wght.5747f005bcd21b1d8b23.ttf",
     "static/media/JosefinSans-VariableFont_wght.ttf": "/game-store/static/media/JosefinSans-VariableFont_wght.1bfcfba29eda50476f98.ttf",
@@ -32,10 +32,10 @@
     "static/media/arrow-left.svg": "/game-store/static/media/arrow-left.ecec417d3171d56dba912d0a741a8e6a.svg",
     "static/media/cross.svg": "/game-store/static/media/cross.a18c1bde39f44feb01e2ccecff56c5f9.svg",
     "main.f1f5bad4.css.map": "/game-store/static/css/main.f1f5bad4.css.map",
-    "main.adc2db7c.js.map": "/game-store/static/js/main.adc2db7c.js.map"
+    "main.3360ddc5.js.map": "/game-store/static/js/main.3360ddc5.js.map"
   },
   "entrypoints": [
     "static/css/main.f1f5bad4.css",
-    "static/js/main.adc2db7c.js"
+    "static/js/main.3360ddc5.js"
   ]
 }
